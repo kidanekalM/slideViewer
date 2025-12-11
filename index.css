@@ -10,9 +10,14 @@ html, body {
     overflow: hidden;
 }
 
-#slide-frame {
+#slide-viewer {
     width: 100vw;
     height: 100vh;
+}
+
+#slide-frame {
+    width: 100%;
+    height: 100%;
     border: none;
     display: block;
 }
