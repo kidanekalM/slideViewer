@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technology Stack</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body {width: 1280px; min-height: 720px; overflow: hidden; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0A2540;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .subtitle {
+            font-size: 24px;
+            color: #64748B;
+        }
+        .tech-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .tech-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .layer-box {
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        .layer-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .connection-line {
+            position: absolute;
+            width: 2px;
+            background-color: #00D4AA;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .security-feature {
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            background: rgba(10, 37, 64, 0.03);
+            border-radius: 8px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        .security-icon {
+            margin-right: 6px;
+            color: #00D4AA;
+        }
+    
+html {
+    overflow: hidden;
+}</style>
+</head>
+<body>
+<div class="slide flex flex-col p-10" style=" overflow: hidden;">
+<!-- Header -->
+<div class="mb-4">
+<h1 class="title mb-2">Technology Stack</h1>
+<p class="subtitle">Enterprise-grade architecture built for scale, security, and Ethiopian reality</p>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 space-x-6">
+<!-- Left Column - Architecture Diagram -->
+<div class="w-1/2">
+<!-- Combined User &amp; Blockchain Layer -->
+<div class="layer-box bg-purple-50">
+<div class="layer-title text-purple-700">USER &amp; BLOCKCHAIN LAYER</div>
+<div class="flex space-x-4">
+<div class="tech-card p-3 flex-1">
+<div class="tech-icon bg-purple-100 text-purple-600 mx-auto">
+<i class="fab fa-ethereum"></i>
+</div>
+<h3 class="text-center font-semibold">Ethereum (Sepolia)</h3>
+<p class="text-xs text-center text-gray-600">Public verifiability + security</p>
+</div>
+<div class="tech-card p-3 flex-1">
+<div class="tech-icon bg-teal-100 text-teal-600 mx-auto">
+<i class="fab fa-react"></i>
+</div>
+<h3 class="text-center font-semibold">React + TypeScript</h3>
+<p class="text-xs text-center text-gray-600">Fast, type-safe, mobile-responsive</p>
+</div>
+<div class="tech-card p-3 flex-1">
+<div class="tech-icon bg-blue-100 text-blue-600 mx-auto">
+<i class="fas fa-mobile-alt"></i>
+</div>
+<h3 class="text-center font-semibold">Chapa API</h3>
+<p class="text-xs text-center text-gray-600">ETB on-ramp via mobile money</p>
+</div>
+</div>
+</div>
+<!-- Connection Line -->
+<div class="connection-line h-4"></div>
+<!-- SafeDeal Backend Layer -->
+<div class="layer-box bg-blue-50">
+<div class="layer-title text-blue-700">SAFEDEAL BACKEND</div>
+<div class="grid grid-cols-3 gap-3">
+<div class="tech-card p-3">
+<div class="tech-icon bg-blue-100 text-blue-600 mx-auto">
+<i class="fab fa-golang"></i>
+</div>
+<h3 class="text-center font-semibold">Go Microservices</h3>
+<p class="text-xs text-center text-gray-600">Handles 10K concurrent escrows</p>
+</div>
+<div class="tech-card p-3">
+<div class="tech-icon bg-blue-100 text-blue-600 mx-auto">
+<i class="fas fa-database"></i>
+</div>
+<h3 class="text-center font-semibold">PostgreSQL</h3>
+<p class="text-xs text-center text-gray-600">ACID guarantees for transactions</p>
+</div>
+<div class="tech-card p-3">
+<div class="tech-icon bg-blue-100 text-blue-600 mx-auto">
+<i class="fas fa-comment-dots"></i>
+</div>
+<h3 class="text-center font-semibold">WebSocket</h3>
+<p class="text-xs text-center text-gray-600">Real-time chat with proof</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column - Security Features &amp; Tech Details -->
+<div class="w-1/2">
+<div class="bg-white rounded-lg p-5 shadow-sm">
+<h3 class="text-xl font-bold text-gray-800 mb-3">Built for Scale, Security, and Ethiopian Reality</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex items-start">
+<i class="fas fa-shield-alt text-teal-500 mt-1 mr-2 text-lg"></i>
+<div>
+<p class="font-medium text-gray-800">Security Features</p>
+<ul class="text-gray-600 text-xs list-disc pl-4">
+<li>AES-256 encryption for private keys</li>
+<li>JWT auth with 15-minute expiration</li>
+<li>Multi-signature wallets</li>
+<li>Public blockchain audit trail</li>
+</ul>
+</div>
+</div>
+<div class="flex items-start">
+<i class="fas fa-server text-teal-500 mt-1 mr-2 text-lg"></i>
+<div>
+<p class="font-medium text-gray-800">Infrastructure</p>
+<ul class="text-gray-600 text-xs list-disc pl-4">
+<li>RabbitMQ for async event processing</li>
+<li>Docker + Kubernetes for scaling</li>
+<li>WebSocket notifications</li>
+<li>Multi-region deployment</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Features Highlighted -->
+<div class="bg-gray-50 rounded-lg p-4 mt-4">
+<h3 class="text-lg font-semibold text-gray-800 mb-2">Key Technical Differentiators</h3>
+<div class="flex flex-wrap">
+<div class="security-feature">
+<i class="fas fa-lock security-icon"></i>
+<span class="text-xs">Immutable audit trail</span>
+</div>
+<div class="security-feature">
+<i class="fas fa-tachometer-alt security-icon"></i>
+<span class="text-xs">Handles 10K concurrent escrows</span>
+</div>
+<div class="security-feature">
+<i class="fas fa-globe-africa security-icon"></i>
+<span class="text-xs">No crypto wallet needed</span>
+</div>
+<div class="security-feature">
+<i class="fas fa-bolt security-icon"></i>
+<span class="text-xs">Funds move instantly</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

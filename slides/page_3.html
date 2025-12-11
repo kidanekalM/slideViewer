@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Why Current Solutions Fail</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body {width: 1280px; min-height: 720px; overflow: hidden; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0A2540;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .subtitle {
+            font-size: 24px;
+            color: #64748B;
+        }
+        .solution-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .solution-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .failure-badge {
+            background: #FEF2F2;
+            color: #EF4444;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .solution-header {
+            border-bottom: 2px solid #EFF6FF;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .comparison-table th {
+            background-color: rgba(10, 37, 64, 0.05);
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 10px;
+            border-bottom: 1px solid #EFF6FF;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table .solution-icon {
+            font-size: 24px;
+        }
+    
+html {
+    overflow: hidden;
+}</style>
+</head>
+<body>
+<div class="slide flex flex-col p-10" style=" overflow: hidden;">
+<!-- Header -->
+<div class="mb-6">
+<h1 class="title mb-2">Why Current Solutions Fail</h1>
+<p class="subtitle">The broken landscape of digital transactions in Ethiopia</p>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 space-x-6">
+<!-- Left Column - Comparison Table -->
+<div class="w-1/2">
+<table class="comparison-table">
+<thead>
+<tr>
+<th width="15%">Solution</th>
+<th width="40%">Why It Fails Ethiopians</th>
+<th width="45%">Real-World Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="flex items-center">
+<i class="fas fa-university text-blue-600 solution-icon"></i>
+<span class="ml-2 font-medium">Bank Escrow</span>
+</div>
+</td>
+<td>
+<span class="failure-badge">Slow</span>
+<span class="failure-badge">Expensive</span>
+<span class="failure-badge">Exclusive</span>
+<p class="mt-1">Requires bank accounts (excluding 70% of informal workers), charges 5-10% fees</p>
+</td>
+<td>
+<p class="text-gray-700">Delays payments for weeks, costs ETB 2,000-5,000 in legal fees</p>
+</td>
+</tr>
+<tr>
+<td>
+<div class="flex items-center">
+<i class="fas fa-mobile-alt text-teal-500 solution-icon"></i>
+<span class="ml-2 font-medium">Centralized Apps</span>
+</div>
+</td>
+<td>
+<span class="failure-badge">Single Point of Failure</span>
+<span class="failure-badge">Trust Shifted</span>
+<p class="mt-1">Funds sit in one company&#39;s wallet — you trust them, not buyer/seller</p>
+</td>
+<td>
+<p class="text-gray-700">If the company is hacked or mismanages funds, users have no recourse</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Right Column - Visual Cards -->
+<div class="w-1/2 grid grid-cols-3 gap-4">
+<!-- Cash Card -->
+<div class="solution-card p-4">
+<div class="solution-header flex items-center justify-between">
+<div>
+<h3 class="font-bold text-gray-800">Cash-in-Envelope</h3>
+<p class="text-sm text-gray-500">Most common method</p>
+</div>
+<i class="fas fa-money-bill-wave text-amber-500 text-2xl"></i>
+</div>
+<div class="mt-2">
+<div class="flex items-center mb-1">
+<i class="fas fa-times-circle text-red-500 mr-2"></i>
+<p class="text-sm">No audit trail</p>
+</div>
+<div class="flex items-center">
+<i class="fas fa-times-circle text-red-500 mr-2"></i>
+<p class="text-sm">Trust required</p>
+</div>
+</div>
+</div>
+<!-- Bank Card -->
+<div class="solution-card p-4">
+<div class="solution-header flex items-center justify-between">
+<div>
+<h3 class="font-bold text-gray-800">Bank Escrow</h3>
+<p class="text-sm text-gray-500">&#34;Safe&#34; option</p>
+</div>
+<i class="fas fa-university text-blue-600 text-2xl"></i>
+</div>
+<div class="mt-2">
+<div class="flex items-center mb-1">
+<i class="fas fa-times-circle text-red-500 mr-2"></i>
+<p class="text-sm">Requires bank accounts</p>
+</div>
+<div class="flex items-center">
+<i class="fas fa-times-circle text-red-500 mr-2"></i>
+<p class="text-sm">5-10% fees</p>
+</div>
+</div>
+</div>
+<!-- Centralized App Card -->
+<div class="solution-card p-4">
+<div class="solution-header flex items-center justify-between">
+<div>
+<h3 class="font-bold text-gray-800">Centralized Apps</h3>
+<p class="text-sm text-gray-500">Tech solution</p>
+</div>
+<i class="fas fa-mobile-alt text-teal-500 text-2xl"></i>
+</div>
+<div class="mt-2">
+<div class="flex items-center mb-1">
+<i class="fas fa-times-circle text-red-500 mr-2"></i>
+<p class="text-sm">Single point of failure</p>
+</div>
+<div class="flex items-center">
+<i class="fas fa-times-circle text-red-500 mr-2"></i>
+<p class="text-sm">Trust in third party</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

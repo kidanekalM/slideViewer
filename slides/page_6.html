@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI-Powered Dispute Resolution</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        body {width: 1280px; min-height: 720px; overflow: hidden; margin: 0;
+            padding: 0;}
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+            
+        }
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0A2540;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .subtitle {
+            font-size: 24px;
+            color: #64748B;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .comparison-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .traditional {
+            background-color: rgba(239, 68, 68, 0.05);
+            border-left: 4px solid #EF4444;
+        }
+        .safedeal {
+            background-color: rgba(16, 185, 129, 0.05);
+            border-left: 4px solid #10B981;
+        }
+        .case-example {
+            background-color: rgba(0, 212, 170, 0.05);
+            border-left: 4px solid #00D4AA;
+        }
+        .comparison-header {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .comparison-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .comparison-icon-wrapper {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .traditional-icon {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+        }
+        .safedeal-icon {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10B981;
+        }
+        .case-icon {
+            background-color: rgba(0, 212, 170, 0.1);
+            color: #00D4AA;
+        }
+        .vs-badge {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+    
+html {
+    overflow: hidden;
+}</style>
+</head>
+<body>
+<div class="slide flex flex-col p-10" style=" overflow: hidden;">
+<!-- Header -->
+<div class="mb-4">
+<h1 class="title mb-2">AI-Powered Dispute Resolution</h1>
+<p class="subtitle">Context-aware mediation using Ethiopian commercial customs</p>
+</div>
+<!-- Main Content -->
+<div class="flex flex-1 space-x-6">
+<!-- Left Column - Traditional vs SafeDeal -->
+<div class="w-3/5 flex flex-col space-y-4">
+<!-- Comparison Headers -->
+<div class="flex">
+<!-- Traditional -->
+<div class="w-1/2 pr-3">
+<div class="traditional card p-4">
+<div class="flex items-center mb-2">
+<i class="fas fa-gavel comparison-icon text-red-500 mr-3"></i>
+<h3 class="comparison-header text-red-500 font-semibold">Traditional Dispute Resolution</h3>
+</div>
+<div class="space-y-2">
+<div class="comparison-item">
+<div class="comparison-icon-wrapper traditional-icon">
+<i class="fas fa-clock"></i>
+</div>
+<div>
+<p class="font-medium">Takes 2-4 weeks</p>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-icon-wrapper traditional-icon">
+<i class="fas fa-money-bill-wave"></i>
+</div>
+<div>
+<p class="font-medium">Costs ETB 2,000-5,000</p>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-icon-wrapper traditional-icon">
+<i class="fas fa-balance-scale"></i>
+</div>
+<div>
+<p class="font-medium">Uses generic contract law</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- VS Badge -->
+<div class="vs-badge">VS</div>
+<!-- SafeDeal -->
+<div class="w-1/2 pl-3">
+<div class="safedeal card p-4">
+<div class="flex items-center mb-2">
+<i class="fas fa-robot comparison-icon text-green-500 mr-3"></i>
+<h3 class="comparison-header text-green-500 font-semibold">SafeDeal AI Arbitration</h3>
+</div>
+<div class="space-y-2">
+<div class="comparison-item">
+<div class="comparison-icon-wrapper safedeal-icon">
+<i class="fas fa-bolt"></i>
+</div>
+<div>
+<p class="font-medium">Resolves in minutes</p>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-icon-wrapper safedeal-icon">
+<i class="fas fa-hand-holding-usd"></i>
+</div>
+<div>
+<p class="font-medium">Costs ETB 0</p>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-icon-wrapper safedeal-icon">
+<i class="fas fa-landmark"></i>
+</div>
+<div>
+<p class="font-medium">Trained on Ethiopian norms</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Example -->
+<div class="case-example card p-4">
+<div class="flex items-center mb-2">
+<i class="fas fa-lightbulb comparison-icon text-teal-500 mr-3"></i>
+<h3 class="comparison-header text-teal-500 font-semibold">Real-World Example</h3>
+</div>
+<div class="flex">
+<div class="w-1/2 pr-4">
+<div class="comparison-item">
+<div class="comparison-icon-wrapper case-icon">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<div>
+<p class="font-medium">Dispute: &#34;The wall plaster has minor cracks&#34;</p>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-icon-wrapper case-icon">
+<i class="fas fa-times-circle"></i>
+</div>
+<div>
+<p class="font-medium text-red-500">Traditional: Full contract void → ETB 0 to contractor</p>
+</div>
+</div>
+</div>
+<div class="w-1/2 pl-4 border-l border-gray-200">
+<div class="comparison-item">
+<div class="comparison-icon-wrapper case-icon">
+<i class="fas fa-check-circle"></i>
+</div>
+<div>
+<p class="font-medium text-green-500">SafeDeal AI: &#34;Per Addis norms, minor defects warrant 10% deduction&#34;</p>
+</div>
+</div>
+<div class="comparison-item">
+<div class="comparison-icon-wrapper case-icon">
+<i class="fas fa-calculator"></i>
+</div>
+<div>
+<p class="font-medium text-green-500">ETB 90,000 released (90% of ETB 100,000)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column - Benefits -->
+<div class="w-2/5">
+<div class="card p-5 h-full">
+<h3 class="text-xl font-bold text-gray-800 mb-3">Why Context Matters</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
+<i class="fas fa-comments"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">Full Conversation History</p>
+<p class="text-gray-600">AI reads negotiation history, not just &#34;he said/she said&#34;</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
+<i class="fas fa-users"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">Local Commercial Norms</p>
+<p class="text-gray-600">Understands Ethiopian customs like &#34;minor flaws don&#39;t void payment&#34;</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
+<i class="fas fa-handshake"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">Fair Outcomes</p>
+<p class="text-gray-600">Results feel just, not just legally correct</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
+<i class="fas fa-chart-line"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">Scale &amp; Affordability</p>
+<p class="text-gray-600">AI scales exponentially — 1 model for 10,000 disputes/day</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
