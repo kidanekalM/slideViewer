@@ -5,29 +5,31 @@ class SimpleSlideViewer {
         this.slidesPath = 'slides/page_';
         this.isFullscreen = false;
 
-        this.container = document.getElementById("slide-container");
         this.viewer = document.getElementById("slide-viewer");
+        this.frame = document.getElementById("slide-frame");
 
         this.loadSlide();
         this.bindEvents();
         this.bindFullscreenEvents();
     }
 
-    async loadSlide() {
+    loadSlide() {
         const url = `${this.slidesPath}${this.currentSlide}.html`;
-        const response = await fetch(url);
-        const html = await response.text();
-
-        this.container.innerHTML = html;
+        this.frame.src = url;
         this.scaleSlide();
     }
 
     scaleSlide() {
+        const baseWidth = 1280;
+        const baseHeight = 720;
+
         const scale = Math.min(
-            window.innerWidth / 1280,
-            window.innerHeight / 720
+            window.innerWidth / baseWidth,
+            window.innerHeight / baseHeight
         );
-        this.container.style.transform = `scale(${scale})`;
+
+        this.frame.style.width = `${baseWidth * scale}px`;
+        this.frame.style.height = `${baseHeight * scale}px`;
     }
 
     bindEvents() {
@@ -103,9 +105,25 @@ class SimpleSlideViewer {
 
     toggleFullscreen() {
         if (!this.isFullscreen) {
-            this.viewer.requestFullscreen?.();
+            if (this.viewer.requestFullscreen) {
+                this.viewer.requestFullscreen();
+            } else if (this.viewer.webkitRequestFullscreen) {
+                this.viewer.webkitRequestFullscreen();
+            } else if (this.viewer.msRequestFullscreen) {
+                this.viewer.msRequestFullscreen();
+            }
         } else {
-            document.exitFullscreen?.();
+            this.exitFullscreen();
+        }
+    }
+
+    exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
         }
     }
 
@@ -133,10 +151,12 @@ class SimpleSlideViewer {
         let startX = 0;
 
         this.viewer.addEventListener('touchstart', (e) => {
+            if (!e.changedTouches || !e.changedTouches[0]) return;
             startX = e.changedTouches[0].screenX;
         }, { passive: true });
 
         this.viewer.addEventListener('touchend', (e) => {
+            if (!e.changedTouches || !e.changedTouches[0]) return;
             const endX = e.changedTouches[0].screenX;
             const diff = startX - endX;
 
