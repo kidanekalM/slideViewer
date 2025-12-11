@@ -5,20 +5,34 @@ class SimpleSlideViewer {
         this.slidesPath = 'slides/page_';
         this.isFullscreen = false;
 
-        this.init();
-    }
+        this.container = document.getElementById("slide-container");
+        this.viewer = document.getElementById("slide-viewer");
 
-    init() {
-        this.slideFrame = document.getElementById('slide-frame');
-        this.viewer = document.getElementById('slide-viewer');
-
-        this.updateSlide();
+        this.loadSlide();
         this.bindEvents();
         this.bindFullscreenEvents();
     }
 
+    async loadSlide() {
+        const url = `${this.slidesPath}${this.currentSlide}.html`;
+        const response = await fetch(url);
+        const html = await response.text();
+
+        this.container.innerHTML = html;
+        this.scaleSlide();
+    }
+
+    scaleSlide() {
+        const scale = Math.min(
+            window.innerWidth / 1280,
+            window.innerHeight / 720
+        );
+        this.container.style.transform = `scale(${scale})`;
+    }
+
     bindEvents() {
-        document.addEventListener('keydown', (e) => this.handleKeyboard(e), true);
+        window.addEventListener("resize", () => this.scaleSlide());
+        document.addEventListener("keydown", (e) => this.handleKeyboard(e), true);
         this.initTouchSupport();
     }
 
@@ -78,6 +92,8 @@ class SimpleSlideViewer {
                 !!document.fullscreenElement ||
                 !!document.webkitFullscreenElement ||
                 !!document.msFullscreenElement;
+
+            this.scaleSlide();
         };
 
         document.addEventListener('fullscreenchange', updateState);
@@ -87,68 +103,47 @@ class SimpleSlideViewer {
 
     toggleFullscreen() {
         if (!this.isFullscreen) {
-            this.enterFullscreen();
+            this.viewer.requestFullscreen?.();
         } else {
-            this.exitFullscreen();
-        }
-    }
-
-    enterFullscreen() {
-        const elem = this.viewer;
-
-        if (elem.requestFullscreen) elem.requestFullscreen();
-        else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
-        else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
-    }
-
-    exitFullscreen() {
-        if (document.exitFullscreen) document.exitFullscreen();
-        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-        else if (document.msExitFullscreen) document.msExitFullscreen();
-    }
-
-    initTouchSupport() {
-        let startX = 0;
-
-        this.slideFrame.addEventListener('touchstart', (e) => {
-            startX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        this.slideFrame.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].screenX;
-            this.handleSwipe(startX, endX);
-        }, { passive: true });
-    }
-
-    handleSwipe(startX, endX) {
-        const diff = startX - endX;
-        const threshold = 50;
-
-        if (Math.abs(diff) > threshold) {
-            diff > 0 ? this.nextSlide() : this.previousSlide();
+            document.exitFullscreen?.();
         }
     }
 
     previousSlide() {
         if (this.currentSlide > 1) {
-            this.goToSlide(this.currentSlide - 1);
+            this.currentSlide--;
+            this.loadSlide();
         }
     }
 
     nextSlide() {
         if (this.currentSlide < this.totalSlides) {
-            this.goToSlide(this.currentSlide + 1);
+            this.currentSlide++;
+            this.loadSlide();
         }
     }
 
     goToSlide(num) {
         if (num < 1 || num > this.totalSlides) return;
         this.currentSlide = num;
-        this.updateSlide();
+        this.loadSlide();
     }
 
-    updateSlide() {
-        this.slideFrame.src = `${this.slidesPath}${this.currentSlide}.html`;
+    initTouchSupport() {
+        let startX = 0;
+
+        this.viewer.addEventListener('touchstart', (e) => {
+            startX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        this.viewer.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].screenX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? this.nextSlide() : this.previousSlide();
+            }
+        }, { passive: true });
     }
 }
 

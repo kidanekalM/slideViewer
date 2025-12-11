@@ -11,13 +11,16 @@ html, body {
 }
 
 #slide-viewer {
-    width: 100vw;
-    height: 100vh;
-}
-
-#slide-frame {
     width: 100%;
     height: 100%;
-    border: none;
-    display: block;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slide-container {
+    transform-origin: top left;
+    width: 1280px;
+    height: 720px;
 }
