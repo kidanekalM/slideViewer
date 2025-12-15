@@ -35,6 +35,10 @@ class SimpleSlideViewer {
     bindEvents() {
         window.addEventListener("resize", () => this.scaleSlide());
         document.addEventListener("keydown", (e) => this.handleKeyboard(e), true);
+        
+        document.getElementById("prev-btn").addEventListener("click", () => this.previousSlide());
+        document.getElementById("next-btn").addEventListener("click", () => this.nextSlide());
+
         this.initTouchSupport();
     }
 

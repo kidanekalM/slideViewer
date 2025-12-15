@@ -1,294 +1,309 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Market Opportunity</title>
+<!DOCTYPE html>
+<html lang="en">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
-        body {width: 1280px; min-height: 720px; overflow: hidden; margin: 0;
-            padding: 0;}
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Market Opportunity</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        body {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         .slide {
             width: 1280px;
             min-height: 720px;
             position: relative;
             background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-            
+
         }
+
         .title {
             font-size: 48px;
             font-weight: 800;
             color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .subtitle {
             font-size: 24px;
             color: #64748B;
         }
+
         .market-card {
             background: white;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
+
         .market-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
+
         .stat-number {
             font-size: 40px;
             font-weight: 800;
             line-height: 1;
         }
+
         .stat-icon {
             font-size: 24px;
             margin-bottom: 8px;
         }
+
         .chart-container {
             height: 220px;
             width: 100%;
         }
+
         .bar {
             fill: #00D4AA;
             transition: fill 0.3s ease;
         }
+
         .bar:hover {
             fill: #0A2540;
         }
+
         .tooltip {
             position: absolute;
             padding: 8px;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             pointer-events: none;
             font-size: 14px;
             z-index: 10;
         }
-    
-html {
-    overflow: hidden;
-}</style>
-</head>
-<body>
-<div class="slide flex flex-col p-10" style=" overflow: hidden;">
-<!-- Header -->
-<div class="mb-4">
-<h1 class="title mb-2">Market Opportunity</h1>
-<p class="subtitle">Ethiopia&#39;s digital economy growth creates significant market potential for SafeDeal</p>
-</div>
-<!-- Main Content -->
-<div class="flex flex-1 space-x-6">
-<!-- Left Column - Market Size Stats -->
-<div class="w-1/2 flex flex-col space-y-3">
-<!-- Market Growth Chart -->
-<div class="market-card p-4 flex-1">
-<h3 class="text-xl font-bold text-gray-800 mb-2">Ethiopia&#39;s Digital Economy Growth</h3>
-<div class="chart-container" id="chart" data-sk-source-container="chart" data-sk-source-id="1998850157760610309" data-sk-source-type="web_search"></div>
-</div>
-<!-- Market Size Stats Cards -->
-<div class="flex space-x-4">
-<!-- SMEs Stat Card -->
-<div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
-<i class="fas fa-store stat-icon text-teal-500"></i>
-<div class="stat-number text-teal-500">4.2M</div>
-<p class="text-center text-gray-700 font-medium">SMEs going digital</p>
-<p class="text-sm text-gray-500">+40% annually</p>
-</div>
-<!-- Freelancers Stat Card -->
-<div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
-<i class="fas fa-user-tie stat-icon text-amber-500"></i>
-<div class="stat-number text-amber-500">1.8M</div>
-<p class="text-center text-gray-700 font-medium">Freelancers seeking secure payment</p>
-<p class="text-sm text-gray-500">+35% annually</p>
-</div>
-<!-- Mobile Money Stat Card -->
-<div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
-<i class="fas fa-mobile-alt stat-icon text-blue-500"></i>
-<div class="stat-number text-blue-500">45M</div>
-<p class="text-center text-gray-700 font-medium">Mobile money users</p>
-<p class="text-sm text-gray-500">+25% annually</p>
-</div>
-</div>
-</div>
-<!-- Right Column - Market Details -->
-<div class="w-1/2">
-<div class="market-card p-4 h-full">
-<h3 class="text-xl font-bold text-gray-800 mb-3">Serviceable Market Segments</h3>
-<div class="space-y-3">
-<!-- Freelancers Market -->
-<div class="flex items-start">
-<div class="bg-teal-100 rounded-full p-2 mr-3">
-<i class="fas fa-laptop-code text-teal-600 text-xl"></i>
-</div>
-<div>
-<h4 class="font-bold text-gray-800">Freelancers &amp; Digital Workers</h4>
-<p class="text-gray-600">1.8M users × ETB 500/mo = <span class="font-semibold">ETB 10.8B</span> annual market</p>
-</div>
-</div>
-<!-- Construction Market -->
-<div class="flex items-start">
-<div class="bg-amber-100 rounded-full p-2 mr-3">
-<i class="fas fa-hard-hat text-amber-600 text-xl"></i>
-</div>
-<div>
-<h4 class="font-bold text-gray-800">Construction &amp; Contracting</h4>
-<p class="text-gray-600">15% of ETB 180B = <span class="font-semibold">ETB 27B</span> annual market</p>
-</div>
-</div>
-<!-- E-commerce Market -->
-<div class="flex items-start">
-<div class="bg-blue-100 rounded-full p-2 mr-3">
-<i class="fas fa-shopping-cart text-blue-600 text-xl"></i>
-</div>
-<div>
-<h4 class="font-bold text-gray-800">E-commerce &amp; Digital Goods</h4>
-<p class="text-gray-600">ETB 12B annually (growing 60%)</p>
-</div>
-</div>
-</div>
-<div class="mt-4 bg-gray-50 p-3 rounded-lg border-l-4 border-teal-500">
-<p class="text-gray-700"><span class="font-bold">Revenue Potential:</span> 2% transaction fee = <span class="font-bold">ETB 1B+</span> annual revenue at 10% market penetration</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script>
-        // D3.js chart for market growth
-        document.addEventListener('DOMContentLoaded', function() {
-            const data = [
-                {segment: "SMEs Going Digital", current: 4.2, growth: 40, projection: 8.5},
-                {segment: "Freelance Workforce", current: 1.8, growth: 35, projection: 4.2},
-                {segment: "Mobile Money Users", current: 45, growth: 25, projection: 88},
-                {segment: "Construction Projects", current: 180, growth: 20, projection: 310}
-            ];
-            
-            const margin = {top: 20, right: 30, bottom: 50, left: 60};
-            const width = document.getElementById('chart').clientWidth - margin.left - margin.right;
-            const height = document.getElementById('chart').clientHeight - margin.top - margin.bottom;
-            
-            const svg = d3.select("#chart")
-                .append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                .attr("transform", `translate(${margin.left},${margin.top})`);
-                
-            // X axis
-            const x = d3.scaleBand()
-                .domain(data.map(d => d.segment))
-                .range([0, width])
-                .padding(0.3);
-                
-            svg.append("g")
-                .attr("transform", `translate(0,${height})`)
-                .call(d3.axisBottom(x))
-                .selectAll("text")
-                .style("text-anchor", "end")
-                .attr("dx", "-.8em")
-                .attr("dy", ".15em")
-                .attr("transform", "rotate(-25)");
-                
-            // Add Y axis
-            const y = d3.scaleLinear()
-                .domain([0, d3.max(data, d => d.projection) * 1.1])
-                .range([height, 0]);
-                
-            svg.append("g")
-                .call(d3.axisLeft(y).tickFormat(d => d + (d >= 100 ? "B" : "M")));
-                
-            // Create tooltip
-            const tooltip = d3.select("#chart")
-                .append("div")
-                .style("opacity", 0)
-                .attr("class", "tooltip");
-                
-            // Add bars for current values
-            svg.selectAll(".bar-current")
-                .data(data)
-                .join("rect")
-                .attr("class", "bar")
-                .attr("x", d => x(d.segment))
-                .attr("width", x.bandwidth() / 2)
-                .attr("y", d => y(d.current))
-                .attr("height", d => height - y(d.current))
-                .attr("fill", (d, i) => {
-                    const colors = ["#00D4AA", "#F59E0B", "#3B82F6", "#EF4444"];
-                    return colors[i];
-                })
-                .on("mouseover", function(event, d) {
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    tooltip.html(`Current: ${d.current} ${d.current >= 100 ? "B" : "M"}`)
-                        .style("left", (event.pageX) + "px")
-                        .style("top", (event.pageY - 28) + "px");
-                })
-                .on("mouseout", function(d) {
-                    tooltip.transition()
-                        .duration(500)
-                        .style("opacity", 0);
-                });
-                
-            // Add bars for projected values
-            svg.selectAll(".bar-projected")
-                .data(data)
-                .join("rect")
-                .attr("class", "bar")
-                .attr("x", d => x(d.segment) + x.bandwidth() / 2)
-                .attr("width", x.bandwidth() / 2)
-                .attr("y", d => y(d.projection))
-                .attr("height", d => height - y(d.projection))
-                .attr("fill", (d, i) => {
-                    const colors = ["#0A2540", "#B45309", "#1D4ED8", "#B91C1C"];
-                    return colors[i];
-                })
-                .attr("opacity", 0.7)
-                .on("mouseover", function(event, d) {
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    tooltip.html(`Projected: ${d.projection} ${d.projection >= 100 ? "B" : "M"} (+${d.growth}%)`)
-                        .style("left", (event.pageX) + "px")
-                        .style("top", (event.pageY - 28) + "px");
-                })
-                .on("mouseout", function(d) {
-                    tooltip.transition()
-                        .duration(500)
-                        .style("opacity", 0);
-                });
-                
-            // Add legend
-            const legend = svg.append("g")
-                .attr("transform", `translate(${width - 150}, 0)`);
-                
-            legend.append("rect")
-                .attr("width", 15)
-                .attr("height", 15)
-                .attr("fill", "#00D4AA");
-                
-            legend.append("text")
-                .attr("x", 20)
-                .attr("y", 12)
-                .text("Current (2024)")
-                .style("font-size", "12px")
-                .style("fill", "#64748B");
-                
-            legend.append("rect")
-                .attr("width", 15)
-                .attr("height", 15)
-                .attr("y", 20)
-                .attr("fill", "#0A2540")
-                .attr("opacity", 0.7);
-                
-            legend.append("text")
-                .attr("x", 20)
-                .attr("y", 32)
-                .text("Projected (2027)")
-                .style("font-size", "12px")
-                .style("fill", "#64748B");
-        });
-    </script>
 
-</body></html>
+        html {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide flex flex-col p-10" style=" overflow: hidden;">
+        <!-- Header -->
+        <div class="mb-4">
+            <h1 class="title mb-2">Market Opportunity</h1>
+            <p class="subtitle">Ethiopia&#39;s digital economy growth creates significant market potential for SafeDeal
+            </p>
+        </div>
+        <!-- Main Content -->
+        <div class="flex flex-1 space-x-6">
+            <!-- Left Column - Market Size Stats -->
+            <div class="w-1/2 flex flex-col space-y-3">
+                <!-- Market Growth Chart -->
+                <div class="market-card p-4 flex-1">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ethiopia&#39;s Digital Economy Growth</h3>
+                    <div class="chart-container" id="chart" data-sk-source-container="chart"
+                        data-sk-source-id="1998850157760610309" data-sk-source-type="web_search"></div>
+                </div>
+                <!-- Market Size Stats Cards -->
+                <div class="flex space-x-4">
+                    <!-- SMEs Stat Card -->
+                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
+                        <i class="fas fa-store stat-icon text-teal-500"></i>
+                        <div class="stat-number text-teal-500">4.2M</div>
+                        <p class="text-center text-gray-700 font-medium">SMEs going digital</p>
+                        <p class="text-sm text-gray-500">+40% annually</p>
+                    </div>
+                    <!-- Freelancers Stat Card -->
+                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
+                        <i class="fas fa-user-tie stat-icon text-amber-500"></i>
+                        <div class="stat-number text-amber-500">1.8M</div>
+                        <p class="text-center text-gray-700 font-medium">Freelancers seeking secure payment</p>
+                        <p class="text-sm text-gray-500">+35% annually</p>
+                    </div>
+                    <!-- Mobile Money Stat Card -->
+                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
+                        <i class="fas fa-mobile-alt stat-icon text-blue-500"></i>
+                        <div class="stat-number text-blue-500">45M</div>
+                        <p class="text-center text-gray-700 font-medium">Mobile money users</p>
+                        <p class="text-sm text-gray-500">+25% annually</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column - Market Details -->
+            <div class="w-1/2">
+                <div class="market-card p-4 h-full">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Serviceable Market Segments</h3>
+                    <div class="space-y-3">
+                        <!-- Freelancers Market -->
+                        <div class="flex items-start">
+                            <div class="bg-teal-100 rounded-full p-2 mr-3">
+                                <i class="fas fa-laptop-code text-teal-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Freelancers &amp; Digital Workers</h4>
+                                <p class="text-gray-600">1.8M users × ETB 500/mo = <span class="font-semibold">ETB
+                                        10.8B</span> annual market</p>
+                            </div>
+                        </div>
+                        <!-- Construction Market -->
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 rounded-full p-2 mr-3">
+                                <i class="fas fa-hard-hat text-amber-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Construction &amp; Contracting</h4>
+                                <p class="text-gray-600">15% of ETB 180B = <span class="font-semibold">ETB 27B</span>
+                                    annual market</p>
+                            </div>
+                        </div>
+                        <!-- E-commerce Market -->
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 rounded-full p-2 mr-3">
+                                <i class="fas fa-shopping-cart text-blue-600 text-xl"></i>
+                            </div>
+                            // D3.js chart for market growth
+                            document.addEventListener('DOMContentLoaded', function() {
+                            const data = [
+                            {segment: "SMEs Going Digital", current: 4.2, growth: 40, projection: 8.5},
+                            {segment: "Freelance Workforce", current: 1.8, growth: 35, projection: 4.2},
+                            {segment: "Mobile Money Users", current: 45, growth: 25, projection: 88},
+                            {segment: "Construction Projects", current: 180, growth: 20, projection: 310}
+                            ];
+
+                            const margin = {top: 20, right: 30, bottom: 50, left: 60};
+                            const width = document.getElementById('chart').clientWidth - margin.left - margin.right;
+                            const height = document.getElementById('chart').clientHeight - margin.top - margin.bottom;
+
+                            const svg = d3.select("#chart")
+                            .append("svg")
+                            .attr("width", width + margin.left + margin.right)
+                            .attr("height", height + margin.top + margin.bottom)
+                            .append("g")
+                            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+                            // X axis
+                            const x = d3.scaleBand()
+                            .domain(data.map(d => d.segment))
+                            .range([0, width])
+                            .padding(0.3);
+
+                            svg.append("g")
+                            .attr("transform", `translate(0,${height})`)
+                            .call(d3.axisBottom(x))
+                            .selectAll("text")
+                            .style("text-anchor", "end")
+                            .attr("dx", "-.8em")
+                            .attr("dy", ".15em")
+                            .attr("transform", "rotate(-25)");
+
+                            // Add Y axis
+                            const y = d3.scaleLinear()
+                            .domain([0, d3.max(data, d => d.projection) * 1.1])
+                            .range([height, 0]);
+
+                            svg.append("g")
+                            .call(d3.axisLeft(y).tickFormat(d => d + (d >= 100 ? "B" : "M")));
+
+                            // Create tooltip
+                            const tooltip = d3.select("#chart")
+                            .append("div")
+                            .style("opacity", 0)
+                            .attr("class", "tooltip");
+
+                            // Add bars for current values
+                            svg.selectAll(".bar-current")
+                            .data(data)
+                            .join("rect")
+                            .attr("class", "bar")
+                            .attr("x", d => x(d.segment))
+                            .attr("width", x.bandwidth() / 2)
+                            .attr("y", d => y(d.current))
+                            .attr("height", d => height - y(d.current))
+                            .attr("fill", (d, i) => {
+                            const colors = ["#00D4AA", "#F59E0B", "#3B82F6", "#EF4444"];
+                            return colors[i];
+                            })
+                            .on("mouseover", function(event, d) {
+                            tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                            tooltip.html(`Current: ${d.current} ${d.current >= 100 ? "B" : "M"}`)
+                            .style("left", (event.pageX) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                            })
+                            .on("mouseout", function(d) {
+                            tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                            });
+
+                            // Add bars for projected values
+                            svg.selectAll(".bar-projected")
+                            .data(data)
+                            .join("rect")
+                            .attr("class", "bar")
+                            .attr("x", d => x(d.segment) + x.bandwidth() / 2)
+                            .attr("width", x.bandwidth() / 2)
+                            .attr("y", d => y(d.projection))
+                            .attr("height", d => height - y(d.projection))
+                            .attr("fill", (d, i) => {
+                            const colors = ["#0A2540", "#B45309", "#1D4ED8", "#B91C1C"];
+                            return colors[i];
+                            })
+                            .attr("opacity", 0.7)
+                            .on("mouseover", function(event, d) {
+                            tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                            tooltip.html(`Projected: ${d.projection} ${d.projection >= 100 ? "B" : "M"}
+                            (+${d.growth}%)`)
+                            .style("left", (event.pageX) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                            })
+                            .on("mouseout", function(d) {
+                            tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                            });
+
+                            // Add legend
+                            const legend = svg.append("g")
+                            .attr("transform", `translate(${width - 150}, 0)`);
+
+                            legend.append("rect")
+                            .attr("width", 15)
+                            .attr("height", 15)
+                            .attr("fill", "#00D4AA");
+
+                            legend.append("text")
+                            .attr("x", 20)
+                            .attr("y", 12)
+                            .text("Current (2024)")
+                            .style("font-size", "12px")
+                            .style("fill", "#64748B");
+
+                            legend.append("rect")
+                            .attr("width", 15)
+                            .attr("height", 15)
+                            .attr("y", 20)
+                            .attr("fill", "#0A2540")
+                            .attr("opacity", 0.7);
+
+                            legend.append("text")
+                            .attr("x", 20)
+                            .attr("y", 32)
+                            .text("Projected (2027)")
+                            .style("font-size", "12px")
+                            .style("fill", "#64748B");
+                            });
+                            </script>
+
+</body>
+
+</html>
