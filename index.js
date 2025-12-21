@@ -1,13 +1,12 @@
-class AllSlidesViewer {
+class VerticalSlideViewer {
     constructor() {
         this.currentSlide = 1;
         this.totalSlides = 15;
         this.slidesPath = 'slides/page_';
         this.isFullscreen = false;
-        this.zoomLevel = 1;
         
         this.viewer = document.getElementById("slide-viewer");
-        this.container = document.getElementById("all-slides-container");
+        this.container = document.getElementById("vertical-container");
         this.currentSpan = document.getElementById("current");
         this.totalSpan = document.getElementById("total");
         
@@ -25,25 +24,52 @@ class AllSlidesViewer {
         this.totalSpan.textContent = this.totalSlides;
         
         for (let i = 1; i <= this.totalSlides; i++) {
+            await this.createSlideFrame(i);
+        }
+    }
+    
+    async createSlideFrame(slideNumber) {
+        return new Promise((resolve) => {
             const slideDiv = document.createElement('div');
             slideDiv.className = 'slide-frame';
-            slideDiv.id = `slide-${i}`;
-            slideDiv.dataset.slideNumber = i;
+            slideDiv.id = `slide-${slideNumber}`;
+            slideDiv.dataset.slideNumber = slideNumber;
             
             const iframe = document.createElement('iframe');
-            iframe.src = `${this.slidesPath}${i}.html`;
-            iframe.style.width = '1280px';
-            iframe.style.height = '720px';
-            iframe.style.border = 'none';
+            iframe.loading = 'lazy';
+            iframe.onload = () => {
+                // Try to add slide number inside iframe for printing
+                try {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    const slideNumberDiv = document.createElement('div');
+                    slideNumberDiv.style.cssText = `
+                        position: absolute;
+                        bottom: 20px;
+                        right: 20px;
+                        color: #666;
+                        font-size: 14px;
+                        font-family: Arial, sans-serif;
+                        background: rgba(255,255,255,0.9);
+                        padding: 4px 12px;
+                        border-radius: 12px;
+                    `;
+                    slideNumberDiv.textContent = `Slide ${slideNumber}`;
+                    iframeDoc.body.appendChild(slideNumberDiv);
+                } catch (e) {
+                    // Cross-origin restriction, ignore
+                }
+                resolve();
+            };
             
+            iframe.src = `${this.slidesPath}${slideNumber}.html`;
             slideDiv.appendChild(iframe);
             this.container.appendChild(slideDiv);
             
-            // Add click handler to each slide
+            // Click to navigate
             slideDiv.addEventListener('click', () => {
-                this.goToSlide(i);
+                this.goToSlide(slideNumber);
             });
-        }
+        });
     }
     
     bindEvents() {
@@ -51,72 +77,30 @@ class AllSlidesViewer {
         document.getElementById('prev-btn').addEventListener('click', () => this.previousSlide());
         document.getElementById('next-btn').addEventListener('click', () => this.nextSlide());
         
-        // Fullscreen button
+        // Control buttons
+        document.getElementById('print-btn').addEventListener('click', () => this.printPDF());
         document.getElementById('fullscreen-btn').addEventListener('click', () => this.toggleFullscreen());
-        
-        // Zoom controls
-        document.getElementById('zoom-in-btn').addEventListener('click', () => this.adjustZoom(0.1));
-        document.getElementById('zoom-out-btn').addEventListener('click', () => this.adjustZoom(-0.1));
-        document.getElementById('zoom-slider').addEventListener('input', (e) => {
-            this.setZoom(e.target.value / 100);
-        });
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => this.handleKeyboard(e));
         
-        // Resize handling
-        window.addEventListener('resize', () => this.handleResize());
+        // Scroll event
+        window.addEventListener('scroll', () => this.updateActiveSlideFromScroll());
         
         // Fullscreen events
         document.addEventListener('fullscreenchange', () => this.handleFullscreenChange());
-        document.addEventListener('webkitfullscreenchange', () => this.handleFullscreenChange());
-        
-        // Container scroll event
-        this.container.addEventListener('scroll', () => this.updateActiveSlideFromScroll());
     }
     
     handleKeyboard(e) {
         switch (e.key) {
-            case 'ArrowLeft':
-            case 'PageUp':
-                e.preventDefault();
-                this.previousSlide();
-                break;
-                
-            case 'ArrowRight':
-            case 'PageDown':
-            case ' ':
-                e.preventDefault();
-                this.nextSlide();
-                break;
-                
-            case 'Home':
-                e.preventDefault();
-                this.goToSlide(1);
-                break;
-                
-            case 'End':
-                e.preventDefault();
-                this.goToSlide(this.totalSlides);
-                break;
-                
-            case 'f':
-            case 'F':
-                e.preventDefault();
-                this.toggleFullscreen();
-                break;
-                
-            case '+':
-            case '=':
-                e.preventDefault();
-                this.adjustZoom(0.1);
-                break;
-                
-            case '-':
-            case '_':
-                e.preventDefault();
-                this.adjustZoom(-0.1);
-                break;
+            case 'ArrowUp': case 'PageUp':
+                e.preventDefault(); this.previousSlide(); break;
+            case 'ArrowDown': case 'PageDown': case ' ':
+                e.preventDefault(); this.nextSlide(); break;
+            case 'Home': e.preventDefault(); this.goToSlide(1); break;
+            case 'End': e.preventDefault(); this.goToSlide(this.totalSlides); break;
+            case 'f': case 'F': e.preventDefault(); this.toggleFullscreen(); break;
+            case 'p': case 'P': e.preventDefault(); this.printPDF(); break;
         }
     }
     
@@ -127,13 +111,13 @@ class AllSlidesViewer {
         this.scrollToCurrentSlide();
     }
     
-    previousSlide() {
+    previousSlide() { 
         if (this.currentSlide > 1) {
             this.goToSlide(this.currentSlide - 1);
         }
     }
     
-    nextSlide() {
+    nextSlide() { 
         if (this.currentSlide < this.totalSlides) {
             this.goToSlide(this.currentSlide + 1);
         }
@@ -142,33 +126,36 @@ class AllSlidesViewer {
     scrollToCurrentSlide() {
         const slideElement = document.getElementById(`slide-${this.currentSlide}`);
         if (slideElement) {
-            slideElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center',
-                inline: 'center'
+            const yOffset = -100; // Adjust for fixed controls
+            const y = slideElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
             });
         }
     }
     
     updateActiveSlideFromScroll() {
-        const containerRect = this.container.getBoundingClientRect();
-        const containerCenter = containerRect.left + containerRect.width / 2;
+        const viewportHeight = window.innerHeight;
+        const scrollTop = window.pageYOffset;
+        const viewportCenter = scrollTop + (viewportHeight / 2);
         
         let closestSlide = null;
         let minDistance = Infinity;
         
-        // Find slide closest to center
         for (let i = 1; i <= this.totalSlides; i++) {
             const slide = document.getElementById(`slide-${i}`);
-            if (slide) {
-                const slideRect = slide.getBoundingClientRect();
-                const slideCenter = slideRect.left + slideRect.width / 2;
-                const distance = Math.abs(slideCenter - containerCenter);
-                
-                if (distance < minDistance) {
-                    minDistance = distance;
-                    closestSlide = i;
-                }
+            if (!slide) continue;
+            
+            const slideRect = slide.getBoundingClientRect();
+            const slideCenter = scrollTop + slideRect.top + (slideRect.height / 2);
+            
+            const distance = Math.abs(slideCenter - viewportCenter);
+            
+            if (distance < minDistance) {
+                minDistance = distance;
+                closestSlide = i;
             }
         }
         
@@ -188,59 +175,32 @@ class AllSlidesViewer {
         });
     }
     
-    setZoom(level) {
-        this.zoomLevel = Math.max(0.5, Math.min(2, level));
-        
-        // Update slider
-        document.getElementById('zoom-slider').value = this.zoomLevel * 100;
-        
-        // Apply zoom to all slides
-        document.querySelectorAll('.slide-frame').forEach(slide => {
-            slide.style.transform = `scale(${this.zoomLevel})`;
-        });
-        
-        // Store in CSS variable for fullscreen
-        document.documentElement.style.setProperty('--zoom-level', this.zoomLevel);
-    }
-    
-    adjustZoom(delta) {
-        this.setZoom(this.zoomLevel + delta);
+    printPDF() {
+        // Show simple print instruction
+        if (confirm('Click OK to print to PDF. For best results:\n\n1. Choose "Save as PDF" as destination\n2. Set margins to "None" or "Minimum"\n3. Enable "Background graphics"\n\nClick OK to continue.')) {
+            // Wait a moment for any iframes to load
+            setTimeout(() => {
+                window.print();
+            }, 500);
+        }
     }
     
     toggleFullscreen() {
         if (!this.isFullscreen) {
-            if (this.viewer.requestFullscreen) {
-                this.viewer.requestFullscreen();
-            } else if (this.viewer.webkitRequestFullscreen) {
-                this.viewer.webkitRequestFullscreen();
-            }
+            this.viewer.requestFullscreen?.() || 
+            this.viewer.webkitRequestFullscreen?.();
         } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            }
+            document.exitFullscreen?.() || 
+            document.webkitExitFullscreen?.();
         }
     }
     
     handleFullscreenChange() {
         this.isFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
-        
-        // Adjust padding in fullscreen
-        if (this.isFullscreen) {
-            this.container.style.padding = '40px';
-        } else {
-            this.container.style.padding = '20px';
-        }
-    }
-    
-    handleResize() {
-        // Re-center current slide on resize
-        setTimeout(() => this.scrollToCurrentSlide(), 100);
     }
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new AllSlidesViewer();
+    new VerticalSlideViewer();
 });

@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide Viewer - All Slides</title>
+    <title>Slide Viewer - Vertical Layout</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div id="slide-viewer">
-        <div id="all-slides-container">
-            <!-- All slides will be loaded here -->
-        </div>
-        <div id="navigation">
-            <button id="prev-btn" class="nav-btn">❮</button>
-            <div id="slide-info">Slide <span id="current">1</span> of <span id="total">15</span></div>
-            <button id="next-btn" class="nav-btn">❯</button>
-        </div>
         <div id="controls">
+            <button id="print-btn" title="Print/Export PDF">🖨️ Print</button>
             <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
-            <button id="zoom-out-btn" title="Zoom Out">-</button>
-            <input id="zoom-slider" type="range" min="50" max="200" value="100">
-            <button id="zoom-in-btn" title="Zoom In">+</button>
+        </div>
+        
+        <div id="vertical-container">
+            <!-- All slides will be loaded here vertically -->
+        </div>
+        
+        <div id="navigation">
+            <button id="prev-btn" class="nav-btn">↑ Previous</button>
+            <div id="slide-info">Slide <span id="current">1</span> of <span id="total">15</span></div>
+            <button id="next-btn" class="nav-btn">↓ Next</button>
         </div>
     </div>
 
