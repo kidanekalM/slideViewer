@@ -5,37 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Technology Stack</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #64748B;
-        }
-
+        /* Page-specific overrides */
         .tech-card {
             background: white;
             border-radius: 12px;
@@ -102,19 +76,6 @@
             color: #00D4AA;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes flow {
             from {
                 background-position: 0 0;
@@ -124,25 +85,11 @@
                 background-position: 0 20px;
             }
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        html {
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10" style=" overflow: hidden;">
+    <div class="slide flex flex-col p-10">
         <!-- Header -->
         <div class="mb-4">
             <h1 class="title mb-2">Technology Stack</h1>
@@ -152,7 +99,7 @@
         <div class="flex flex-1 space-x-6">
             <!-- Left Column - Architecture Diagram -->
             <div class="w-1/2">
-                <!-- Combined User &amp; Blockchain Layer -->
+                <!-- Combined User & Blockchain Layer -->
                 <div class="layer-box bg-purple-50" style="animation-delay: 0.1s;">
                     <div class="layer-title text-purple-700">USER &amp; BLOCKCHAIN LAYER</div>
                     <div class="flex space-x-4">
@@ -209,7 +156,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Right Column - Security Features &amp; Tech Details -->
+            <!-- Right Column - Security Features & Tech Details -->
             <div class="w-1/2">
                 <div class="bg-white rounded-lg p-5 shadow-sm layer-box" style="animation-delay: 0.5s;">
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Built for Scale, Security, and Ethiopian Reality
@@ -266,7 +213,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

@@ -5,25 +5,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>The Trust Crisis in Ethiopian Digital Commerce</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-        }
-
+        /* Page-specific overrides */
         .gradient-bg {
             background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
@@ -31,7 +18,7 @@
         .stat-card {
             transition: all 0.3s ease;
             opacity: 0;
-            animation: slideUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .stat-card:hover {
@@ -56,18 +43,6 @@
             animation: slideInRight 0.8s ease-out forwards;
         }
 
-        @keyframes slideUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -77,27 +52,11 @@
                 opacity: 1;
             }
         }
-
-        @keyframes slideInRight {
-            from {
-                transform: translateX(20px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        html {
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body>
-    <div class="slide gradient-bg flex flex-col" style=" overflow: hidden;">
+    <div class="slide gradient-bg flex flex-col">
         <!-- Header -->
         <div class="px-16 pt-10 pb-4">
             <h1 class="text-5xl font-bold text-white mb-3" style="animation: fadeIn 1s ease-out;">The Trust Crisis in
@@ -110,8 +69,8 @@
             <div class="w-1/2 pr-8 flex flex-col justify-center">
                 <div class="flex space-x-6 mb-5">
                     <!-- Stat Card 1 -->
-                    <div class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center"
-                        style="animation-delay: 0.2s;">
+                    <div
+                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-200">
                         <div class="text-5xl font-bold text-teal-400 mb-1">1.3B ETB</div>
                         <div class="text-white text-lg">lost to digital fraud</div>
                         <div class="text-white text-sm opacity-75">in Ethiopia (2024)</div>
@@ -120,8 +79,8 @@
                         </div>
                     </div>
                     <!-- Stat Card 2 -->
-                    <div class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center"
-                        style="animation-delay: 0.4s;">
+                    <div
+                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-400">
                         <div class="text-6xl font-bold text-teal-400 mb-1">70%</div>
                         <div class="text-white text-xl">of scams start on</div>
                         <div class="text-white text-sm opacity-75">Social Media (TikTok/Telegram)</div>
@@ -132,8 +91,8 @@
                 </div>
                 <!-- Additional Stats -->
                 <div class="flex space-x-6">
-                    <div class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center"
-                        style="animation-delay: 0.6s;">
+                    <div
+                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-600">
                         <div class="text-5xl font-bold text-teal-400 mb-1">61%</div>
                         <div class="text-white text-lg">pay upfront &amp; get nothing</div>
                         <div class="text-white text-sm opacity-75">undelivered merchandise</div>
@@ -141,8 +100,8 @@
                             <i class="fas fa-box-open text-2xl"></i>
                         </div>
                     </div>
-                    <div class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center"
-                        style="animation-delay: 0.8s;">
+                    <div
+                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-800">
                         <div class="text-4xl font-bold text-teal-400 mb-1">
                             <i class="fas fa-user-slash mr-2"></i>
                         </div>
@@ -168,7 +127,7 @@
                     </div>
                 </div>
                 <div class="space-y-3">
-                    <div class="flex items-start key-point" style="animation-delay: 1.0s;">
+                    <div class="flex items-start key-point delay-1000">
                         <div class="text-teal-400 mr-4 mt-1">
                             <i class="fas fa-comment-dollar text-2xl"></i>
                         </div>
@@ -204,17 +163,13 @@
         <!-- Footer -->
         <div class="px-16 py-6 flex justify-between items-center">
             <div class="text-white opacity-50 text-sm">
-                SafeDeal | Ethiopia&#39;s First Programmable Trust Layer
+                SafeDeal | Ethiopia's First Programmable Trust Layer
             </div>
             <div class="text-white opacity-50 text-sm" style="visibility: hidden;">
                 2/15
             </div>
         </div>
     </div>
-    <script>
-        // D3.js could be used here for more complex visualizations if needed
-    </script>
-
 </body>
 
 </html>

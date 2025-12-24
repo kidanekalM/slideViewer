@@ -5,53 +5,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Market Opportunity</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #64748B;
-        }
-
-        .market-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .market-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
+        /* Page-specific overrides */
         .stat-number {
             font-size: 40px;
             font-weight: 800;
@@ -90,19 +49,6 @@
             z-index: 10;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes grow {
             from {
                 transform: scaleY(0);
@@ -112,51 +58,43 @@
                 transform: scaleY(1);
             }
         }
-
-        html {
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10" style=" overflow: hidden;">
+    <div class="slide flex flex-col p-10">
         <!-- Header -->
         <div class="mb-4">
             <h1 class="title mb-2">Market Opportunity</h1>
-            <p class="subtitle">Ethiopia&#39;s digital economy growth creates significant market potential for SafeDeal
-            </p>
+            <p class="subtitle">Ethiopia's digital economy growth creates significant market potential for SafeDeal</p>
         </div>
         <!-- Main Content -->
         <div class="flex flex-1 space-x-6">
             <!-- Left Column - Market Size Stats -->
             <div class="w-1/2 flex flex-col space-y-3">
                 <!-- Market Growth Chart -->
-                <div class="market-card p-4 flex-1" style="animation-delay: 0.1s;">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ethiopia&#39;s Digital Economy Growth</h3>
+                <div class="card p-4 flex-1 animate-fadeInUp delay-100">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ethiopia's Digital Economy Growth</h3>
                     <div class="chart-container" id="chart"></div>
                 </div>
                 <!-- Market Size Stats Cards -->
                 <div class="flex space-x-4">
                     <!-- SMEs Stat Card -->
-                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center"
-                        style="animation-delay: 0.2s;">
+                    <div class="card flex-1 p-3 flex flex-col items-center justify-center animate-fadeInUp delay-200">
                         <i class="fas fa-store stat-icon text-teal-500"></i>
                         <div class="stat-number text-teal-500">4.2M</div>
                         <p class="text-center text-gray-700 font-medium">SMEs going digital</p>
                         <p class="text-sm text-gray-500">+40% annually</p>
                     </div>
                     <!-- Freelancers Stat Card -->
-                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center"
-                        style="animation-delay: 0.3s;">
+                    <div class="card flex-1 p-3 flex flex-col items-center justify-center animate-fadeInUp delay-300">
                         <i class="fas fa-user-tie stat-icon text-amber-500"></i>
                         <div class="stat-number text-amber-500">1.8M</div>
                         <p class="text-center text-gray-700 font-medium">Freelancers seeking secure payment</p>
                         <p class="text-sm text-gray-500">+35% annually</p>
                     </div>
                     <!-- Mobile Money Stat Card -->
-                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center"
-                        style="animation-delay: 0.4s;">
+                    <div class="card flex-1 p-3 flex flex-col items-center justify-center animate-fadeInUp delay-400">
                         <i class="fas fa-mobile-alt stat-icon text-blue-500"></i>
                         <div class="stat-number text-blue-500">45M</div>
                         <p class="text-center text-gray-700 font-medium">Mobile money users</p>
@@ -166,7 +104,7 @@
             </div>
             <!-- Right Column - Market Details -->
             <div class="w-1/2">
-                <div class="market-card p-4 h-full" style="animation-delay: 0.5s;">
+                <div class="card p-4 h-full animate-fadeInUp delay-500">
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Serviceable Market Segments</h3>
                     <div class="space-y-3">
                         <!-- Freelancers Market -->
@@ -364,7 +302,6 @@
                 .style("fill", "#64748B");
         });
     </script>
-
 </body>
 
 </html>

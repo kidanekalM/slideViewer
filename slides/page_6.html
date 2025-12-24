@@ -5,50 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>AI-Powered Dispute Resolution</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #64748B;
-        }
-
-        .card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
+        /* Page-specific overrides */
         .comparison-icon {
             font-size: 24px;
             margin-bottom: 8px;
@@ -129,43 +90,6 @@
             animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
         }
 
-        /* Animations */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes popIn {
             from {
                 opacity: 0;
@@ -196,14 +120,22 @@
             animation: flash 2s ease-in-out infinite;
         }
 
-        html {
-            overflow: hidden;
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10" style=" overflow: hidden;">
+    <div class="slide flex flex-col p-10">
         <!-- Header -->
         <div class="mb-4">
             <h1 class="title mb-2">AI-Powered Dispute Resolution</h1>
@@ -366,7 +298,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

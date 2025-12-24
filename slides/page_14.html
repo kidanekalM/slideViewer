@@ -5,52 +5,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Investment Opportunity</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #64748B;
-        }
-
-        .card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
+        /* Page-specific overrides */
         .funding-amount {
             font-size: 56px;
             font-weight: 800;
@@ -86,19 +46,6 @@
             animation: fadeIn 1s ease-out 1s forwards;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes zoomIn {
             from {
                 opacity: 0;
@@ -132,19 +79,15 @@
                 opacity: 1;
             }
         }
-
-        html {
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-8" style=" overflow: hidden;">
+    <div class="slide flex flex-col p-8">
         <!-- Header -->
         <div class="mb-4">
             <h1 class="title mb-1">Investment Opportunity</h1>
-            <p class="subtitle">Funding to accelerate Ethiopia&#39;s first programmable trust layer</p>
+            <p class="subtitle">Funding to accelerate Ethiopia's first programmable trust layer</p>
         </div>
         <!-- Main Content -->
         <div class="flex flex-1 space-x-8">
@@ -161,22 +104,19 @@
                         </div>
                     </div>
                     <div class="funding-amount mb-4">ETB 10M</div>
-                    <p class="text-lg text-gray-700 mb-4">SafeDeal seeks seed funding to establish Ethiopia&#39;s first
+                    <p class="text-lg text-gray-700 mb-4">SafeDeal seeks seed funding to establish Ethiopia's first
                         programmable trust layer for digital transactions.</p>
                     <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500 mb-4">
                         <p class="text-blue-800 font-medium">Expected Market Impact: ETB 1B+ annual revenue at 10%
-                            market
-                            penetration</p>
+                            market penetration</p>
                     </div>
                     <div class="mt-auto">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Expected Milestones:</h3>
                         <div class="space-y-1">
                             <div class="milestone-item text-gray-700" style="animation-delay: 0.8s;">Month 6: 500
-                                escrows,
-                                ETB 5M transacted (Social Commerce Pilot)</div>
+                                escrows, ETB 5M transacted (Social Commerce Pilot)</div>
                             <div class="milestone-item text-gray-700" style="animation-delay: 1.0s;">Month 12: NBE
-                                sandbox
-                                graduation, 10,000 users</div>
+                                sandbox graduation, 10,000 users</div>
                             <div class="milestone-item text-gray-700" style="animation-delay: 1.2s;">Month 18: Series A
                                 readiness (ETB 100M transacted)</div>
                         </div>
@@ -326,7 +266,6 @@
                 .text(d => `${d.data.value}%`);
         });
     </script>
-
 </body>
 
 </html>

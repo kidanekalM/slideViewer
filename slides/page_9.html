@@ -5,39 +5,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Competitive Advantage</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #64748B;
-        }
-
+        /* Page-specific overrides */
         .advantage-card {
             background: white;
             border-radius: 16px;
@@ -118,7 +91,6 @@
             animation: slideInLeft 0.8s ease-out forwards;
         }
 
-        /* Animations */
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -143,36 +115,18 @@
             }
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
         .pulse-icon {
             animation: pulse 2s infinite;
-        }
-
-        html {
-            overflow: hidden;
         }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10" style=" overflow: hidden;">
+    <div class="slide flex flex-col p-10">
         <!-- Header -->
         <div class="mb-4">
             <h1 class="title mb-2">Competitive Advantage</h1>
-            <p class="subtitle">Why SafeDeal wins in Ethiopia&#39;s digital economy</p>
+            <p class="subtitle">Why SafeDeal wins in Ethiopia's digital economy</p>
         </div>
         <!-- Main Content -->
         <div class="flex flex-1 space-x-6">
@@ -251,7 +205,7 @@
                     </tbody>
                 </table>
             </div>
-            <!-- Right Column - Key Advantages &amp; Moats -->
+            <!-- Right Column - Key Advantages & Moats -->
             <div class="w-1/2">
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Key Advantages</h3>
                 <div class="space-y-3 mb-4">
@@ -262,7 +216,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-800">Faster &amp; Cheaper</h4>
-                            <p class="text-gray-600">Instant settlement vs. banks&#39; weeks-long processing time and
+                            <p class="text-gray-600">Instant settlement vs. banks' weeks-long processing time and
                                 5-10% fees</p>
                         </div>
                     </div>
@@ -304,7 +258,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

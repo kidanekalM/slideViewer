@@ -5,39 +5,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Vision for Ethiopia&#39;s Digital Future</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #64748B;
-        }
-
+        /* Page-specific overrides */
         .vision-card {
             background: white;
             border-radius: 16px;
@@ -80,19 +53,6 @@
             animation: rotate 20s linear infinite;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes rotate {
             from {
                 transform: rotate(0deg);
@@ -102,38 +62,24 @@
                 transform: rotate(360deg);
             }
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        html {
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-8" style=" overflow: hidden;">
+    <div class="slide flex flex-col p-8">
         <!-- Background elements -->
         <div class="hexagon" style="top: -50px; right: -50px;"></div>
         <div class="hexagon" style="bottom: -50px; left: 200px; animation-direction: reverse;"></div>
         <!-- Header -->
         <div class="mb-6 z-10">
-            <h1 class="title mb-1">Vision for Ethiopia&#39;s Digital Future</h1>
+            <h1 class="title mb-1">Vision for Ethiopia's Digital Future</h1>
             <p class="subtitle">Building economic justice infrastructure where fair exchange becomes the default</p>
         </div>
         <!-- Main Vision Statement -->
         <div class="vision-card p-5 mb-5 z-10 border-l-4 border-teal-500" style="animation-delay: 0.1s;">
             <h2 class="text-2xl font-bold text-gray-800 mb-1">Our True North Star</h2>
             <p class="text-lg text-gray-700 italic">
-                &#34;To make fair exchange the default in Ethiopia&#39;s digital economy.&#34;
+                "To make fair exchange the default in Ethiopia's digital economy."
             </p>
         </div>
         <!-- Strategic Alignment and Future Impact -->
@@ -179,7 +125,7 @@
             </div>
             <!-- Right Column - Future Impact -->
             <div class="w-1/2">
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Projected Impact by 2027</h3>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Projected Impact by 2028</h3>
                 <div class="grid grid-cols-2 gap-3">
                     <div class="vision-card p-4 flex flex-col items-center justify-center"
                         style="animation-delay: 0.6s;">
@@ -211,7 +157,7 @@
         <!-- Footer -->
         <div class="mt-5 flex justify-between items-center z-10">
             <div class="text-gray-600">
-                <p class="text-sm">This isn&#39;t just fintech — it&#39;s economic justice.</p>
+                <p class="text-sm">This isn't just fintech — it's economic justice.</p>
             </div>
             <div class="flex items-center space-x-4">
                 <div class="text-gray-700 font-medium">contact@safedeal.et</div>
@@ -220,7 +166,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

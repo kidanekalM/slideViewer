@@ -5,37 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Why Current Solutions Fail</title>
-
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        body {
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        .slide {
-            width: 1280px;
-            min-height: 720px;
-            position: relative;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-        }
-
-        .title {
-            font-size: 48px;
-            font-weight: 800;
-            color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitle {
-            font-size: 24px;
-            color: #64748B;
-        }
-
+        /* Page-specific overrides */
         .solution-card {
             background: white;
             border-radius: 16px;
@@ -99,33 +73,6 @@
             font-size: 24px;
         }
 
-        /* Animations */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
         @keyframes shake {
 
             0%,
@@ -157,15 +104,11 @@
         .shake-on-hover:hover .solution-icon {
             animation: shake 0.5s;
         }
-
-        html {
-            overflow: hidden;
-        }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10" style=" overflow: hidden;">
+    <div class="slide flex flex-col p-10">
         <!-- Header -->
         <div class="mb-6">
             <h1 class="title mb-2">Why Current Solutions Fail</h1>
@@ -184,7 +127,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="animate-row" style="animation-delay: 0.2s;">
+                        <tr class="animate-row delay-200">
                             <td>
                                 <div class="flex items-center">
                                     <i class="fas fa-money-bill-wave text-red-500 solution-icon"></i>
@@ -201,7 +144,7 @@
                                         scammers</span>. If seller blocks you, money is gone forever.</p>
                             </td>
                         </tr>
-                        <tr class="animate-row" style="animation-delay: 0.4s;">
+                        <tr class="animate-row delay-400">
                             <td>
                                 <div class="flex items-center">
                                     <i class="fas fa-university text-blue-600 solution-icon"></i>
@@ -219,7 +162,7 @@
                                         population</span> (Unbanked). Delays payments for weeks.</p>
                             </td>
                         </tr>
-                        <tr class="animate-row" style="animation-delay: 0.6s;">
+                        <tr class="animate-row delay-600">
                             <td>
                                 <div class="flex items-center">
                                     <i class="fas fa-mobile-alt text-teal-500 solution-icon"></i>
@@ -229,11 +172,12 @@
                             <td>
                                 <span class="failure-badge">Single Point of Failure</span>
                                 <span class="failure-badge">Trust Shifted</span>
-                                <p class="mt-1">Funds sit in one company&#39;s wallet</p>
+                                <p class="mt-1">Funds sit in one company's wallet</p>
                             </td>
                             <td>
                                 <p class="text-gray-700">You trust them, not the seller. If they are hacked, you have
-                                    <span class="font-bold text-red-600">zero recourse</span>.</p>
+                                    <span class="font-bold text-red-600">zero recourse</span>.
+                                </p>
                             </td>
                         </tr>
                     </tbody>
@@ -266,7 +210,7 @@
                     <div class="solution-header flex items-center justify-between">
                         <div>
                             <h3 class="font-bold text-gray-800">Bank Escrow</h3>
-                            <p class="text-sm text-gray-500">&#34;Safe&#34; option</p>
+                            <p class="text-sm text-gray-500">"Safe" option</p>
                         </div>
                         <i class="fas fa-university text-blue-600 text-2xl"></i>
                     </div>
@@ -304,7 +248,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
