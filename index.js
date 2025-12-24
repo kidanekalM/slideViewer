@@ -1,12 +1,13 @@
 class SimpleSlideViewer {
     constructor() {
         this.currentSlide = 1;
-        this.totalSlides = 8;
+        this.totalSlides = 19;
         this.slidesPath = 'slides/page_';
         this.isFullscreen = false;
 
         this.viewer = document.getElementById("slide-viewer");
         this.frame = document.getElementById("slide-frame");
+        this.indicator = document.getElementById("slide-indicator");
 
         this.loadSlide();
         this.bindEvents();
@@ -17,6 +18,7 @@ class SimpleSlideViewer {
         const url = `${this.slidesPath}${this.currentSlide}.html`;
         this.frame.src = url;
         this.scaleSlide();
+        this.updateIndicator();
     }
 
     scaleSlide() {
@@ -168,6 +170,11 @@ class SimpleSlideViewer {
         if (num < 1 || num > this.totalSlides) return;
         this.currentSlide = num;
         this.loadSlide();
+    }
+
+    updateIndicator() {
+        if (!this.indicator) return;
+        this.indicator.textContent = `${this.currentSlide} / ${this.totalSlides}`;
     }
 
     initTouchSupport() {
