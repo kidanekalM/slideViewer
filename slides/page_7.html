@@ -43,6 +43,8 @@
             border-radius: 16px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .market-card:hover {
@@ -69,6 +71,8 @@
         .bar {
             fill: #00D4AA;
             transition: fill 0.3s ease;
+            transform-origin: bottom;
+            animation: grow 1s ease-out forwards;
         }
 
         .bar:hover {
@@ -84,6 +88,29 @@
             pointer-events: none;
             font-size: 14px;
             z-index: 10;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes grow {
+            from {
+                transform: scaleY(0);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
         }
 
         html {
@@ -105,29 +132,31 @@
             <!-- Left Column - Market Size Stats -->
             <div class="w-1/2 flex flex-col space-y-3">
                 <!-- Market Growth Chart -->
-                <div class="market-card p-4 flex-1">
+                <div class="market-card p-4 flex-1" style="animation-delay: 0.1s;">
                     <h3 class="text-xl font-bold text-gray-800 mb-2">Ethiopia&#39;s Digital Economy Growth</h3>
-                    <div class="chart-container" id="chart" data-sk-source-container="chart"
-                        data-sk-source-id="1998850157760610309" data-sk-source-type="web_search"></div>
+                    <div class="chart-container" id="chart"></div>
                 </div>
                 <!-- Market Size Stats Cards -->
                 <div class="flex space-x-4">
                     <!-- SMEs Stat Card -->
-                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
+                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center"
+                        style="animation-delay: 0.2s;">
                         <i class="fas fa-store stat-icon text-teal-500"></i>
                         <div class="stat-number text-teal-500">4.2M</div>
                         <p class="text-center text-gray-700 font-medium">SMEs going digital</p>
                         <p class="text-sm text-gray-500">+40% annually</p>
                     </div>
                     <!-- Freelancers Stat Card -->
-                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
+                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center"
+                        style="animation-delay: 0.3s;">
                         <i class="fas fa-user-tie stat-icon text-amber-500"></i>
                         <div class="stat-number text-amber-500">1.8M</div>
                         <p class="text-center text-gray-700 font-medium">Freelancers seeking secure payment</p>
                         <p class="text-sm text-gray-500">+35% annually</p>
                     </div>
                     <!-- Mobile Money Stat Card -->
-                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center">
+                    <div class="market-card flex-1 p-3 flex flex-col items-center justify-center"
+                        style="animation-delay: 0.4s;">
                         <i class="fas fa-mobile-alt stat-icon text-blue-500"></i>
                         <div class="stat-number text-blue-500">45M</div>
                         <p class="text-center text-gray-700 font-medium">Mobile money users</p>
@@ -137,7 +166,7 @@
             </div>
             <!-- Right Column - Market Details -->
             <div class="w-1/2">
-                <div class="market-card p-4 h-full">
+                <div class="market-card p-4 h-full" style="animation-delay: 0.5s;">
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Serviceable Market Segments</h3>
                     <div class="space-y-3">
                         <!-- Freelancers Market -->
@@ -152,14 +181,14 @@
                             </div>
                         </div>
                         <!-- Social Media Commerce Market -->
-                        <div class="flex items-start">
+                        <div class="flex items-start bg-amber-50 p-2 rounded-lg border-l-4 border-amber-500">
                             <div class="bg-amber-100 rounded-full p-2 mr-3">
                                 <i class="fas fa-hashtag text-amber-600 text-xl"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800">Social Media Commerce</h4>
                                 <p class="text-gray-600">Informal market = <span class="font-semibold">ETB 40B</span>
-                                    annual volume</p>
+                                    annual volume. <span class="text-amber-600 font-bold">High Growth Area!</span></p>
                             </div>
                         </div>
                         <!-- E-commerce Market -->
@@ -288,6 +317,7 @@
                     return colors[i];
                 })
                 .attr("opacity", 0.7)
+                .style("animation-delay", "0.5s") // Delay projection bars
                 .on("mouseover", function (event, d) {
                     tooltip.transition()
                         .duration(200)

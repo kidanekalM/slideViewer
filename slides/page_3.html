@@ -64,6 +64,7 @@
             display: inline-block;
             margin-right: 8px;
             margin-bottom: 8px;
+            animation: pulse 2s infinite;
         }
 
         .solution-header {
@@ -98,6 +99,65 @@
             font-size: 24px;
         }
 
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-5px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(5px);
+            }
+        }
+
+        .animate-row {
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .shake-on-hover:hover .solution-icon {
+            animation: shake 0.5s;
+        }
+
         html {
             overflow: hidden;
         }
@@ -124,7 +184,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr class="animate-row" style="animation-delay: 0.2s;">
                             <td>
                                 <div class="flex items-center">
                                     <i class="fas fa-money-bill-wave text-red-500 solution-icon"></i>
@@ -137,11 +197,11 @@
                                 <p class="mt-1">Standard for social media commerce. You pay and pray.</p>
                             </td>
                             <td>
-                                <p class="text-gray-700">If seller blocks you, money is gone forever. Zero protection.
-                                </p>
+                                <p class="text-gray-700">Used by <span class="font-bold text-red-600">90% of
+                                        scammers</span>. If seller blocks you, money is gone forever.</p>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="animate-row" style="animation-delay: 0.4s;">
                             <td>
                                 <div class="flex items-center">
                                     <i class="fas fa-university text-blue-600 solution-icon"></i>
@@ -152,15 +212,14 @@
                                 <span class="failure-badge">Slow</span>
                                 <span class="failure-badge">Expensive</span>
                                 <span class="failure-badge">Exclusive</span>
-                                <p class="mt-1">Requires bank accounts (excluding 70% of informal workers), charges
-                                    5-10% fees</p>
+                                <p class="mt-1">Requires bank accounts, charges 5-10% fees</p>
                             </td>
                             <td>
-                                <p class="text-gray-700">Delays payments for weeks, costs ETB 2,000-5,000 in legal fees
-                                </p>
+                                <p class="text-gray-700">Excludes <span class="font-bold text-red-600">70% of
+                                        population</span> (Unbanked). Delays payments for weeks.</p>
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="animate-row" style="animation-delay: 0.6s;">
                             <td>
                                 <div class="flex items-center">
                                     <i class="fas fa-mobile-alt text-teal-500 solution-icon"></i>
@@ -170,12 +229,11 @@
                             <td>
                                 <span class="failure-badge">Single Point of Failure</span>
                                 <span class="failure-badge">Trust Shifted</span>
-                                <p class="mt-1">Funds sit in one company&#39;s wallet — you trust them, not buyer/seller
-                                </p>
+                                <p class="mt-1">Funds sit in one company&#39;s wallet</p>
                             </td>
                             <td>
-                                <p class="text-gray-700">If the company is hacked or mismanages funds, users have no
-                                    recourse</p>
+                                <p class="text-gray-700">You trust them, not the seller. If they are hacked, you have
+                                    <span class="font-bold text-red-600">zero recourse</span>.</p>
                             </td>
                         </tr>
                     </tbody>
@@ -184,13 +242,13 @@
             <!-- Right Column - Visual Cards -->
             <div class="w-1/2 grid grid-cols-3 gap-4">
                 <!-- Direct Transfer Card -->
-                <div class="solution-card p-4">
+                <div class="solution-card p-4 shake-on-hover">
                     <div class="solution-header flex items-center justify-between">
                         <div>
                             <h3 class="font-bold text-gray-800">Direct Transfer</h3>
                             <p class="text-sm text-gray-500">Social Media Standard</p>
                         </div>
-                        <i class="fas fa-paper-plane text-red-500 text-2xl"></i>
+                        <i class="fas fa-paper-plane text-red-500 text-2xl solution-icon"></i>
                     </div>
                     <div class="mt-2">
                         <div class="flex items-center mb-1">

@@ -1,35 +1,52 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hybrid Trust Architecture</title>
+<!DOCTYPE html>
+<html lang="en">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
-        body {width: 1280px; min-height: 720px; overflow: hidden; margin: 0;
-            padding: 0;}
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hybrid Trust Architecture</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        body {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         .slide {
             width: 1280px;
             min-height: 720px;
             position: relative;
             background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
         }
+
         .title {
             font-size: 48px;
             font-weight: 800;
             color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .layer-card {
             background: white;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            z-index: 2;
         }
+
         .layer-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
+
         .layer-icon {
             font-size: 32px;
             width: 60px;
@@ -38,19 +55,13 @@
             align-items: center;
             justify-content: center;
             border-radius: 50%;
+            transition: transform 0.3s ease;
         }
-        .layer-connector {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 10;
+
+        .layer-card:hover .layer-icon {
+            animation: pulse 1s infinite;
         }
+
         .benefit-card {
             background: rgba(10, 37, 64, 0.03);
             border-left: 3px solid;
@@ -58,125 +69,182 @@
             border-radius: 0 8px 8px 0;
             transition: all 0.2s ease;
         }
+
         .benefit-card:hover {
             transform: translateX(5px);
         }
-    
-html {
-    overflow: hidden;
-}</style>
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes flow {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 20px 0;
+            }
+        }
+
+        .connector-line {
+            position: absolute;
+            top: 50%;
+            height: 4px;
+            background: repeating-linear-gradient(90deg, #CBD5E1 0, #CBD5E1 10px, transparent 10px, transparent 20px);
+            background-size: 20px 100%;
+            animation: flow 1s linear infinite;
+            z-index: 1;
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
-<div class="slide flex flex-col p-10" style=" overflow: hidden;">
-<!-- Header -->
-<div class="mb-4">
-<h1 class="title">Hybrid Trust Architecture</h1>
-</div>
-<!-- Main Content - Architecture Diagram -->
-<div class="flex flex-1 space-x-6">
-<!-- User Layer -->
-<div class="layer-card flex-1 p-5 flex flex-col">
-<div class="flex items-center mb-3">
-<div class="layer-icon bg-amber-100 text-amber-500 mr-4">
-<i class="fas fa-user"></i>
-</div>
-<h3 class="text-2xl font-bold text-gray-800">User Layer</h3>
-</div>
-<div class="text-center mb-3">
-<span class="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">
+    <div class="slide flex flex-col p-10" style=" overflow: hidden;">
+        <!-- Header -->
+        <div class="mb-4">
+            <h1 class="title">Hybrid Trust Architecture</h1>
+        </div>
+        <!-- Main Content - Architecture Diagram -->
+        <div class="flex flex-1 space-x-6 relative">
+            <!-- Connectors -->
+            <div class="connector-line" style="left: 25%; width: 15%; top: 18%;"></div>
+            <div class="connector-line" style="left: 58%; width: 15%; top: 18%;"></div>
+
+            <!-- User Layer -->
+            <div class="layer-card flex-1 p-5 flex flex-col" style="animation-delay: 0.2s;">
+                <div class="flex items-center mb-3">
+                    <div class="layer-icon bg-amber-100 text-amber-500 mr-4">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">User Layer</h3>
+                </div>
+                <div class="text-center mb-3">
+                    <span class="inline-block bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">
                         No Crypto Needed
                     </span>
-</div>
-<ul class="space-y-2 mb-4 flex-1">
-<li class="flex items-center">
-<i class="fas fa-mobile-alt text-amber-500 mr-3"></i>
-<span>Pay in ETB via Chapa/Mobile Money</span>
-</li>
-<li class="flex items-center">
-<i class="fas fa-qrcode text-amber-500 mr-3"></i>
-<span>Simple payment initiation with QR codes</span>
-</li>
-</ul>
-<div class="benefit-card border-amber-500 mt-auto">
-<p class="text-sm font-medium text-gray-700">For Users: Pay like Venmo, trust like blockchain</p>
-</div>
-</div>
-<!-- SafeDeal Backend Layer -->
-<div class="layer-card flex-1 p-5 flex flex-col">
-<div class="flex items-center mb-3">
-<div class="layer-icon bg-teal-100 text-teal-500 mr-4">
-<i class="fas fa-server"></i>
-</div>
-<h3 class="text-2xl font-bold text-gray-800">SafeDeal Backend</h3>
-</div>
-<div class="text-center mb-3">
-<span class="inline-block bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-medium">
+                </div>
+                <ul class="space-y-2 mb-4 flex-1">
+                    <li class="flex items-center">
+                        <i class="fas fa-mobile-alt text-amber-500 mr-3"></i>
+                        <span>Pay in ETB via Chapa/Mobile Money</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-qrcode text-amber-500 mr-3"></i>
+                        <span>Simple payment initiation with QR codes</span>
+                    </li>
+                </ul>
+                <div class="benefit-card border-amber-500 mt-auto">
+                    <p class="text-sm font-medium text-gray-700">For Users: Pay like Venmo, trust like blockchain</p>
+                </div>
+            </div>
+            <!-- SafeDeal Backend Layer -->
+            <div class="layer-card flex-1 p-5 flex flex-col" style="animation-delay: 0.4s;">
+                <div class="flex items-center mb-3">
+                    <div class="layer-icon bg-teal-100 text-teal-500 mr-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">SafeDeal Backend</h3>
+                </div>
+                <div class="text-center mb-3">
+                    <span class="inline-block bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-medium">
                         Go Microservices
                     </span>
-</div>
-<ul class="space-y-2 mb-4 flex-1">
-<li class="flex items-center">
-<i class="fas fa-user-check text-teal-500 mr-3"></i>
-<span>User Auth (JWT) for secure login</span>
-</li>
-<li class="flex items-center">
-<i class="fas fa-money-bill-wave text-teal-500 mr-3"></i>
-<span>Payment Processing (Chapa API)</span>
-</li>
-<li class="flex items-center">
-<i class="fas fa-robot text-teal-500 mr-3"></i>
-<span>AI Arbitration (Gemini)</span>
-</li>
-</ul>
-<div class="benefit-card border-teal-500 mt-auto">
-<p class="text-sm font-medium text-gray-700">For Disputes: AI reads full negotiation context</p>
-</div>
-</div>
-<!-- Blockchain Layer -->
-<div class="layer-card flex-1 p-5 flex flex-col">
-<div class="flex items-center mb-3">
-<div class="layer-icon bg-blue-100 text-blue-500 mr-4">
-<i class="fas fa-link"></i>
-</div>
-<h3 class="text-2xl font-bold text-gray-800">Blockchain Layer</h3>
-</div>
-<div class="text-center mb-3">
-<span class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                </div>
+                <ul class="space-y-2 mb-4 flex-1">
+                    <li class="flex items-center">
+                        <i class="fas fa-user-check text-teal-500 mr-3"></i>
+                        <span>User Auth (JWT) for secure login</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-money-bill-wave text-teal-500 mr-3"></i>
+                        <span>Payment Processing (Chapa API)</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-robot text-teal-500 mr-3"></i>
+                        <span>AI Arbitration (Gemini)</span>
+                    </li>
+                </ul>
+                <div class="benefit-card border-teal-500 mt-auto">
+                    <p class="text-sm font-medium text-gray-700">For Disputes: AI reads full negotiation context</p>
+                </div>
+            </div>
+            <!-- Blockchain Layer -->
+            <div class="layer-card flex-1 p-5 flex flex-col" style="animation-delay: 0.6s;">
+                <div class="flex items-center mb-3">
+                    <div class="layer-icon bg-blue-100 text-blue-500 mr-4">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Blockchain Layer</h3>
+                </div>
+                <div class="text-center mb-3">
+                    <span class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
                         Ethereum
                     </span>
-</div>
-<ul class="space-y-2 mb-4 flex-1">
-<li class="flex items-center">
-<i class="fas fa-file-contract text-blue-500 mr-3"></i>
-<span>Multi-Sig Escrow Smart Contract</span>
-</li>
-<li class="flex items-center">
-<i class="fas fa-history text-blue-500 mr-3"></i>
-<span>Immutable Audit Trail</span>
-</li>
-</ul>
-<div class="benefit-card border-blue-500 mt-auto">
-<p class="text-sm font-medium text-gray-700">For Verification: Any party can audit escrow state</p>
-</div>
-</div>
-</div>
-<!-- Bottom Section - Why This Matters -->
-<div class="mt-5 bg-white p-4 rounded-lg shadow-sm">
-<div class="flex space-x-6">
-<div class="flex-1 flex items-center">
-<i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
-<p class="text-sm">Blockchain provides trust without crypto knowledge</p>
-</div>
-<div class="flex-1 flex items-center">
-<i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
-<p class="text-sm">Go microservices handle 10,000 concurrent escrows</p>
-</div>
-<div class="flex-1 flex items-center">
-<i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
-<p class="text-sm">AI dispute resolution trained on Ethiopian commercial norms</p>
-</div>
-</div>
-</div>
-</div>
+                </div>
+                <ul class="space-y-2 mb-4 flex-1">
+                    <li class="flex items-center">
+                        <i class="fas fa-file-contract text-blue-500 mr-3"></i>
+                        <span>Multi-Sig Escrow Smart Contract</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-history text-blue-500 mr-3"></i>
+                        <span>Immutable Audit Trail</span>
+                    </li>
+                </ul>
+                <div class="benefit-card border-blue-500 mt-auto">
+                    <p class="text-sm font-medium text-gray-700">For Verification: Any party can audit escrow state</p>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Section - Why This Matters -->
+        <div class="mt-5 bg-white p-4 rounded-lg shadow-sm opacity-0"
+            style="animation: fadeInUp 0.8s ease-out 0.8s forwards;">
+            <div class="flex space-x-6">
+                <div class="flex-1 flex items-center">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <p class="text-sm">Blockchain provides trust without crypto knowledge</p>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <p class="text-sm">Go microservices handle 10,000 concurrent escrows</p>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                    <p class="text-sm">AI dispute resolution trained on Ethiopian commercial norms</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</body></html>
+</body>
+
+</html>

@@ -1,210 +1,280 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Regulatory Path via IFL</title>
+<!DOCTYPE html>
+<html lang="en">
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-<script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
-        body {width: 1280px; min-height: 720px; overflow: hidden; margin: 0;
-            padding: 0;}
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Regulatory Path via IFL</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        body {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
         .slide {
             width: 1280px;
             min-height: 720px;
             position: relative;
             background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
-            
+
         }
+
         .title {
             font-size: 48px;
             font-weight: 800;
             color: #0A2540;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .subtitle {
             font-size: 24px;
             color: #64748B;
         }
+
         .card {
             background: white;
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
+
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
+
         .timeline-container {
             height: 160px;
             width: 100%;
         }
+
         .benefit-icon {
             font-size: 24px;
             margin-bottom: 8px;
         }
+
         .milestone-card {
             border-left: 4px solid;
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideInLeft 0.5s ease-out forwards;
         }
+
         .milestone-card:hover {
             transform: translateX(5px);
         }
-    
-html {
-    overflow: hidden;
-}</style>
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        html {
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
-<div class="slide flex flex-col p-12" style=" overflow: hidden;">
-<!-- Header -->
-<div class="mb-4">
-<h1 class="title mb-2">Regulatory Path via IFL</h1>
-<p class="subtitle">Strategic progression from IFL sandbox pilot to NBE licensing</p>
-</div>
-<!-- Main Content -->
-<div class="flex flex-1 space-x-6">
-<!-- Left Column - Timeline -->
-<div class="w-1/2">
-<div class="card p-5 h-full flex flex-col">
-<h3 class="text-xl font-bold text-gray-800 mb-3">Regulatory Journey</h3>
-<div class="timeline-container flex-1" id="timeline"></div>
-<div class="flex justify-between mt-2 text-sm text-gray-500">
-<div>Month 1</div>
-<div>Month 6</div>
-<div>Month 12</div>
-<div>Month 18</div>
-</div>
-<div class="mt-3 space-y-2">
-<div class="milestone-card border-amber-500 bg-amber-50 p-2 pl-3 rounded">
-<div class="flex items-center">
-<i class="fas fa-flag-checkered text-amber-500 mr-2"></i>
-<span class="font-medium">IFL Sandbox Approval</span>
-</div>
-<p class="text-xs text-gray-600">Pilot for 1,000 users</p>
-</div>
-<div class="milestone-card border-teal-500 bg-teal-50 p-2 pl-3 rounded">
-<div class="flex items-center">
-<i class="fas fa-users text-teal-500 mr-2"></i>
-<span class="font-medium">Supervised Pilot</span>
-</div>
-<p class="text-xs text-gray-600">Real transactions with supervision</p>
-</div>
-<div class="milestone-card border-green-500 bg-green-50 p-2 pl-3 rounded">
-<div class="flex items-center">
-<i class="fas fa-certificate text-green-500 mr-2"></i>
-<span class="font-medium">NBE License Application</span>
-</div>
-<p class="text-xs text-gray-600">Fast-track with compliance</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Column - Benefits -->
-<div class="w-1/2">
-<div class="card p-5 mb-4">
-<h3 class="text-xl font-bold text-gray-800 mb-3">Why IFL Matters</h3>
-<div class="space-y-3">
-<div class="flex items-start">
-<div class="w-1/5 flex flex-col items-center">
-<i class="fas fa-shield-alt benefit-icon text-teal-500"></i>
-<div class="text-center font-bold text-teal-500 text-sm">De-risk Capital</div>
-</div>
-<div class="w-4/5">
-<p class="text-xs text-gray-700">Test with ETB 5M, not ETB 50M. Enables SafeDeal to prove model before market entry.</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-1/5 flex flex-col items-center">
-<i class="fas fa-check-circle benefit-icon text-amber-500"></i>
-<div class="text-center font-bold text-amber-500 text-sm">Prove Compliance</div>
-</div>
-<div class="w-4/5">
-<p class="text-xs text-gray-700">NBE sees real data. Demonstrates product-market fit under regulatory supervision.</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-1/5 flex flex-col items-center">
-<i class="fas fa-handshake benefit-icon text-green-500"></i>
-<div class="text-center font-bold text-green-500 text-sm">Build Credibility</div>
-</div>
-<div class="w-4/5">
-<p class="text-xs text-gray-700">UNDP/NBE backing signals legitimacy to investors, positioning as serious fintech innovator.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="card p-5">
-<h3 class="text-xl font-bold text-gray-800 mb-3">Legal Framework</h3>
-<div class="grid grid-cols-3 gap-2">
-<div class="bg-gray-50 p-2 rounded text-center">
-<i class="fas fa-gavel text-gray-500"></i>
-<p class="text-xs font-medium">Escrow Law</p>
-<p class="text-xs text-gray-500">Proclamation No. 1231/2021</p>
-</div>
-<div class="bg-gray-50 p-2 rounded text-center">
-<i class="fas fa-file-contract text-gray-500"></i>
-<p class="text-xs font-medium">Payment Instrument</p>
-<p class="text-xs text-gray-500">NBE/PSD/002/2021</p>
-</div>
-<div class="bg-gray-50 p-2 rounded text-center">
-<i class="fas fa-user-shield text-gray-500"></i>
-<p class="text-xs font-medium">Data Protection</p>
-<p class="text-xs text-gray-500">Proclamation No. 1263/2021</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script>
+    <div class="slide flex flex-col p-12" style=" overflow: hidden;">
+        <!-- Header -->
+        <div class="mb-4">
+            <h1 class="title mb-2">Regulatory Path via IFL</h1>
+            <p class="subtitle">Strategic progression from IFL sandbox pilot to NBE licensing</p>
+        </div>
+        <!-- Main Content -->
+        <div class="flex flex-1 space-x-6">
+            <!-- Left Column - Timeline -->
+            <div class="w-1/2">
+                <div class="card p-5 h-full flex flex-col" style="animation-delay: 0.1s;">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Regulatory Journey</h3>
+                    <div class="timeline-container flex-1" id="timeline"></div>
+                    <div class="flex justify-between mt-2 text-sm text-gray-500">
+                        <div>Month 1</div>
+                        <div>Month 6</div>
+                        <div>Month 12</div>
+                        <div>Month 18</div>
+                    </div>
+                    <div class="mt-3 space-y-2">
+                        <div class="milestone-card border-amber-500 bg-amber-50 p-2 pl-3 rounded"
+                            style="animation-delay: 0.5s;">
+                            <div class="flex items-center">
+                                <i class="fas fa-flag-checkered text-amber-500 mr-2"></i>
+                                <span class="font-medium">IFL Sandbox Approval</span>
+                            </div>
+                            <p class="text-xs text-gray-600">Pilot for 1,000 users</p>
+                        </div>
+                        <div class="milestone-card border-teal-500 bg-teal-50 p-2 pl-3 rounded"
+                            style="animation-delay: 0.7s;">
+                            <div class="flex items-center">
+                                <i class="fas fa-users text-teal-500 mr-2"></i>
+                                <span class="font-medium">Supervised Pilot</span>
+                            </div>
+                            <p class="text-xs text-gray-600">Real transactions with supervision</p>
+                        </div>
+                        <div class="milestone-card border-green-500 bg-green-50 p-2 pl-3 rounded"
+                            style="animation-delay: 0.9s;">
+                            <div class="flex items-center">
+                                <i class="fas fa-certificate text-green-500 mr-2"></i>
+                                <span class="font-medium">NBE License Application</span>
+                            </div>
+                            <p class="text-xs text-gray-600">Fast-track with compliance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column - Benefits -->
+            <div class="w-1/2">
+                <div class="card p-5 mb-4" style="animation-delay: 0.3s;">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Why IFL Matters</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <div class="w-1/5 flex flex-col items-center">
+                                <i class="fas fa-shield-alt benefit-icon text-teal-500"></i>
+                                <div class="text-center font-bold text-teal-500 text-sm">De-risk Capital</div>
+                            </div>
+                            <div class="w-4/5">
+                                <p class="text-xs text-gray-700">Test with ETB 5M, not ETB 50M. Enables SafeDeal to
+                                    prove model before market entry.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-1/5 flex flex-col items-center">
+                                <i class="fas fa-check-circle benefit-icon text-amber-500"></i>
+                                <div class="text-center font-bold text-amber-500 text-sm">Prove Compliance</div>
+                            </div>
+                            <div class="w-4/5">
+                                <p class="text-xs text-gray-700">NBE sees real data. Demonstrates product-market fit
+                                    under regulatory supervision.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-1/5 flex flex-col items-center">
+                                <i class="fas fa-handshake benefit-icon text-green-500"></i>
+                                <div class="text-center font-bold text-green-500 text-sm">Build Credibility</div>
+                            </div>
+                            <div class="w-4/5">
+                                <p class="text-xs text-gray-700">UNDP/NBE backing signals legitimacy to investors,
+                                    positioning as serious fintech innovator.</p>
+                            </div>
+                        </div>
+                        <!-- Added Consumer Protection Benefit -->
+                        <div class="flex items-start">
+                            <div class="w-1/5 flex flex-col items-center">
+                                <i class="fas fa-user-shield benefit-icon text-blue-500"></i>
+                                <div class="text-center font-bold text-blue-500 text-sm">Consumer Protection</div>
+                            </div>
+                            <div class="w-4/5">
+                                <p class="text-xs text-gray-700">Ensures fair dispute resolution and fraud prevention
+                                    for all users.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-5" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Legal Framework</h3>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="bg-gray-50 p-2 rounded text-center">
+                            <i class="fas fa-gavel text-gray-500"></i>
+                            <p class="text-xs font-medium">Escrow Law</p>
+                            <p class="text-xs text-gray-500">Proclamation No. 1231/2021</p>
+                        </div>
+                        <div class="bg-gray-50 p-2 rounded text-center">
+                            <i class="fas fa-file-contract text-gray-500"></i>
+                            <p class="text-xs font-medium">Payment Instrument</p>
+                            <p class="text-xs text-gray-500">NBE/PSD/002/2021</p>
+                        </div>
+                        <div class="bg-gray-50 p-2 rounded text-center">
+                            <i class="fas fa-user-shield text-gray-500"></i>
+                            <p class="text-xs font-medium">Data Protection</p>
+                            <p class="text-xs text-gray-500">Proclamation No. 1263/2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
         // Simple D3.js timeline visualization
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const timelineData = [
-                {stage: "IFL Application", position: 0, color: "#F59E0B", label: "Stage 1"},
-                {stage: "Supervised Pilot", position: 1, color: "#00D4AA", label: "Stage 2"},
-                {stage: "NBE License", position: 2, color: "#10B981", label: "Stage 3"}
+                { stage: "IFL Application", position: 0, color: "#F59E0B", label: "Stage 1" },
+                { stage: "Supervised Pilot", position: 1, color: "#00D4AA", label: "Stage 2" },
+                { stage: "NBE License", position: 2, color: "#10B981", label: "Stage 3" }
             ];
-            
-            const margin = {top: 20, right: 20, bottom: 20, left: 20};
+
+            const margin = { top: 20, right: 20, bottom: 20, left: 20 };
             const width = document.getElementById('timeline').clientWidth - margin.left - margin.right;
             const height = document.getElementById('timeline').clientHeight - margin.top - margin.bottom;
-            
+
             const svg = d3.select("#timeline")
                 .append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
                 .attr("transform", `translate(${margin.left},${margin.top})`);
-                
+
             // Create the timeline line
             svg.append("line")
                 .attr("x1", 0)
-                .attr("y1", height/2)
+                .attr("y1", height / 2)
                 .attr("x2", width)
-                .attr("y2", height/2)
+                .attr("y2", height / 2)
                 .attr("stroke", "#E5E7EB")
                 .attr("stroke-width", 4);
-                
+
             // Calculate positions
             const xScale = d3.scaleLinear()
                 .domain([0, 2])
                 .range([50, width - 50]);
-                
+
             // Add circles for each stage
             const stages = svg.selectAll(".stage")
                 .data(timelineData)
                 .enter()
                 .append("g")
                 .attr("class", "stage")
-                .attr("transform", d => `translate(${xScale(d.position)}, ${height/2})`);
-                
+                .attr("transform", d => `translate(${xScale(d.position)}, ${height / 2})`);
+
             stages.append("circle")
-                .attr("r", 12)
+                .attr("r", 0)
                 .attr("fill", d => d.color)
                 .attr("stroke", "white")
-                .attr("stroke-width", 3);
-                
+                .attr("stroke-width", 3)
+                .transition()
+                .duration(500)
+                .delay((d, i) => i * 300)
+                .attr("r", 12);
+
             // Add labels
             stages.append("text")
                 .attr("y", -25)
@@ -212,16 +282,28 @@ html {
                 .attr("font-weight", "bold")
                 .attr("fill", "#374151")
                 .attr("font-size", "10px")
-                .text(d => d.label);
-                
+                .text(d => d.label)
+                .attr("opacity", 0)
+                .transition()
+                .duration(500)
+                .delay((d, i) => i * 300 + 200)
+                .attr("opacity", 1);
+
             stages.append("text")
                 .attr("y", 25)
                 .attr("text-anchor", "middle")
                 .attr("font-weight", "bold")
                 .attr("fill", d => d.color)
                 .attr("font-size", "10px")
-                .text(d => d.stage);
+                .text(d => d.stage)
+                .attr("opacity", 0)
+                .transition()
+                .duration(500)
+                .delay((d, i) => i * 300 + 200)
+                .attr("opacity", 1);
         });
     </script>
 
-</body></html>
+</body>
+
+</html>

@@ -57,16 +57,22 @@
         .traditional {
             background-color: rgba(239, 68, 68, 0.05);
             border-left: 4px solid #EF4444;
+            opacity: 0;
+            animation: slideInLeft 0.8s ease-out forwards;
         }
 
         .safedeal {
             background-color: rgba(16, 185, 129, 0.05);
             border-left: 4px solid #10B981;
+            opacity: 0;
+            animation: slideInRight 0.8s ease-out forwards;
         }
 
         .case-example {
             background-color: rgba(0, 212, 170, 0.05);
             border-left: 4px solid #00D4AA;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.5s forwards;
         }
 
         .comparison-header {
@@ -119,6 +125,75 @@
             font-weight: 600;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             z-index: 10;
+            opacity: 0;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @keyframes flash {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0.5;
+            }
+        }
+
+        .flash-text {
+            animation: flash 2s ease-in-out infinite;
         }
 
         html {
@@ -139,7 +214,7 @@
             <!-- Left Column - Traditional vs SafeDeal -->
             <div class="w-3/5 flex flex-col space-y-4">
                 <!-- Comparison Headers -->
-                <div class="flex">
+                <div class="flex relative">
                     <!-- Traditional -->
                     <div class="w-1/2 pr-3">
                         <div class="traditional card p-4 h-full">
@@ -176,7 +251,7 @@
                         </div>
                     </div>
                     <!-- VS Badge -->
-                    <div class="vs-badge absolute left-1/2 transform -translate-x-1/2 mt-16" style="left: 31%;">VS</div>
+                    <div class="vs-badge absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">VS</div>
                     <!-- SafeDeal -->
                     <div class="w-1/2 pl-3">
                         <div class="safedeal card p-4 h-full">
@@ -195,10 +270,10 @@
                                 </div>
                                 <div class="comparison-item">
                                     <div class="comparison-icon-wrapper safedeal-icon">
-                                        <i class="fas fa-camera"></i>
+                                        <i class="fas fa-comments"></i>
                                     </div>
                                     <div>
-                                        <p class="font-medium">AI Verifies Photos</p>
+                                        <p class="font-medium">AI Analyzes Chat Logs</p>
                                     </div>
                                 </div>
                                 <div class="comparison-item">
@@ -233,16 +308,16 @@
                         </div>
                         <div class="w-1/2 pl-4">
                             <p class="text-sm text-gray-500 mb-1">With SafeDeal:</p>
-                            <p class="font-medium text-green-500"><i class="fas fa-check mr-1"></i> AI verifies photo of
-                                blue dress.</p>
-                            <p class="font-bold text-gray-800 mt-1">Result: Full Refund Released</p>
+                            <p class="font-medium text-green-500"><i class="fas fa-check mr-1"></i> AI verifies 'Red'
+                                order in chat logs.</p>
+                            <p class="font-bold text-gray-800 mt-1 flash-text">Result: Full Refund Released</p>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Right Column - Benefits -->
             <div class="w-2/5">
-                <div class="card p-5 h-full">
+                <div class="card p-5 h-full opacity-0" style="animation: fadeInUp 0.8s ease-out 1s forwards;">
                     <h3 class="text-xl font-bold text-gray-800 mb-3">Why It Works</h3>
                     <ul class="space-y-4">
                         <li class="flex items-start">
@@ -251,7 +326,8 @@
                             </div>
                             <div>
                                 <p class="font-medium text-gray-800">Automated Evidence Review</p>
-                                <p class="text-gray-600 text-sm">Our AI analyzes photos and chat logs to verify claims
+                                <p class="text-gray-600 text-sm">Our AI analyzes chat logs and transaction terms to
+                                    verify claims
                                     instantly, without human bias.</p>
                             </div>
                         </li>

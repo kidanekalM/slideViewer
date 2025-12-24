@@ -43,6 +43,8 @@
             border-radius: 16px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .vision-card:hover {
@@ -75,6 +77,40 @@
             background-color: rgba(0, 212, 170, 0.05);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             z-index: 1;
+            animation: rotate 20s linear infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         html {
@@ -86,15 +122,15 @@
 <body>
     <div class="slide flex flex-col p-8" style=" overflow: hidden;">
         <!-- Background elements -->
-        <div class="hexagon" style="top: -50px; right: -50px; transform: rotate(15deg);"></div>
-        <div class="hexagon" style="bottom: -50px; left: 200px; transform: rotate(-10deg);"></div>
+        <div class="hexagon" style="top: -50px; right: -50px;"></div>
+        <div class="hexagon" style="bottom: -50px; left: 200px; animation-direction: reverse;"></div>
         <!-- Header -->
         <div class="mb-6 z-10">
             <h1 class="title mb-1">Vision for Ethiopia&#39;s Digital Future</h1>
             <p class="subtitle">Building economic justice infrastructure where fair exchange becomes the default</p>
         </div>
         <!-- Main Vision Statement -->
-        <div class="vision-card p-5 mb-5 z-10 border-l-4 border-teal-500">
+        <div class="vision-card p-5 mb-5 z-10 border-l-4 border-teal-500" style="animation-delay: 0.1s;">
             <h2 class="text-2xl font-bold text-gray-800 mb-1">Our True North Star</h2>
             <p class="text-lg text-gray-700 italic">
                 &#34;To make fair exchange the default in Ethiopia&#39;s digital economy.&#34;
@@ -106,7 +142,8 @@
             <div class="w-1/2">
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Strengthening Digital Ethiopia 2025</h3>
                 <div class="space-y-3">
-                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-500">
+                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-500 vision-card"
+                        style="animation-delay: 0.3s;">
                         <div class="mr-3 mt-1">
                             <i class="fas fa-shopping-bag text-2xl text-blue-500"></i>
                         </div>
@@ -116,7 +153,8 @@
                                     class="font-semibold">Trust Deficit</span>.</p>
                         </div>
                     </div>
-                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-green-500">
+                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-green-500 vision-card"
+                        style="animation-delay: 0.4s;">
                         <div class="mr-3 mt-1">
                             <i class="fas fa-wallet text-2xl text-green-500"></i>
                         </div>
@@ -126,7 +164,8 @@
                                 formal digital economy.</p>
                         </div>
                     </div>
-                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-amber-500">
+                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-amber-500 vision-card"
+                        style="animation-delay: 0.5s;">
                         <div class="mr-3 mt-1">
                             <i class="fas fa-briefcase text-2xl text-amber-500"></i>
                         </div>
@@ -142,22 +181,26 @@
             <div class="w-1/2">
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Projected Impact by 2027</h3>
                 <div class="grid grid-cols-2 gap-3">
-                    <div class="vision-card p-4 flex flex-col items-center justify-center">
+                    <div class="vision-card p-4 flex flex-col items-center justify-center"
+                        style="animation-delay: 0.6s;">
                         <i class="fas fa-exchange-alt text-amber-500 text-2xl mb-2"></i>
                         <div class="impact-number gradient-text">ETB 1B+</div>
                         <p class="text-center text-gray-700 font-medium">in escrow transactions</p>
                     </div>
-                    <div class="vision-card p-4 flex flex-col items-center justify-center">
+                    <div class="vision-card p-4 flex flex-col items-center justify-center"
+                        style="animation-delay: 0.7s;">
                         <i class="fas fa-users text-teal-500 text-2xl mb-2"></i>
                         <div class="impact-number gradient-text">100,000+</div>
                         <p class="text-center text-gray-700 font-medium">freelancers working without fear</p>
                     </div>
-                    <div class="vision-card p-4 flex flex-col items-center justify-center">
+                    <div class="vision-card p-4 flex flex-col items-center justify-center"
+                        style="animation-delay: 0.8s;">
                         <i class="fas fa-building text-blue-500 text-2xl mb-2"></i>
                         <div class="impact-number gradient-text">50,000</div>
                         <p class="text-center text-gray-700 font-medium">construction projects secured</p>
                     </div>
-                    <div class="vision-card p-4 flex flex-col items-center justify-center">
+                    <div class="vision-card p-4 flex flex-col items-center justify-center"
+                        style="animation-delay: 0.9s;">
                         <i class="fas fa-globe-africa text-green-500 text-2xl mb-2"></i>
                         <div class="impact-number gradient-text">East Africa</div>
                         <p class="text-center text-gray-700 font-medium">export of trust infrastructure</p>
