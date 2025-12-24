@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>The SafeDeal Flow</title>
+    <title>Under the Hood</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
@@ -12,64 +12,63 @@
             background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
 
-        .step-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 1rem;
-            padding: 2rem;
-            position: relative;
-            border-top: 4px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .step-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .step-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .code-block {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 
 <body>
     <div class="slide gradient-bg flex flex-col p-12">
-        <div class="text-center mb-10">
-            <h1 class="text-5xl font-bold text-white mb-2">How It Works</h1>
-            <p class="text-gray-300">Trust automated by code.</p>
+        <div class="mb-8">
+            <h1 class="text-5xl font-bold text-white mb-2">Under the Hood</h1>
+            <p class="text-xl text-gray-300">Powered by the Ethio-Trust Blockchain</p>
         </div>
 
-        <div class="grid grid-cols-3 gap-8 h-full">
-            <!-- Step 1 -->
-            <div class="step-card border-purple-500 animate-fadeInUp">
-                <div class="step-icon text-purple-400">🔒</div>
-                <h3 class="text-2xl font-bold text-white mb-2">1. Buyer Pays</h3>
-                <p class="text-gray-300">Funds are not sent to the seller. They are locked in a secure smart contract
-                    escrow.</p>
-                <div class="mt-4 text-xs text-purple-300 bg-purple-500/10 inline-block px-2 py-1 rounded">
-                    Money Safe
+        <div class="flex gap-12 h-full">
+            <div class="w-1/2 flex flex-col justify-center animate-fadeInUp">
+                <div class="code-block text-sm text-green-400 leading-relaxed shadow-lg">
+                    <span class="text-pink-400">contract</span> SafeDealEscrow {<br />
+                    &nbsp;&nbsp;<span class="text-blue-400">address</span> seller;<br />
+                    &nbsp;&nbsp;<span class="text-blue-400">address</span> buyer;<br />
+                    &nbsp;&nbsp;<span class="text-blue-400">uint</span> amount;<br /><br />
+                    &nbsp;&nbsp;<span class="text-yellow-400">function</span> release() {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-pink-400">require</span>(msg.sender == buyer);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;seller.transfer(amount);<br />
+                    &nbsp;&nbsp;}<br />
+                    }
                 </div>
+                <p class="text-gray-400 mt-4 text-sm italic">
+                    *Simplified representation of our smart contract logic
+                </p>
             </div>
 
-            <!-- Step 2 -->
-            <div class="step-card border-blue-500 animate-fadeInUp delay-100">
-                <div class="step-icon text-blue-400">🚚</div>
-                <h3 class="text-2xl font-bold text-white mb-2">2. Seller Ships</h3>
-                <p class="text-gray-300">Seller sees proof of funds and ships the product with confidence.</p>
-                <div class="mt-4 text-xs text-blue-300 bg-blue-500/10 inline-block px-2 py-1 rounded">
-                    Seller Protected
+            <div class="w-1/2 flex flex-col justify-center space-y-6 animate-fadeInUp delay-200">
+                <div class="flex items-start">
+                    <div class="bg-teal-500/20 p-3 rounded-lg mr-4 text-teal-400 font-bold">01</div>
+                    <div>
+                        <h3 class="text-xl text-white font-bold">Immutable Logic</h3>
+                        <p class="text-gray-400 text-sm">Once deployed, the rules cannot be changed by any party.</p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="step-card border-teal-500 animate-fadeInUp delay-200">
-                <div class="step-icon text-teal-400">🤝</div>
-                <h3 class="text-2xl font-bold text-white mb-2">3. Release</h3>
-                <p class="text-gray-300">Funds are automatically released when the buyer accepts or the return window
-                    expires.</p>
-                <div class="mt-4 text-xs text-teal-300 bg-teal-500/10 inline-block px-2 py-1 rounded">
-                    Instant Settlement
+                <div class="flex items-start">
+                    <div class="bg-blue-500/20 p-3 rounded-lg mr-4 text-blue-400 font-bold">02</div>
+                    <div>
+                        <h3 class="text-xl text-white font-bold">Bank Integration</h3>
+                        <p class="text-gray-400 text-sm">Seamless fiat on-ramps/off-ramps for real Birr settlement.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="bg-purple-500/20 p-3 rounded-lg mr-4 text-purple-400 font-bold">03</div>
+                    <div>
+                        <h3 class="text-xl text-white font-bold">API First</h3>
+                        <p class="text-gray-400 text-sm">Plug-and-play SDK for any existing e-commerce site or Telegram
+                            bot.</p>
+                    </div>
                 </div>
             </div>
         </div>

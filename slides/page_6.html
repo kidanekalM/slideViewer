@@ -4,58 +4,75 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>The National Mandate</title>
+    <title>The Execution Gap</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
-
-        .highlight-box {
-            border-left: 4px solid #00D4AA;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-        }
     </style>
 </head>
 
 <body>
     <div class="slide gradient-bg flex flex-col p-12">
-        <div class="flex justify-between items-end mb-12">
-            <div>
-                <h1 class="text-5xl font-bold text-white mb-2">The National Mandate</h1>
-                <p class="text-xl text-gray-300">Digital Payments NBE National Digital Payment Strategy 2026–2030</p>
-            </div>
-            <div class="text-right">
-                <div class="text-teal-400 font-bold text-2xl">Action 36</div>
-                <div class="text-sm text-gray-500">Key Priority</div>
-            </div>
+        <div class="mb-10 text-center">
+            <h1 class="text-5xl font-bold text-white mb-2">The Execution Gap</h1>
+            <p class="text-xl text-gray-300">How trust is built today vs. how it should be.</p>
         </div>
 
-        <div class="flex gap-12 items-center h-full">
-            <div class="w-1/2 animate-fadeInUp">
-                <blockquote class="text-3xl text-white font-light italic leading-relaxed mb-6">
-                    "The growth of Ethiopia’s e-commerce is constrained by a lack of trust between unfamiliar buyers and
-                    sellers."
-                </blockquote>
-                <div class="text-gray-400">— NBE National Digital Payment Strategy Document, Page 52</div>
+        <div class="flex items-center justify-center gap-12 h-full">
+            <!-- The Old Way -->
+            <div class="w-1/2 bg-white bg-opacity-5 rounded-xl p-8 border border-red-500/20 animate-fadeInUp">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-2xl mr-4">🐢
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Traditional CPO</h3>
+                </div>
+                <div class="mb-4">
+                    <span class="bg-red-500/10 text-red-300 text-xs font-bold px-2 py-1 rounded">"Closed
+                        Accounts"</span>
+                </div>
+                <p class="text-gray-300 mb-6">
+                    Buyers must visit a bank branch to "block" funds (CPO).
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li class="flex items-start"><span class="text-red-500 mr-2">✕</span> <strong>Time
+                            Consuming:</strong> Takes days to process.</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2">✕</span> <strong>NBE Friction:</strong>
+                        Regulators want digital efficiency, not paper trails.</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-2">✕</span> <strong>Hard to use:</strong>
+                        Impossible for everyday e-commerce.</li>
+                </ul>
             </div>
 
-            <div class="w-1/2 space-y-6 animate-fadeInUp delay-200">
-                <div class="highlight-box">
-                    <h3 class="text-xl font-bold text-white mb-1">The Goal</h3>
-                    <p class="text-gray-300">Establish trusted <strong>Escrow Services</strong> to protect consumers and
-                        merchants.</p>
-                </div>
+            <!-- Arrow -->
+            <div class="text-teal-400 text-5xl animate-pulse">
+                ➡
+            </div>
 
-                <div class="highlight-box">
-                    <h3 class="text-xl font-bold text-white mb-1">The Target</h3>
-                    <div class="flex items-baseline gap-4">
-                        <span class="text-3xl font-bold text-teal-400">0.0008%</span>
-                        <span class="text-gray-300">Fraud Rate by 2030</span>
+            <!-- The SafeDeal Way -->
+            <div
+                class="w-1/2 bg-white bg-opacity-5 rounded-xl p-8 border border-teal-500/20 animate-fadeInUp delay-200">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-teal-500/20 flex items-center justify-center text-2xl mr-4">⚡
                     </div>
+                    <h3 class="text-2xl font-bold text-white">SafeDeal</h3>
                 </div>
+                <div class="mb-4">
+                    <span class="bg-teal-500/10 text-teal-300 text-xs font-bold px-2 py-1 rounded">Instant Escrow</span>
+                </div>
+                <p class="text-gray-300 mb-6">
+                    Trust generated via API in milliseconds.
+                </p>
+                <ul class="text-sm text-gray-400 space-y-3">
+                    <li class="flex items-start"><span class="text-teal-400 mr-2">✓</span> <strong>Instant:</strong>
+                        Create escrow & release funds in seconds.</li>
+                    <li class="flex items-start"><span class="text-teal-400 mr-2">✓</span> <strong>Fully
+                            Digital:</strong> Zero paperwork. 100% compliant.</li>
+                    <li class="flex items-start"><span class="text-teal-400 mr-2">✓</span> <strong>Seamless:</strong>
+                        Integrated directly into the app.</li>
+                </ul>
             </div>
         </div>
     </div>

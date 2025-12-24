@@ -4,56 +4,61 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Trust Infrastructure</title>
+    <title>Roadmap to Trust</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
-
-        .score-circle {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 10px solid #00D4AA;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 212, 170, 0.1);
-            box-shadow: 0 0 30px rgba(0, 212, 170, 0.2);
-        }
     </style>
 </head>
 
 <body>
     <div class="slide gradient-bg flex flex-col p-12">
-        <div class="mb-8">
-            <h1 class="text-5xl font-bold text-white mb-2">The Long Game: Identity</h1>
-            <p class="text-xl text-gray-300">Turning transaction data into creditworthiness</p>
+        <div class="mb-10 text-center">
+            <h1 class="text-5xl font-bold text-white mb-2">Roadmap to 2026</h1>
+            <p class="text-xl text-teal-400">Executing Action 36</p>
         </div>
 
-        <div class="flex items-center gap-16 justify-center h-full">
-            <div class="animate-fadeInUp">
-                <div class="score-circle">
-                    <span class="text-gray-300 text-sm uppercase tracking-widest">Trust Score</span>
-                    <span class="text-6xl font-bold text-white">850</span>
-                    <span class="text-teal-400 text-xs mt-2">SafeDeal Platinum</span>
+        <div class="relative mt-8">
+            <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-600 -translate-y-1/2 rounded"></div>
+
+            <div class="grid grid-cols-4 gap-4 relative z-10">
+                <!-- Q1 -->
+                <div class="animate-fadeInUp">
+                    <div class="w-8 h-8 bg-teal-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-teal-500/20">
+                        <h3 class="font-bold text-white mb-2">Q1 2025</h3>
+                        <p class="text-sm text-gray-300">Pilot with 3 Partner Banks & 50 Merchants</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="w-1/2 space-y-6 animate-fadeInUp delay-200">
-                <h3 class="text-3xl font-bold text-white leading-tight">
-                    Every successful escrow builds the merchant’s reputation.
-                </h3>
-                <p class="text-gray-400 text-lg">
-                    We aggregate delivery performance, dispute ratios, and volume to create a "Trust Score" that banks
-                    can finally use for <strong>Micro-Lending</strong>.
-                </p>
+                <!-- Q2 -->
+                <div class="animate-fadeInUp delay-100">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-blue-500/20">
+                        <h3 class="font-bold text-white mb-2">Q2 2025</h3>
+                        <p class="text-sm text-gray-300">Public API Launch. Integration with Major Telegram Bots.</p>
+                    </div>
+                </div>
 
-                <div class="bg-white bg-opacity-10 p-4 rounded-lg border-l-4 border-teal-500">
-                    <p class="text-white italic">"Data is the new collateral."</p>
+                <!-- Q3 -->
+                <div class="animate-fadeInUp delay-200">
+                    <div class="w-8 h-8 bg-purple-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-purple-500/20">
+                        <h3 class="font-bold text-white mb-2">Q4 2025</h3>
+                        <p class="text-sm text-gray-300">10,000 Active Users. $5M Transaction Volume.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="animate-fadeInUp delay-300">
+                    <div class="w-8 h-8 bg-yellow-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-yellow-500/20">
+                        <h3 class="font-bold text-white mb-2">2026</h3>
+                        <p class="text-sm text-gray-300">Launch of Trust Score Credit API for Micro-lending.</p>
+                    </div>
                 </div>
             </div>
         </div>
