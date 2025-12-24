@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Integration</title>
+    <title>Roadmap 2026</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
@@ -12,73 +12,71 @@
             background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
 
-        .terminal {
-            background: #1e1e1e;
-            border-radius: 8px;
-            padding: 16px;
-            font-family: 'Courier New', Courier, monospace;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        .milestone-dot {
+            width: 16px;
+            height: 16px;
+            background: #00D4AA;
+            border-radius: 50%;
+            position: relative;
+            z-index: 10;
+            border: 2px solid #0A2540;
+        }
+
+        .milestone-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 0;
+            transform: translateY(-50%);
         }
     </style>
 </head>
 
 <body>
-    <div class="slide gradient-bg flex flex-col p-12">
-        <div class="mb-10 text-center">
-            <h1 class="text-5xl font-bold text-white mb-2">10 Minutes to Trust</h1>
-            <p class="text-xl text-gray-400">Plug-and-play for any platform</p>
+    <div class="slide gradient-bg flex flex-col p-12 justify-center">
+        <div class="mb-16 text-center">
+            <h1 class="text-5xl font-bold text-white mb-2">Roadmap 2026</h1>
+            <p class="text-xl text-teal-400">Execution Plan</p>
         </div>
 
-        <div class="flex gap-12 items-center justify-center h-full">
-            <div class="w-1/2 animate-fadeInUp">
-                <div class="terminal text-white text-sm">
-                    <div class="flex gap-2 mb-4">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="space-y-2">
-                        <p class="text-gray-500"># Install the SDK</p>
-                        <p><span class="text-teal-400">$</span> npm install @safedeal/sdk</p>
-                        <br />
-                        <p class="text-gray-500"># Initialize Escrow</p>
-                        <p><span class="text-purple-400">const</span> escrow = <span class="text-blue-400">await</span>
-                            safedeal.create({</p>
-                        <p class="pl-4">amount: <span class="text-green-400">5000</span>,</p>
-                        <p class="pl-4">currency: <span class="text-green-400">'ETB'</span>,</p>
-                        <p class="pl-4">condition: <span class="text-green-400">'DELIVERY_CONFIRMED'</span></p>
-                        <p>});</p>
-                    </div>
-                </div>
-            </div>
+        <div class="relative w-full px-12">
+            <!-- Connecting Line -->
+            <div class="milestone-line"></div>
 
-            <div class="w-1/3 animate-fadeInUp delay-200 space-y-8">
-                <div class="flex items-start">
-                    <div
-                        class="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">
-                        1</div>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Telegram Bots</h3>
-                        <p class="text-gray-400 text-sm">Add a "Safe Pay" button to your bot instantly.</p>
-                    </div>
+            <div class="grid grid-cols-4 gap-4">
+                <!-- Q1 -->
+                <div class="relative text-center animate-fadeInUp">
+                    <div class="milestone-dot mx-auto mb-6"></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Q1</h3>
+                    <div class="text-teal-400 text-sm font-bold uppercase tracking-wider mb-2">Launch</div>
+                    <p class="text-gray-400 text-sm">App Live (iOS/Android)<br />2 Partner Banks</p>
                 </div>
-                <div class="flex items-start">
-                    <div
-                        class="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">
-                        2</div>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">Marketplace Web</h3>
-                        <p class="text-gray-400 text-sm">React/Vue components ready to drop in.</p>
-                    </div>
+
+                <!-- Q2 -->
+                <div class="relative text-center animate-fadeInUp delay-100">
+                    <div class="milestone-dot mx-auto mb-6 bg-blue-500 border-gray-900"></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Q2</h3>
+                    <div class="text-blue-400 text-sm font-bold uppercase tracking-wider mb-2">Growth</div>
+                    <p class="text-gray-400 text-sm">5k Active Users<br />Telegram Bot Beta</p>
                 </div>
-                <div class="flex items-start">
-                    <div
-                        class="bg-teal-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 font-bold">
-                        3</div>
-                    <div>
-                        <h3 class="text-white font-bold text-lg">ERP Systems</h3>
-                        <p class="text-gray-400 text-sm">Enterprise APIs for B2B supply chain escrow.</p>
-                    </div>
+
+                <!-- Q3 -->
+                <div class="relative text-center animate-fadeInUp delay-200">
+                    <div class="milestone-dot mx-auto mb-6 bg-purple-500 border-gray-900"></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Q3</h3>
+                    <div class="text-purple-400 text-sm font-bold uppercase tracking-wider mb-2">Ecosystem</div>
+                    <p class="text-gray-400 text-sm">Public API Launch<br />E-commerce Plugins</p>
+                </div>
+
+                <!-- Q4 -->
+                <div class="relative text-center animate-fadeInUp delay-300">
+                    <div class="milestone-dot mx-auto mb-6 bg-yellow-500 border-gray-900"></div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Q4</h3>
+                    <div class="text-yellow-400 text-sm font-bold uppercase tracking-wider mb-2">Scale</div>
+                    <p class="text-gray-400 text-sm">Trust Score Model<br />Micro-Lending Pilot</p>
                 </div>
             </div>
         </div>

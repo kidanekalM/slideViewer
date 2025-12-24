@@ -4,76 +4,74 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Ecosystem Unlock</title>
+    <title>The Future: Embedded Trust</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
-
-        .ecosystem-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
     </style>
 </head>
 
 <body>
     <div class="slide gradient-bg flex flex-col p-12">
-        <div class="mb-8 items-center">
-            <h1 class="text-5xl font-bold text-white mb-2">Unlocking the Ecosystem</h1>
-            <p class="text-xl text-teal-400">SafeDeal serves every stakeholder</p>
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-5xl font-bold text-white mb-2">The Future: Embedded Trust</h1>
+                <p class="text-xl text-teal-400">Scaling via API Infrastructure</p>
+            </div>
+            <div class="bg-blue-500/20 px-4 py-2 rounded-lg border border-blue-500/50">
+                <span class="text-blue-300 font-bold">Coming Soon</span>
+            </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-8 h-full">
-            <!-- Banks -->
-            <div class="ecosystem-card animate-fadeInUp">
-                <div class="flex items-center mb-4">
-                    <span class="text-3xl mr-4">🏦</span>
-                    <h3 class="text-2xl font-bold text-white">Banks</h3>
+        <div class="flex gap-12 items-center h-full">
+            <div class="w-1/2 space-y-6 animate-fadeInUp">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    We are building the <strong>Plug-and-Play SDK</strong> that allows ANY e-commerce app to offer
+                    bank-grade escrow without building it from scratch.
+                </p>
+
+                <div class="bg-white bg-opacity-5 p-6 rounded-xl border border-white/10">
+                    <h3 class="text-white font-bold mb-4">Why Platforms Need This</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="text-teal-400 mr-2">✓</span> <strong>Compliance:</strong> No need for their own
+                            Payment Operator license.
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="text-teal-400 mr-2">✓</span> <strong>Speed:</strong> Integrate "Safe Pay"
+                            button in <10 minutes. </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="text-teal-400 mr-2">✓</span> <strong>Trust:</strong> Instantly boost conversion
+                            by leveraging our banking partners.
+                        </li>
+                    </ul>
                 </div>
-                <ul class="text-gray-300 space-y-2">
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> New Float on Escrow Deposits
-                    </li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Zero Tech Investment (We
-                        provide it)</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Full Compliance with Action
-                        36</li>
-                </ul>
             </div>
 
-            <!-- Startups -->
-            <div class="ecosystem-card animate-fadeInUp delay-100">
-                <div class="flex items-center mb-4">
-                    <span class="text-3xl mr-4">🚀</span>
-                    <h3 class="text-2xl font-bold text-white">Startups & Apps</h3>
-                </div>
-                <ul class="text-gray-300 space-y-2">
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Offer "Protected Payments"
-                        instantly</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> No Financial License
-                        Required</li>
-                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Higher User Retention</li>
-                </ul>
-            </div>
-
-            <!-- PSOs -->
-            <div
-                class="ecosystem-card col-span-2 flex items-center justify-between animate-fadeInUp delay-200 bg-teal-900/20 border-teal-500/30">
-                <div class="w-2/3">
-                    <div class="flex items-center mb-2">
-                        <span class="text-3xl mr-4">📡</span>
-                        <h3 class="text-2xl font-bold text-white">PSOs (Payment Operators)</h3>
+            <div class="w-1/2 animate-fadeInUp delay-200">
+                <!-- Visual of SDK flowing into apps -->
+                <div class="relative bg-gray-900 rounded-xl p-8 border border-gray-700 shadow-2xl">
+                    <div class="absolute -top-4 -left-4 bg-teal-500 text-white px-3 py-1 rounded font-bold text-sm">
+                        SafeDeal API</div>
+                    <div class="font-mono text-sm text-gray-400 mb-2">// One line of code</div>
+                    <div class="font-mono text-sm text-white bg-black p-3 rounded mb-6">
+                        <span class="text-purple-400">await</span> SafeDeal.<span
+                            class="text-blue-400">checkout</span>({ escrow: <span class="text-green-400">true</span> });
                     </div>
-                    <p class="text-gray-300">Expand from simple transfers to complex conditional payments without
-                        building the logic from scratch.</p>
-                </div>
-                <div class="text-4xl text-teal-400 font-bold">
-                    +30% Yield
-                    <span class="block text-xs font-normal text-gray-400">on avg transaction fee</span>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-800 p-3 rounded text-center">
+                            <span class="text-2xl">🛒</span>
+                            <div class="text-xs text-gray-400 mt-1">Marketplaces</div>
+                        </div>
+                        <div class="bg-gray-800 p-3 rounded text-center">
+                            <span class="text-2xl">🤖</span>
+                            <div class="text-xs text-gray-400 mt-1">Telegram Bots</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

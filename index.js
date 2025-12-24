@@ -1,7 +1,7 @@
 class SimpleSlideViewer {
     constructor() {
         this.currentSlide = 1;
-        this.totalSlides = 18;
+        this.totalSlides = 16;
         this.slidesPath = 'slides/page_';
         this.isFullscreen = false;
 
