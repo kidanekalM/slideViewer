@@ -4,51 +4,65 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Policy Catalyst — Action 36 (Exact Quote)</title>
+    <title>Roadmap to Trust</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        .quote {
-            border-left: 4px solid #00D4AA;
-            background: rgba(10, 37, 64, 0.03);
-            padding: 16px 20px;
-            border-radius: 8px;
-        }
-        .badge {
-            display: inline-block;
-            background: #00D4AA;
-            color: white;
-            border-radius: 9999px;
-            padding: 6px 12px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-12">
-        <div class="mb-4 flex items-center justify-between">
-            <h1 class="title">Policy Catalyst — Action 36</h1>
-            <span class="badge">National Digital Payments Strategy 2026–2030</span>
-        </div>
-        <p class="subtitle mb-6">Exact wording from Page 51</p>
-
-        <div class="quote animate-fadeInUp">
-            <p class="text-gray-800 text-lg">
-                <strong>Action 36:</strong> Review existing regulatory frameworks to permit licensed payment system
-                operators to establish and operate escrow accounts at commercial banks and resolve the discrepancy
-                between settlement timelines and e-commerce return policies. This review will assess the necessary risk
-                management controls and legal frameworks required to enhance buyer-seller protection, reduce fraud, and
-                build a trusted digital marketplace.
-            </p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="mb-10 text-center">
+            <h1 class="text-5xl font-bold text-white mb-2">Roadmap to 2026</h1>
+            <p class="text-xl text-teal-400">Executing Action 36</p>
         </div>
 
-        <div class="mt-6 text-sm text-gray-500">
-            Source: Ethiopia National Digital Payments Strategy 2026–2030, Page 51
+        <div class="relative mt-8">
+            <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-600 -translate-y-1/2 rounded"></div>
+
+            <div class="grid grid-cols-4 gap-4 relative z-10">
+                <!-- Q1 -->
+                <div class="animate-fadeInUp">
+                    <div class="w-8 h-8 bg-teal-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-teal-500/20">
+                        <h3 class="font-bold text-white mb-2">Q1 2025</h3>
+                        <p class="text-sm text-gray-300">Pilot with 3 Partner Banks & 50 Merchants</p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="animate-fadeInUp delay-100">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-blue-500/20">
+                        <h3 class="font-bold text-white mb-2">Q2 2025</h3>
+                        <p class="text-sm text-gray-300">Public API Launch. Integration with Major Telegram Bots.</p>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="animate-fadeInUp delay-200">
+                    <div class="w-8 h-8 bg-purple-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-purple-500/20">
+                        <h3 class="font-bold text-white mb-2">Q4 2025</h3>
+                        <p class="text-sm text-gray-300">10,000 Active Users. $5M Transaction Volume.</p>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="animate-fadeInUp delay-300">
+                    <div class="w-8 h-8 bg-yellow-500 rounded-full border-4 border-gray-800 mx-auto mb-4"></div>
+                    <div class="bg-white bg-opacity-5 p-4 rounded-lg border border-yellow-500/20">
+                        <h3 class="font-bold text-white mb-2">2026</h3>
+                        <p class="text-sm text-gray-300">Launch of Trust Score Credit API for Micro-lending.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
-

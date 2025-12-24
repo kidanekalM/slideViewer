@@ -4,32 +4,83 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Our Solution</title>
+    <title>Broken Payment Rails</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-12">
-        <div class="mb-2">
-            <h1 class="title mb-2">Our Solution</h1>
-            <p class="subtitle">A neutral escrow layer for Ethiopian e‑commerce</p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="mb-8">
+            <h1 class="text-5xl font-bold text-white mb-2">Broken Payment Rails</h1>
+            <p class="text-white opacity-80 text-xl">Existing options force a choice between high risk and high cost.
+            </p>
         </div>
-        <div class="grid grid-cols-3 gap-6 mt-4">
-            <div class="card p-4 animate-fadeInUp">
-                <h3 class="font-bold text-gray-800 mb-2">Neutral Holding</h3>
-                <p class="text-gray-700">Funds held in escrow accounts at commercial banks, managed by licensed PSOs.</p>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Page 51</div>
+
+        <div class="grid grid-cols-3 gap-6 h-full items-center">
+            <!-- Direct Transfer -->
+            <div
+                class="bg-white bg-opacity-5 rounded-xl p-6 border border-red-500/20 h-80 flex flex-col animate-fadeInUp">
+                <div
+                    class="h-12 w-12 bg-red-500/20 rounded-full flex items-center justify-center mb-4 text-red-400 text-2xl">
+                    ⚠
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Direct Transfer</h3>
+                <p class="text-gray-400 text-sm mb-6">"Send me the screenshot"</p>
+
+                <div class="mt-auto space-y-3">
+                    <div class="flex items-center text-red-300 text-sm">
+                        <span class="mr-2">✕</span> Zero Buyer Protection
+                    </div>
+                    <div class="flex items-center text-red-300 text-sm">
+                        <span class="mr-2">✕</span> Scammer's Favorite
+                    </div>
+                </div>
             </div>
-            <div class="card p-4 animate-fadeInUp delay-200">
-                <h3 class="font-bold text-gray-800 mb-2">Aligned Release</h3>
-                <p class="text-gray-700">Release on acceptance or after the return window; refund on valid return.</p>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Pages 51–52</div>
+
+            <!-- Cash on Delivery -->
+            <div
+                class="bg-white bg-opacity-5 rounded-xl p-6 border border-orange-500/20 h-80 flex flex-col animate-fadeInUp delay-100">
+                <div
+                    class="h-12 w-12 bg-orange-500/20 rounded-full flex items-center justify-center mb-4 text-orange-400 text-2xl">
+                    📦
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Cash on Delivery</h3>
+                <p class="text-gray-400 text-sm mb-6">"Pay when it arrives"</p>
+
+                <div class="mt-auto space-y-3">
+                    <div class="flex items-center text-orange-300 text-sm">
+                        <span class="mr-2">✕</span> High Operational Cost
+                    </div>
+                    <div class="flex items-center text-orange-300 text-sm">
+                        <span class="mr-2">✕</span> High Refusal Rate
+                    </div>
+                </div>
             </div>
-            <div class="card p-4 animate-fadeInUp delay-300">
-                <h3 class="font-bold text-gray-800 mb-2">Auditable Controls</h3>
-                <p class="text-gray-700">Clear rules, dispute flows, and reporting to reduce fraud.</p>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Page 51</div>
+
+            <!-- Informal Escrow -->
+            <div
+                class="bg-white bg-opacity-5 rounded-xl p-6 border border-yellow-500/20 h-80 flex flex-col animate-fadeInUp delay-200">
+                <div
+                    class="h-12 w-12 bg-yellow-500/20 rounded-full flex items-center justify-center mb-4 text-yellow-400 text-2xl">
+                    🤝
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Informal Middlemen</h3>
+                <p class="text-gray-400 text-sm mb-6">"Trust this guy"</p>
+
+                <div class="mt-auto space-y-3">
+                    <div class="flex items-center text-yellow-300 text-sm">
+                        <span class="mr-2">✕</span> Unregulated
+                    </div>
+                    <div class="flex items-center text-yellow-300 text-sm">
+                        <span class="mr-2">✕</span> Slow & Expensive
+                    </div>
+                </div>
             </div>
         </div>
     </div>

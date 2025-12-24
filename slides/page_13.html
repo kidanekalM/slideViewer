@@ -4,38 +4,80 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Impact & 2030 Targets</title>
+    <title>Ecosystem Unlock</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
+        }
+
+        .ecosystem-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-12">
-        <div class="mb-2">
-            <h1 class="title mb-2">Impact & 2030 Targets</h1>
-            <p class="subtitle">What success looks like by 2030</p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="mb-8 items-center">
+            <h1 class="text-5xl font-bold text-white mb-2">Unlocking the Ecosystem</h1>
+            <p class="text-xl text-teal-400">SafeDeal serves every stakeholder</p>
         </div>
-        <div class="grid grid-cols-2 gap-6 mt-4">
-            <div class="card p-4 animate-fadeInUp">
-                <h3 class="font-bold text-gray-800 mb-2">Usage & Activity</h3>
-                <ul class="text-gray-700">
-                    <li><span class="text-teal-500 font-semibold">Digital payments per adult:</span> 54 → 275 / year</li>
-                    <li><span class="text-teal-500 font-semibold">Users making merchant payments (30 days):</span> 24% → 60%</li>
+
+        <div class="grid grid-cols-2 gap-8 h-full">
+            <!-- Banks -->
+            <div class="ecosystem-card animate-fadeInUp">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-4">🏦</span>
+                    <h3 class="text-2xl font-bold text-white">Banks</h3>
+                </div>
+                <ul class="text-gray-300 space-y-2">
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> New Float on Escrow Deposits
+                    </li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Zero Tech Investment (We
+                        provide it)</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Full Compliance with Action
+                        36</li>
                 </ul>
-                <div class="text-xs text-gray-500 mt-2">Source: Strategy 2026–2030</div>
             </div>
-            <div class="card p-4 animate-fadeInUp delay-200">
-                <h3 class="font-bold text-gray-800 mb-2">Market & Infrastructure</h3>
-                <ul class="text-gray-700">
-                    <li><span class="text-teal-500 font-semibold">E‑commerce share of digital payments:</span> target 4%</li>
-                    <li><span class="text-teal-500 font-semibold">Centralized data exchange layer:</span> 0 → 1</li>
+
+            <!-- Startups -->
+            <div class="ecosystem-card animate-fadeInUp delay-100">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-4">🚀</span>
+                    <h3 class="text-2xl font-bold text-white">Startups & Apps</h3>
+                </div>
+                <ul class="text-gray-300 space-y-2">
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Offer "Protected Payments"
+                        instantly</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> No Financial License
+                        Required</li>
+                    <li class="flex items-center"><span class="text-teal-400 mr-2">✓</span> Higher User Retention</li>
                 </ul>
-                <div class="text-xs text-gray-500 mt-2">Source: Strategy 2026–2030</div>
+            </div>
+
+            <!-- PSOs -->
+            <div
+                class="ecosystem-card col-span-2 flex items-center justify-between animate-fadeInUp delay-200 bg-teal-900/20 border-teal-500/30">
+                <div class="w-2/3">
+                    <div class="flex items-center mb-2">
+                        <span class="text-3xl mr-4">📡</span>
+                        <h3 class="text-2xl font-bold text-white">PSOs (Payment Operators)</h3>
+                    </div>
+                    <p class="text-gray-300">Expand from simple transfers to complex conditional payments without
+                        building the logic from scratch.</p>
+                </div>
+                <div class="text-4xl text-teal-400 font-bold">
+                    +30% Yield
+                    <span class="block text-xs font-normal text-gray-400">on avg transaction fee</span>
+                </div>
             </div>
         </div>
-        <div class="mt-6 text-gray-700">Escrow aligns incentives to lift merchant payments and reduce fraud, supporting the strategy’s activity and protection goals.</div>
     </div>
 </body>
 
 </html>
-

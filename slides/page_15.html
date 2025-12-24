@@ -4,44 +4,60 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Call to Action</title>
+    <title>Trust Infrastructure</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 10px solid #00D4AA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 212, 170, 0.1);
+            box-shadow: 0 0 30px rgba(0, 212, 170, 0.2);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-12">
-        <div class="mb-2">
-            <h1 class="title mb-2">Call to Action</h1>
-            <p class="subtitle">Turn trust into growth for Ethiopian e‑commerce</p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="mb-8">
+            <h1 class="text-5xl font-bold text-white mb-2">The Long Game: Identity</h1>
+            <p class="text-xl text-gray-300">Turning transaction data into creditworthiness</p>
         </div>
-        <div class="grid grid-cols-3 gap-6 mt-4">
-            <div class="card p-4 animate-fadeInUp">
-                <h3 class="font-bold text-gray-800 mb-2">Regulatory Collaboration</h3>
-                <ul class="text-gray-700">
-                    <li>Co‑design Action 36 implementation</li>
-                    <li>Define escrow controls & reporting</li>
-                </ul>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Pages 51–52</div>
+
+        <div class="flex items-center gap-16 justify-center h-full">
+            <div class="animate-fadeInUp">
+                <div class="score-circle">
+                    <span class="text-gray-300 text-sm uppercase tracking-widest">Trust Score</span>
+                    <span class="text-6xl font-bold text-white">850</span>
+                    <span class="text-teal-400 text-xs mt-2">SafeDeal Platinum</span>
+                </div>
             </div>
-            <div class="card p-4 animate-fadeInUp delay-200">
-                <h3 class="font-bold text-gray-800 mb-2">Bank & PSO Partners</h3>
-                <ul class="text-gray-700">
-                    <li>Set up segregated escrow accounts</li>
-                    <li>Integrate APIs & settlement rules</li>
-                </ul>
-            </div>
-            <div class="card p-4 animate-fadeInUp delay-300">
-                <h3 class="font-bold text-gray-800 mb-2">Pilots & Marketplaces</h3>
-                <ul class="text-gray-700">
-                    <li>Pilot with top marketplaces & verticals</li>
-                    <li>Measure fraud, disputes, release time</li>
-                </ul>
+
+            <div class="w-1/2 space-y-6 animate-fadeInUp delay-200">
+                <h3 class="text-3xl font-bold text-white leading-tight">
+                    Every successful escrow builds the merchant’s reputation.
+                </h3>
+                <p class="text-gray-400 text-lg">
+                    We aggregate delivery performance, dispute ratios, and volume to create a "Trust Score" that banks
+                    can finally use for <strong>Micro-Lending</strong>.
+                </p>
+
+                <div class="bg-white bg-opacity-10 p-4 rounded-lg border-l-4 border-teal-500">
+                    <p class="text-white italic">"Data is the new collateral."</p>
+                </div>
             </div>
         </div>
-        <div class="mt-6 text-gray-700">With escrow enabled, Ethiopia can unlock safe, scalable digital commerce and meet 2030 usage targets.</div>
     </div>
 </body>
 
 </html>
-

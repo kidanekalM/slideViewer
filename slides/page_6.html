@@ -4,39 +4,58 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Value</title>
+    <title>The National Mandate</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
+        }
+
+        .highlight-box {
+            border-left: 4px solid #00D4AA;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-12">
-        <div class="mb-2">
-            <h1 class="title mb-2">Value</h1>
-            <p class="subtitle">Simple benefits for all sides</p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h1 class="text-5xl font-bold text-white mb-2">The National Mandate</h1>
+                <p class="text-xl text-gray-300">Digital Payments Strategy 2026–2030</p>
+            </div>
+            <div class="text-right">
+                <div class="text-teal-400 font-bold text-2xl">Action 36</div>
+                <div class="text-sm text-gray-500">Key Priority</div>
+            </div>
         </div>
-        <div class="grid grid-cols-3 gap-6 mt-4">
-            <div class="card p-4 animate-fadeInUp">
-                <h3 class="font-bold text-gray-800 mb-2">Buyers</h3>
-                <ul class="text-gray-700">
-                    <li>Pay with confidence</li>
-                    <li>Refunds aligned to return policies</li>
-                </ul>
+
+        <div class="flex gap-12 items-center h-full">
+            <div class="w-1/2 animate-fadeInUp">
+                <blockquote class="text-3xl text-white font-light italic leading-relaxed mb-6">
+                    "The growth of Ethiopia’s e-commerce is constrained by a lack of trust between unfamiliar buyers and
+                    sellers."
+                </blockquote>
+                <div class="text-gray-400">— Strategy Document, Page 52</div>
             </div>
-            <div class="card p-4 animate-fadeInUp delay-200">
-                <h3 class="font-bold text-gray-800 mb-2">Merchants</h3>
-                <ul class="text-gray-700">
-                    <li>10‑minute install; no new bank account</li>
-                    <li>Fewer disputes; faster cash on acceptance</li>
-                </ul>
-            </div>
-            <div class="card p-4 animate-fadeInUp delay-300">
-                <h3 class="font-bold text-gray-800 mb-2">Platforms & PSOs</h3>
-                <ul class="text-gray-700">
-                    <li>Differentiate with trusted checkout</li>
-                    <li>Auditable controls aligned with Action 36</li>
-                </ul>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Pages 51–52</div>
+
+            <div class="w-1/2 space-y-6 animate-fadeInUp delay-200">
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-white mb-1">The Goal</h3>
+                    <p class="text-gray-300">Establish trusted <strong>Escrow Services</strong> to protect consumers and
+                        merchants.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3 class="text-xl font-bold text-white mb-1">The Target</h3>
+                    <div class="flex items-baseline gap-4">
+                        <span class="text-3xl font-bold text-teal-400">0.0008%</span>
+                        <span class="text-gray-300">Fraud Rate by 2030</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

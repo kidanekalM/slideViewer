@@ -4,180 +4,77 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Why Now: Policy Catalyst</title>
+    <title>The Trust Standoff</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        /* Page-specific overrides */
-        .solution-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            height: 100%;
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
 
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        .speech-bubble {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
         }
 
-        .solution-icon {
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-
-        .failure-badge {
-            background: #FEF2F2;
-            color: #EF4444;
-            border-radius: 20px;
-            padding: 4px 12px;
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            animation: pulse 2s infinite;
-        }
-
-        .solution-header {
-            border-bottom: 2px solid #EFF6FF;
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-        }
-
-        .comparison-table th {
-            background-color: rgba(10, 37, 64, 0.05);
-            padding: 10px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 10px;
-            border-bottom: 1px solid #EFF6FF;
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .comparison-table .solution-icon {
-            font-size: 24px;
-        }
-
-        @keyframes shake {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            10%,
-            30%,
-            50%,
-            70%,
-            90% {
-                transform: translateX(-5px);
-            }
-
-            20%,
-            40%,
-            60%,
-            80% {
-                transform: translateX(5px);
-            }
-        }
-
-        .animate-row {
-            opacity: 0;
-            animation: slideInLeft 0.8s ease-out forwards;
-        }
-
-        .shake-on-hover:hover .solution-icon {
-            animation: shake 0.5s;
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0.1) transparent;
+            transform: translateX(-50%);
         }
     </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-12">
-        <div class="mb-2">
-            <h1 class="title mb-2">Why Now: Policy Catalyst</h1>
-            <p class="subtitle">Action 36 unlocks escrow for trust</p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="mb-8 text-center">
+            <h1 class="text-5xl font-bold text-white mb-4">The Trust Standoff</h1>
+            <p class="text-xl text-teal-400 font-semibold">"First pay me" vs "First deliver it"</p>
         </div>
-        <div class="grid grid-cols-2 gap-6 mt-4">
-            <div class="card p-4 animate-fadeInUp">
-                <h3 class="font-bold text-gray-800 mb-2">What Action 36 Enables</h3>
-                <ul class="text-gray-700">
-                    <li>Licensed PSOs can operate escrow at commercial banks</li>
-                    <li>Aligns T+2 settlement with 7‑day return policies</li>
-                    <li>Defines risk controls and legal frameworks</li>
-                </ul>
-                <div class="text-xs text-gray-500 mt-2">Source: Strategy 2026–2030, Page 51</div>
-            </div>
-            <div class="card p-4 animate-fadeInUp delay-200">
-                <h3 class="font-bold text-gray-800 mb-2">Why It Matters</h3>
-                <ul class="text-gray-700">
-                    <li>Buyer–seller protection where trust is low</li>
-                    <li>Reduced fraud; stronger consumer confidence</li>
-                    <li>Foundation for a thriving digital marketplace</li>
-                </ul>
-                <div class="text-xs text-gray-500 mt-2">Source: Strategy 2026–2030, Page 52</div>
-            </div>
-        </div>
-    </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-times-circle text-red-500 mr-2"></i>
-                            <p class="text-sm">Scammer favorite</p>
-                        </div>
+
+        <div class="flex justify-center items-center h-full gap-12">
+            <!-- Buyer Perspective -->
+            <div class="flex flex-col items-center w-1/3 animate-fadeInUp">
+                <div class="speech-bubble mb-6 w-full text-center">
+                    <p class="text-white text-lg italic">
+                        "If I send money first, they might ghost me.<br />
+                        What if the product is fake?"
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-5 p-6 rounded-xl border border-red-500/30 w-full">
+                    <h3 class="text-2xl font-bold text-white mb-2">The Buyer</h3>
+                    <p class="text-gray-300 mb-4">Fears fraud & non-delivery</p>
+                    <div class="bg-red-500/20 text-red-300 px-3 py-1 rounded inline-block text-sm">
+                        Result: Demands Cash on Delivery
                     </div>
                 </div>
-                <!-- Bank Card -->
-                <div class="solution-card p-4">
-                    <div class="solution-header flex items-center justify-between">
-                        <div>
-                            <h3 class="font-bold text-gray-800">Bank Escrow</h3>
-                            <p class="text-sm text-gray-500">"Safe" option</p>
-                        </div>
-                        <i class="fas fa-university text-blue-600 text-2xl"></i>
-                    </div>
-                    <div class="mt-2">
-                        <div class="flex items-center mb-1">
-                            <i class="fas fa-times-circle text-red-500 mr-2"></i>
-                            <p class="text-sm">Requires bank accounts</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-times-circle text-red-500 mr-2"></i>
-                            <p class="text-sm">5-10% fees</p>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Friction Icon -->
+            <div class="text-4xl text-white opacity-50 animate-pulse">
+                ⚡
+            </div>
+
+            <!-- Seller Perspective -->
+            <div class="flex flex-col items-center w-1/3 animate-fadeInUp delay-200">
+                <div class="speech-bubble mb-6 w-full text-center">
+                    <p class="text-white text-lg italic">
+                        "If I ship first, they might reject it.<br />
+                        I pay delivery fees for nothing."
+                    </p>
                 </div>
-                <!-- Centralized App Card -->
-                <div class="solution-card p-4">
-                    <div class="solution-header flex items-center justify-between">
-                        <div>
-                            <h3 class="font-bold text-gray-800">Centralized Apps</h3>
-                            <p class="text-sm text-gray-500">Tech solution</p>
-                        </div>
-                        <i class="fas fa-mobile-alt text-teal-500 text-2xl"></i>
-                    </div>
-                    <div class="mt-2">
-                        <div class="flex items-center mb-1">
-                            <i class="fas fa-times-circle text-red-500 mr-2"></i>
-                            <p class="text-sm">Single point of failure</p>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-times-circle text-red-500 mr-2"></i>
-                            <p class="text-sm">Trust in third party</p>
-                        </div>
+                <div class="bg-white bg-opacity-5 p-6 rounded-xl border border-orange-500/30 w-full">
+                    <h3 class="text-2xl font-bold text-white mb-2">The Seller</h3>
+                    <p class="text-gray-300 mb-4">Fears rejection & logistics loss</p>
+                    <div class="bg-orange-500/20 text-orange-300 px-3 py-1 rounded inline-block text-sm">
+                        Result: Restricted Market Reach
                     </div>
                 </div>
             </div>

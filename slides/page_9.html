@@ -4,36 +4,76 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Solution Overview — Neutral Escrow Layer</title>
+    <title>The SafeDeal Flow</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            border-top: 4px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-12">
-        <div class="mb-2">
-            <h1 class="title mb-2">Neutral Escrow Layer</h1>
-            <p class="subtitle">Buyer–seller protection integrated with PSOs and banks</p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="text-center mb-10">
+            <h1 class="text-5xl font-bold text-white mb-2">How It Works</h1>
+            <p class="text-gray-300">Trust automated by code.</p>
         </div>
-        <div class="grid grid-cols-3 gap-6 mt-4">
-            <div class="card p-4 animate-fadeInUp">
-                <h3 class="font-bold text-gray-800 mb-2">Funds Held at Bank</h3>
-                <p class="text-gray-700">Licensed PSO‑managed escrow accounts at commercial banks protect funds until conditions are met.</p>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Page 51</div>
+
+        <div class="grid grid-cols-3 gap-8 h-full">
+            <!-- Step 1 -->
+            <div class="step-card border-purple-500 animate-fadeInUp">
+                <div class="step-icon text-purple-400">🔒</div>
+                <h3 class="text-2xl font-bold text-white mb-2">1. Buyer Pays</h3>
+                <p class="text-gray-300">Funds are not sent to the seller. They are locked in a secure smart contract
+                    escrow.</p>
+                <div class="mt-4 text-xs text-purple-300 bg-purple-500/10 inline-block px-2 py-1 rounded">
+                    Money Safe
+                </div>
             </div>
-            <div class="card p-4 animate-fadeInUp delay-200">
-                <h3 class="font-bold text-gray-800 mb-2">Rules Tied to Returns</h3>
-                <p class="text-gray-700">Release aligned with acceptance or the end of the 7‑day return window.</p>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Pages 51–52</div>
+
+            <!-- Step 2 -->
+            <div class="step-card border-blue-500 animate-fadeInUp delay-100">
+                <div class="step-icon text-blue-400">🚚</div>
+                <h3 class="text-2xl font-bold text-white mb-2">2. Seller Ships</h3>
+                <p class="text-gray-300">Seller sees proof of funds and ships the product with confidence.</p>
+                <div class="mt-4 text-xs text-blue-300 bg-blue-500/10 inline-block px-2 py-1 rounded">
+                    Seller Protected
+                </div>
             </div>
-            <div class="card p-4 animate-fadeInUp delay-300">
-                <h3 class="font-bold text-gray-800 mb-2">Auditable Controls</h3>
-                <p class="text-gray-700">Risk controls and clear legal frameworks to reduce fraud and disputes.</p>
-                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Page 51</div>
+
+            <!-- Step 3 -->
+            <div class="step-card border-teal-500 animate-fadeInUp delay-200">
+                <div class="step-icon text-teal-400">🤝</div>
+                <h3 class="text-2xl font-bold text-white mb-2">3. Release</h3>
+                <p class="text-gray-300">Funds are automatically released when the buyer accepts or the return window
+                    expires.</p>
+                <div class="mt-4 text-xs text-teal-300 bg-teal-500/10 inline-block px-2 py-1 rounded">
+                    Instant Settlement
+                </div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
-
