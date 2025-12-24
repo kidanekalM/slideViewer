@@ -4,297 +4,39 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>AI-Powered Dispute Resolution</title>
+    <title>Value</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
-    <style>
-        /* Page-specific overrides */
-        .comparison-icon {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-
-        .traditional {
-            background-color: rgba(239, 68, 68, 0.05);
-            border-left: 4px solid #EF4444;
-            opacity: 0;
-            animation: slideInLeft 0.8s ease-out forwards;
-        }
-
-        .safedeal {
-            background-color: rgba(16, 185, 129, 0.05);
-            border-left: 4px solid #10B981;
-            opacity: 0;
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-
-        .case-example {
-            background-color: rgba(0, 212, 170, 0.05);
-            border-left: 4px solid #00D4AA;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 0.5s forwards;
-        }
-
-        .comparison-header {
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .comparison-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .comparison-icon-wrapper {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        .traditional-icon {
-            background-color: rgba(239, 68, 68, 0.1);
-            color: #EF4444;
-        }
-
-        .safedeal-icon {
-            background-color: rgba(16, 185, 129, 0.1);
-            color: #10B981;
-        }
-
-        .case-icon {
-            background-color: rgba(0, 212, 170, 0.1);
-            color: #00D4AA;
-        }
-
-        .vs-badge {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 10;
-            opacity: 0;
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards;
-        }
-
-        @keyframes popIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
-
-        @keyframes flash {
-
-            0%,
-            50%,
-            100% {
-                opacity: 1;
-            }
-
-            25%,
-            75% {
-                opacity: 0.5;
-            }
-        }
-
-        .flash-text {
-            animation: flash 2s ease-in-out infinite;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10">
-        <!-- Header -->
-        <div class="mb-4">
-            <h1 class="title mb-2">AI-Powered Dispute Resolution</h1>
-            <p class="subtitle">Fairness for the Digital Economy</p>
+    <div class="slide flex flex-col p-12">
+        <div class="mb-2">
+            <h1 class="title mb-2">Value</h1>
+            <p class="subtitle">Simple benefits for all sides</p>
         </div>
-        <!-- Main Content -->
-        <div class="flex flex-1 space-x-6">
-            <!-- Left Column - Traditional vs SafeDeal -->
-            <div class="w-3/5 flex flex-col space-y-4">
-                <!-- Comparison Headers -->
-                <div class="flex relative">
-                    <!-- Traditional -->
-                    <div class="w-1/2 pr-3">
-                        <div class="traditional card p-4 h-full">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-user-slash comparison-icon text-red-500 mr-3"></i>
-                                <h3 class="comparison-header text-red-500 font-semibold">Traditional Way</h3>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="comparison-item">
-                                    <div class="comparison-icon-wrapper traditional-icon">
-                                        <i class="fas fa-ban"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Seller blocks you</p>
-                                    </div>
-                                </div>
-                                <div class="comparison-item">
-                                    <div class="comparison-icon-wrapper traditional-icon">
-                                        <i class="fas fa-money-bill-wave"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">100% Financial Loss</p>
-                                    </div>
-                                </div>
-                                <div class="comparison-item">
-                                    <div class="comparison-icon-wrapper traditional-icon">
-                                        <i class="fas fa-university"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">No Bank Recourse</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- VS Badge -->
-                    <div class="vs-badge absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">VS</div>
-                    <!-- SafeDeal -->
-                    <div class="w-1/2 pl-3">
-                        <div class="safedeal card p-4 h-full">
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-shield-alt comparison-icon text-green-500 mr-3"></i>
-                                <h3 class="comparison-header text-green-500 font-semibold">SafeDeal Way</h3>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="comparison-item">
-                                    <div class="comparison-icon-wrapper safedeal-icon">
-                                        <i class="fas fa-lock"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Funds held in Escrow</p>
-                                    </div>
-                                </div>
-                                <div class="comparison-item">
-                                    <div class="comparison-icon-wrapper safedeal-icon">
-                                        <i class="fas fa-comments"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">AI Analyzes Chat Logs</p>
-                                    </div>
-                                </div>
-                                <div class="comparison-item">
-                                    <div class="comparison-icon-wrapper safedeal-icon">
-                                        <i class="fas fa-undo"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Instant Refund</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Case Example -->
-                <div class="case-example card p-4 flex-1">
-                    <div class="flex items-center mb-2">
-                        <i class="fas fa-shopping-bag comparison-icon text-teal-500 mr-3"></i>
-                        <h3 class="comparison-header text-teal-500 font-semibold">Real-World Scenario</h3>
-                    </div>
-                    <div class="mb-3">
-                        <p class="font-medium text-gray-700"><i
-                                class="fas fa-exclamation-circle text-amber-500 mr-2"></i>Dispute: "I ordered a red
-                            dress, but received a blue one."</p>
-                    </div>
-                    <div class="flex">
-                        <div class="w-1/2 pr-4 border-r border-gray-200">
-                            <p class="text-sm text-gray-500 mb-1">Without SafeDeal:</p>
-                            <p class="font-medium text-red-500"><i class="fas fa-times mr-1"></i> Seller says "No
-                                Returns" and blocks buyer.</p>
-                            <p class="font-bold text-gray-800 mt-1">Result: ETB 3,000 Loss</p>
-                        </div>
-                        <div class="w-1/2 pl-4">
-                            <p class="text-sm text-gray-500 mb-1">With SafeDeal:</p>
-                            <p class="font-medium text-green-500"><i class="fas fa-check mr-1"></i> AI verifies 'Red'
-                                order in chat logs.</p>
-                            <p class="font-bold text-gray-800 mt-1 flash-text">Result: Full Refund Released</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid grid-cols-3 gap-6 mt-4">
+            <div class="card p-4 animate-fadeInUp">
+                <h3 class="font-bold text-gray-800 mb-2">Buyers</h3>
+                <ul class="text-gray-700">
+                    <li>Pay with confidence</li>
+                    <li>Refunds aligned to return policies</li>
+                </ul>
             </div>
-            <!-- Right Column - Benefits -->
-            <div class="w-2/5">
-                <div class="card p-5 h-full opacity-0" style="animation: fadeInUp 0.8s ease-out 1s forwards;">
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Why It Works</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-800">Automated Evidence Review</p>
-                                <p class="text-gray-600 text-sm">Our AI analyzes chat logs and transaction terms to
-                                    verify claims
-                                    instantly, without human bias.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
-                                <i class="fas fa-balance-scale"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-800">Fairness by Default</p>
-                                <p class="text-gray-600 text-sm">Funds are only released when both parties are satisfied
-                                    or a dispute is resolved.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-800">Speed</p>
-                                <p class="text-gray-600 text-sm">Disputes that used to take weeks are now resolved in
-                                    minutes.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="comparison-icon-wrapper bg-blue-50 text-blue-500 mr-3 mt-1">
-                                <i class="fas fa-globe-africa"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-800">Trust for Everyone</p>
-                                <p class="text-gray-600 text-sm">Making e-commerce safe for the 95% of Ethiopians who
-                                    don't trust paying upfront.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="card p-4 animate-fadeInUp delay-200">
+                <h3 class="font-bold text-gray-800 mb-2">Sellers</h3>
+                <ul class="text-gray-700">
+                    <li>Fewer scams and chargebacks</li>
+                    <li>Faster release on acceptance</li>
+                </ul>
+            </div>
+            <div class="card p-4 animate-fadeInUp delay-300">
+                <h3 class="font-bold text-gray-800 mb-2">PSOs & Regulators</h3>
+                <ul class="text-gray-700">
+                    <li>Lower fraud with auditable controls</li>
+                    <li>Aligned with Action 36</li>
+                </ul>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Pages 51–52</div>
             </div>
         </div>
     </div>

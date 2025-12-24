@@ -4,172 +4,44 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Vision for Ethiopia&#39;s Digital Future</title>
+    <title>Call to Action</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
-    <style>
-        /* Page-specific overrides */
-        .vision-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .vision-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .vision-icon {
-            font-size: 36px;
-            margin-bottom: 16px;
-        }
-
-        .impact-number {
-            font-size: 40px;
-            font-weight: 800;
-            line-height: 1;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #00D4AA, #10B981);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hexagon {
-            position: absolute;
-            width: 300px;
-            height: 260px;
-            background-color: rgba(0, 212, 170, 0.05);
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            z-index: 1;
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-8">
-        <!-- Background elements -->
-        <div class="hexagon" style="top: -50px; right: -50px;"></div>
-        <div class="hexagon" style="bottom: -50px; left: 200px; animation-direction: reverse;"></div>
-        <!-- Header -->
-        <div class="mb-6 z-10">
-            <h1 class="title mb-1">Strategic Alignment: National Digital Payments Strategy 2030</h1>
-            <p class="subtitle">SafeDeal answers the government's call for Escrow Services (Action 36)</p>
+    <div class="slide flex flex-col p-12">
+        <div class="mb-2">
+            <h1 class="title mb-2">Call to Action</h1>
+            <p class="subtitle">Turn trust into growth for Ethiopian e‑commerce</p>
         </div>
-        <!-- Main Vision Statement -->
-        <div class="vision-card p-5 mb-5 z-10 border-l-4 border-teal-500" style="animation-delay: 0.1s;">
-            <h2 class="text-xl font-bold text-gray-800 mb-1">The Mandate: Action 36</h2>
-            <p class="text-lg text-gray-700 italic">
-                "Review regulatory frameworks to permit licensed payment system operators to establish and operate
-                escrow accounts... to build a trusted digital marketplace."
-                <span class="text-sm not-italic text-gray-500 block mt-1">- National Digital Payments Strategy 2026-2030
-                    (Page 51)</span>
-            </p>
-        </div>
-        <!-- Strategic Alignment and Future Impact -->
-        <div class="flex flex-1 space-x-5 z-10">
-            <!-- Left Column - Strategic Alignment -->
-            <div class="w-1/2">
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Identified Regulatory Gaps</h3>
-                <div class="space-y-3">
-                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-red-500 vision-card"
-                        style="animation-delay: 0.3s;">
-                        <div class="mr-3 mt-1">
-                            <i class="fas fa-shield-alt text-2xl text-red-500"></i>
-                        </div>
-                        <div>
-                            <p class="font-medium text-gray-800">Trust Deficit</p>
-                            <p class="text-sm text-gray-600">"E-commerce sector is significantly constrained by a lack
-                                of trust between unfamiliar buyers/sellers."</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-amber-500 vision-card"
-                        style="animation-delay: 0.4s;">
-                        <div class="mr-3 mt-1">
-                            <i class="fas fa-ban text-2xl text-amber-500"></i>
-                        </div>
-                        <div>
-                            <p class="font-medium text-gray-800">Infrastructure Gap</p>
-                            <p class="text-sm text-gray-600">"PSOs are currently not permitted to operate escrow
-                                accounts," preventing trust infrastructure.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start bg-white p-3 rounded-lg shadow-sm border-l-4 border-blue-500 vision-card"
-                        style="animation-delay: 0.5s;">
-                        <div class="mr-3 mt-1">
-                            <i class="fas fa-clock text-2xl text-blue-500"></i>
-                        </div>
-                        <div>
-                            <p class="font-medium text-gray-800">Policy Mismatch</p>
-                            <p class="text-sm text-gray-600">"Settlement timelines (T+2) do not match e-commerce return
-                                policies (7 days)," creating risk.</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid grid-cols-3 gap-6 mt-4">
+            <div class="card p-4 animate-fadeInUp">
+                <h3 class="font-bold text-gray-800 mb-2">Regulatory Collaboration</h3>
+                <ul class="text-gray-700">
+                    <li>Co‑design Action 36 implementation</li>
+                    <li>Define escrow controls & reporting</li>
+                </ul>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Pages 51–52</div>
             </div>
-            <!-- Right Column - Future Impact -->
-            <div class="w-1/2">
-                <h3 class="text-xl font-bold text-gray-800 mb-3">National Targets (2030)</h3>
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="vision-card p-4 flex flex-col items-center justify-center"
-                        style="animation-delay: 0.6s;">
-                        <i class="fas fa-chart-line text-amber-500 text-2xl mb-2"></i>
-                        <div class="impact-number gradient-text">750%</div>
-                        <p class="text-center text-gray-700 font-medium text-sm">Target: Digital Tx Value (% of GDP)</p>
-                    </div>
-                    <div class="vision-card p-4 flex flex-col items-center justify-center"
-                        style="animation-delay: 0.7s;">
-                        <i class="fas fa-shopping-cart text-teal-500 text-2xl mb-2"></i>
-                        <div class="impact-number gradient-text">4%</div>
-                        <p class="text-center text-gray-700 font-medium text-sm">Target: E-commerce Share (from <1%)<
-                                /p>
-                    </div>
-                    <div class="vision-card p-4 flex flex-col items-center justify-center"
-                        style="animation-delay: 0.8s;">
-                        <i class="fas fa-user-shield text-blue-500 text-2xl mb-2"></i>
-                        <div class="impact-number gradient-text">0.0008%</div>
-                        <p class="text-center text-gray-700 font-medium text-sm">Target: Fraud Rate</p>
-                    </div>
-                    <div class="vision-card p-4 flex flex-col items-center justify-center"
-                        style="animation-delay: 0.9s;">
-                        <i class="fas fa-rocket text-green-500 text-2xl mb-2"></i>
-                        <div class="impact-number gradient-text">146%</div>
-                        <p class="text-center text-gray-700 font-medium text-sm">CAGR: Digital Tx Volume</p>
-                    </div>
-                </div>
+            <div class="card p-4 animate-fadeInUp delay-200">
+                <h3 class="font-bold text-gray-800 mb-2">Bank & PSO Partners</h3>
+                <ul class="text-gray-700">
+                    <li>Set up segregated escrow accounts</li>
+                    <li>Integrate APIs & settlement rules</li>
+                </ul>
+            </div>
+            <div class="card p-4 animate-fadeInUp delay-300">
+                <h3 class="font-bold text-gray-800 mb-2">Pilots & Marketplaces</h3>
+                <ul class="text-gray-700">
+                    <li>Pilot with top marketplaces & verticals</li>
+                    <li>Measure fraud, disputes, release time</li>
+                </ul>
             </div>
         </div>
-        <!-- Footer -->
-        <div class="mt-5 flex justify-between items-center z-10">
-            <div class="text-gray-600">
-                <p class="text-sm">This isn't just fintech — it's economic justice.</p>
-            </div>
-            <div class="flex items-center space-x-4">
-                <div class="text-gray-700 font-medium">contact@safedeal.et</div>
-                <div class="h-6 w-px bg-gray-300"></div>
-                <div class="text-gray-700 font-medium">www.safedeal.et</div>
-            </div>
-        </div>
+        <div class="mt-6 text-gray-700">With escrow enabled, Ethiopia can unlock safe, scalable digital commerce and meet 2030 usage targets.</div>
     </div>
 </body>
 
 </html>
+

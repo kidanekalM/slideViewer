@@ -4,260 +4,36 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Competitive Advantage</title>
+    <title>Solution Overview — Neutral Escrow Layer</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
-    <style>
-        /* Page-specific overrides */
-        .advantage-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInRight 0.8s ease-out forwards;
-        }
-
-        .advantage-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .moat-card {
-            background: rgba(10, 37, 64, 0.03);
-            border-left: 4px solid #0A2540;
-            padding: 16px;
-            border-radius: 0 8px 8px 0;
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInRight 0.8s ease-out forwards;
-        }
-
-        .moat-card:hover {
-            background: rgba(10, 37, 64, 0.05);
-        }
-
-        .comparison-table {
-            border-collapse: separate;
-            border-spacing: 0;
-            width: 100%;
-        }
-
-        .comparison-table th {
-            background-color: #0A2540;
-            color: white;
-            padding: 12px;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .comparison-table td {
-            padding: 12px;
-            text-align: center;
-            background-color: white;
-        }
-
-        .comparison-table tr:nth-child(even) td {
-            background-color: #EFF6FF;
-        }
-
-        .comparison-table .rating-high {
-            color: #10B981;
-        }
-
-        .comparison-table .rating-medium {
-            color: #F59E0B;
-        }
-
-        .comparison-table .rating-low {
-            color: #EF4444;
-        }
-
-        .icon-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 16px;
-            flex-shrink: 0;
-        }
-
-        .animate-row {
-            opacity: 0;
-            animation: slideInLeft 0.8s ease-out forwards;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .pulse-icon {
-            animation: pulse 2s infinite;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10">
-        <!-- Header -->
-        <div class="mb-4">
-            <h1 class="title mb-2">Competitive Advantage</h1>
-            <p class="subtitle">Why SafeDeal wins in Ethiopia's digital economy</p>
+    <div class="slide flex flex-col p-12">
+        <div class="mb-2">
+            <h1 class="title mb-2">Neutral Escrow Layer</h1>
+            <p class="subtitle">Buyer–seller protection integrated with PSOs and banks</p>
         </div>
-        <!-- Main Content -->
-        <div class="flex flex-1 space-x-6">
-            <!-- Left Column - Comparison Table -->
-            <div class="w-1/2">
-                <h3 class="text-xl font-bold text-gray-800 mb-3">SafeDeal vs. Competitors</h3>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th width="30%">Feature</th>
-                            <th width="35%">SafeDeal</th>
-                            <th width="35%">Traditional Solutions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="animate-row" style="animation-delay: 0.1s;">
-                            <td class="font-medium">Cost</td>
-                            <td class="rating-high">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </td>
-                            <td class="rating-low">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </td>
-                        </tr>
-                        <tr class="animate-row" style="animation-delay: 0.2s;">
-                            <td class="font-medium">Speed</td>
-                            <td class="rating-high">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </td>
-                            <td class="rating-medium">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </td>
-                        </tr>
-                        <tr class="animate-row" style="animation-delay: 0.3s;">
-                            <td class="font-medium">Trust/Security</td>
-                            <td class="rating-high">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </td>
-                            <td class="rating-low">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </td>
-                        </tr>
-                        <tr class="animate-row" style="animation-delay: 0.4s;">
-                            <td class="font-medium">Dispute Resolution</td>
-                            <td class="rating-high font-bold text-teal-600">
-                                AI Chat Analysis
-                            </td>
-                            <td class="rating-low text-sm">
-                                Manual / None
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="grid grid-cols-3 gap-6 mt-4">
+            <div class="card p-4 animate-fadeInUp">
+                <h3 class="font-bold text-gray-800 mb-2">Funds Held at Bank</h3>
+                <p class="text-gray-700">Licensed PSO‑managed escrow accounts at commercial banks protect funds until conditions are met.</p>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Page 51</div>
             </div>
-            <!-- Right Column - Key Advantages & Moats -->
-            <div class="w-1/2">
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Key Advantages</h3>
-                <div class="space-y-3 mb-4">
-                    <!-- Advantage 1 -->
-                    <div class="advantage-card p-3 flex items-center" style="animation-delay: 0.5s;">
-                        <div class="icon-circle bg-amber-100">
-                            <i class="fas fa-bolt text-2xl text-amber-600"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">Faster &amp; Cheaper</h4>
-                            <p class="text-gray-600">Instant settlement vs. banks' weeks-long processing time and
-                                5-10% fees</p>
-                        </div>
-                    </div>
-                    <!-- Advantage 2 -->
-                    <div class="advantage-card p-3 flex items-center" style="animation-delay: 0.6s;">
-                        <div class="icon-circle bg-green-100">
-                            <i class="fas fa-comments text-2xl text-green-600 pulse-icon"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-800">AI Chat Analysis</h4>
-                            <p class="text-gray-600">Automated dispute resolution based on chat logs, perfect for social
-                                commerce.</p>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Competitive Moats</h3>
-                <div class="grid grid-cols-1 gap-3">
-                    <!-- Moat 1 -->
-                    <div class="moat-card" style="animation-delay: 0.7s;">
-                        <div class="flex items-center">
-                            <i class="fas fa-network-wired text-teal-600 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Network Effect</h4>
-                                <p class="text-gray-600">More users = More AI training data = Better mediation</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Moat 2 -->
-                    <div class="moat-card" style="animation-delay: 0.8s;">
-                        <div class="flex items-center">
-                            <i class="fas fa-shield-alt text-teal-600 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Open Source Security</h4>
-                                <p class="text-gray-600">Community-audited smart contracts (vs. closed black boxes)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="card p-4 animate-fadeInUp delay-200">
+                <h3 class="font-bold text-gray-800 mb-2">Rules Tied to Returns</h3>
+                <p class="text-gray-700">Release aligned with acceptance or the end of the 7‑day return window.</p>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Pages 51–52</div>
+            </div>
+            <div class="card p-4 animate-fadeInUp delay-300">
+                <h3 class="font-bold text-gray-800 mb-2">Auditable Controls</h3>
+                <p class="text-gray-700">Risk controls and clear legal frameworks to reduce fraud and disputes.</p>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Page 51</div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+

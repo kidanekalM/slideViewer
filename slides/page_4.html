@@ -4,161 +4,32 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>SafeDeal Solution - Automated Fairness</title>
+    <title>Our Solution</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
-    <style>
-        /* Page-specific overrides */
-        .process-step {
-            position: relative;
-            padding: 16px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .process-arrow {
-            position: absolute;
-            top: 50%;
-            right: -30px;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: #00D4AA;
-            opacity: 0;
-            animation: slideRight 1s ease-out forwards;
-        }
-
-        .feature-box {
-            background: rgba(0, 212, 170, 0.05);
-            border-radius: 12px;
-            padding: 16px;
-            border-left: 4px solid #00D4AA;
-            transition: all 0.3s ease;
-        }
-
-        .feature-box:hover {
-            transform: translateX(5px);
-            background: rgba(0, 212, 170, 0.1);
-        }
-
-        @keyframes slideRight {
-            from {
-                opacity: 0;
-                transform: translate(-20px, -50%);
-            }
-
-            to {
-                opacity: 1;
-                transform: translate(0, -50%);
-            }
-        }
-
-        @keyframes drawCheck {
-            0% {
-                stroke-dashoffset: 100;
-                opacity: 0;
-            }
-
-            100% {
-                stroke-dashoffset: 0;
-                opacity: 1;
-            }
-        }
-
-        .check-anim {
-            animation: drawCheck 0.5s ease-out forwards;
-            animation-delay: 2.5s;
-            opacity: 0;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10">
-        <!-- Header -->
-        <div class="mb-6">
-            <h1 class="title mb-2">SafeDeal Solution: Automated Fairness</h1>
-            <p class="subtitle">Smart Contracts replace the middleman, guaranteeing safety for both sides</p>
+    <div class="slide flex flex-col p-12">
+        <div class="mb-2">
+            <h1 class="title mb-2">Our Solution</h1>
+            <p class="subtitle">A neutral escrow layer for Ethiopian e‑commerce</p>
         </div>
-        <!-- Main Content -->
-        <div class="flex flex-1 flex-col">
-            <!-- Process Flow -->
-            <div class="flex justify-between items-center mb-10 px-4">
-                <!-- Step 1 -->
-                <div class="process-step w-1/5 text-center delay-200">
-                    <div class="text-4xl text-blue-600 mb-2"><i class="fas fa-handshake"></i></div>
-                    <h3 class="font-bold text-gray-800">1. Agreement</h3>
-                    <p class="text-sm text-gray-600">Buyer & Seller agree on terms (price, delivery)</p>
-                    <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
-                </div>
-                <!-- Step 2 -->
-                <div class="process-step w-1/5 text-center delay-400">
-                    <div class="text-4xl text-teal-500 mb-2"><i class="fas fa-lock"></i></div>
-                    <h3 class="font-bold text-gray-800">2. Deposit</h3>
-                    <p class="text-sm text-gray-600">Buyer deposits funds into <span
-                            class="font-semibold text-teal-600">Smart Contract</span></p>
-                    <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
-                </div>
-                <!-- Step 3 -->
-                <div class="process-step w-1/5 text-center delay-600">
-                    <div class="text-4xl text-amber-500 mb-2"><i class="fas fa-truck"></i></div>
-                    <h3 class="font-bold text-gray-800">3. Delivery</h3>
-                    <p class="text-sm text-gray-600">Seller delivers product/service</p>
-                    <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
-                </div>
-                <!-- Step 4 -->
-                <div class="process-step w-1/5 text-center delay-800">
-                    <div class="text-4xl text-green-500 mb-2 relative">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800">4. Release</h3>
-                    <p class="text-sm text-gray-600">Buyer confirms -> Funds released instantly</p>
-                </div>
+        <div class="grid grid-cols-3 gap-6 mt-4">
+            <div class="card p-4 animate-fadeInUp">
+                <h3 class="font-bold text-gray-800 mb-2">Neutral Holding</h3>
+                <p class="text-gray-700">Funds held in escrow accounts at commercial banks, managed by licensed PSOs.</p>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Strategy 2026–2030, Page 51</div>
             </div>
-            <!-- Key Features -->
-            <div class="grid grid-cols-2 gap-6 px-4">
-                <div class="feature-box animate-fadeInUp delay-1000">
-                    <div class="flex items-start">
-                        <i class="fas fa-code text-teal-500 text-2xl mr-3 mt-1"></i>
-                        <div>
-                            <h3 class="font-bold text-gray-800 text-lg">Trustless, Not Trust-Based</h3>
-                            <p class="text-gray-700">Code holds the money, not a person. No one can steal the funds.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-box animate-fadeInUp" style="animation-delay: 1.2s;">
-                    <div class="flex items-start">
-                        <i class="fas fa-search-dollar text-teal-500 text-2xl mr-3 mt-1"></i>
-                        <div>
-                            <h3 class="font-bold text-gray-800 text-lg">Transparency You Can Verify</h3>
-                            <p class="text-gray-700">Every transaction is recorded on the blockchain. Visible,
-                                immutable, and auditable.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-box animate-fadeInUp" style="animation-delay: 1.4s;">
-                    <div class="flex items-start">
-                        <i class="fas fa-robot text-teal-500 text-2xl mr-3 mt-1"></i>
-                        <div>
-                            <h3 class="font-bold text-gray-800 text-lg">AI Dispute Resolution</h3>
-                            <p class="text-gray-700">If there's an issue, our AI analyzes chat logs to mediate fairly
-                                and instantly.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-box animate-fadeInUp" style="animation-delay: 1.6s;">
-                    <div class="flex items-start">
-                        <i class="fas fa-bolt text-teal-500 text-2xl mr-3 mt-1"></i>
-                        <div>
-                            <h3 class="font-bold text-gray-800 text-lg">Instant Settlement</h3>
-                            <p class="text-gray-700">No 3-day bank delays. Sellers get paid the second the buyer
-                                confirms.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="card p-4 animate-fadeInUp delay-200">
+                <h3 class="font-bold text-gray-800 mb-2">Aligned Release</h3>
+                <p class="text-gray-700">Release on acceptance or after the return window; refund on valid return.</p>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Pages 51–52</div>
+            </div>
+            <div class="card p-4 animate-fadeInUp delay-300">
+                <h3 class="font-bold text-gray-800 mb-2">Auditable Controls</h3>
+                <p class="text-gray-700">Clear rules, dispute flows, and reporting to reduce fraud.</p>
+                <div class="text-xs text-gray-500 mt-2">Policy basis: Page 51</div>
             </div>
         </div>
     </div>

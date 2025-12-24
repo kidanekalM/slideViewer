@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>T+2 vs 7-Day Returns — The Mismatch</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
+    <style>
+        .timeline {
+            position: relative;
+            height: 140px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            padding: 16px;
+        }
+        .bar {
+            position: absolute; left: 24px; right: 24px; top: 70px; height: 6px;
+            background: linear-gradient(90deg, #00D4AA, #10B981);
+            border-radius: 3px;
+        }
+        .tick {
+            position: absolute; top: 56px; width: 2px; height: 16px; background: #CBD5E1;
+        }
+        .label { position: absolute; top: 24px; font-weight: 700; color: #0A2540; }
+        .marker { position: absolute; top: 44px; transform: translateX(-50%); }
+        .danger { color: #EF4444; font-weight: 700; }
+        .note { color: #64748B; font-size: 14px; }
+    </style>
+</head>
+
+<body>
+    <div class="slide flex flex-col p-12">
+        <div class="mb-2">
+            <h1 class="title">T+2 vs 7-Day Returns</h1>
+            <p class="subtitle">Funds can release before buyer protection expires</p>
+        </div>
+
+        <div class="timeline mt-4 animate-fadeInUp">
+            <div class="bar"></div>
+            <!-- Ticks for days 0..7 -->
+            <div class="tick" style="left: 24px"></div>
+            <div class="tick" style="left: calc(24px + (100% - 48px) * 0.14)"></div>
+            <div class="tick" style="left: calc(24px + (100% - 48px) * 0.28)"></div>
+            <div class="tick" style="left: calc(24px + (100% - 48px) * 0.42)"></div>
+            <div class="tick" style="left: calc(24px + (100% - 48px) * 0.56)"></div>
+            <div class="tick" style="left: calc(24px + (100% - 48px) * 0.70)"></div>
+            <div class="tick" style="left: calc(24px + (100% - 48px) * 0.84)"></div>
+            <div class="tick" style="right: 24px"></div>
+
+            <!-- Labels -->
+            <div class="label" style="left: 24px">Day 0<br><span class="note">Payment</span></div>
+            <div class="label" style="left: calc(24px + (100% - 48px) * 0.28)">T+2<br><span class="note danger">Funds settle</span></div>
+            <div class="label" style="right: 24px; text-align: right;">Day 7<br><span class="note">Return window ends</span></div>
+
+            <!-- Markers -->
+            <div class="marker danger" style="left: calc(24px + (100% - 48px) * 0.28)">▼</div>
+            <div class="marker" style="right: 24px">▼</div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6 mt-6">
+            <div class="card p-4 animate-fadeInUp">
+                <h3 class="text-lg font-extrabold text-gray-800 mb-2">The Problem</h3>
+                <ul class="text-gray-700">
+                    <li>Settlement occurs at <strong>T+2</strong> while returns allow <strong>7 days</strong>.</li>
+                    <li>Funds can be released <strong>before</strong> the buyer’s return period expires.</li>
+                    <li>Undermines <strong>consumer protection</strong> and trust in e‑commerce.</li>
+                </ul>
+            </div>
+            <div class="card p-4 animate-fadeInUp delay-200">
+                <h3 class="text-lg font-extrabold text-gray-800 mb-2">Policy Remedy (Action 36)</h3>
+                <ul class="text-gray-700">
+                    <li>Permit <strong>licensed PSOs</strong> to operate escrow at commercial banks.</li>
+                    <li>Align settlement rules with <strong>e‑commerce return policies</strong>.</li>
+                    <li>Enhance buyer‑seller protection and reduce fraud.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

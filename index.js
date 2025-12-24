@@ -1,7 +1,7 @@
 class SimpleSlideViewer {
     constructor() {
         this.currentSlide = 1;
-        this.totalSlides = 15;
+        this.totalSlides = 8;
         this.slidesPath = 'slides/page_';
         this.isFullscreen = false;
 
@@ -35,9 +35,28 @@ class SimpleSlideViewer {
     bindEvents() {
         window.addEventListener("resize", () => this.scaleSlide());
         document.addEventListener("keydown", (e) => this.handleKeyboard(e), true);
-        
+
         document.getElementById("prev-btn").addEventListener("click", () => this.previousSlide());
         document.getElementById("next-btn").addEventListener("click", () => this.nextSlide());
+
+        // Fix for keyboard navigation when focus is inside iframe
+        this.frame.addEventListener("load", () => {
+            try {
+                const iframeDoc = this.frame.contentDocument || this.frame.contentWindow.document;
+                if (iframeDoc) {
+                    iframeDoc.addEventListener("keydown", (e) => this.handleKeyboard(e), true);
+                    // Optional: clicking slide returns focus to main window if desired, 
+                    // but handling keydown inside iframe is more robust.
+                    iframeDoc.addEventListener("click", () => {
+                        // Ensure the iframe keeps focus or pass focus to parent? 
+                        // Actually, if we handle keys in iframe, we don't need to force focus away.
+                        // But let's trigger a focus event on the viewer just in case.
+                    });
+                }
+            } catch (error) {
+                console.warn("Could not bind keyboard events to slide iframe (likely CORS/origin restriction):", error);
+            }
+        });
 
         this.initTouchSupport();
     }

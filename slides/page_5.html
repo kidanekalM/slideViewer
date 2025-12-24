@@ -4,149 +4,39 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Hybrid Trust Architecture</title>
+    <title>How It Works</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
-    <style>
-        /* Page-specific overrides */
-        .layer-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            position: relative;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-            z-index: 2;
-        }
-
-        .layer-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .connector-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 40px;
-            background: repeating-linear-gradient(to bottom, #00D4AA 0, #00D4AA 10px, transparent 10px, transparent 20px);
-            z-index: 1;
-            animation: flow 1s linear infinite;
-        }
-
-        .tech-badge {
-            background: rgba(10, 37, 64, 0.05);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #0A2540;
-            margin-right: 8px;
-        }
-
-        .layer-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin-right: 20px;
-        }
-
-        .layer-card:hover .layer-icon {
-            animation: pulse 1s infinite;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="slide flex flex-col p-10">
-        <!-- Header -->
-        <div class="mb-4">
-            <h1 class="title mb-2">Hybrid Trust Architecture</h1>
-            <p class="subtitle">Web2 Usability meets Web3 Security</p>
+    <div class="slide flex flex-col p-12">
+        <div class="mb-2">
+            <h1 class="title mb-2">How It Works</h1>
+            <p class="subtitle">A simple, safe transaction flow</p>
         </div>
-        <!-- Main Content -->
-        <div class="flex flex-1 items-center justify-center relative">
-            <!-- Layers Container -->
-            <div class="w-2/3 relative">
-                <!-- Layer 1: User Experience -->
-                <div class="layer-card p-6 flex items-center border-l-8 border-blue-500 mb-8 delay-200">
-                    <div class="layer-icon bg-blue-100 text-blue-600">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-xl font-bold text-gray-800">Layer 1: User Experience (Web2)</h3>
-                            <div class="flex">
-                                <span class="tech-badge">React</span>
-                                <span class="tech-badge">PWA</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-600">Familiar interface. Login with phone number. <span
-                                class="font-bold text-blue-600">No Crypto Wallet Needed</span>.</p>
-                    </div>
-                </div>
-                <!-- Connector 1-2 -->
-                <div class="connector-line" style="top: 105px;"></div>
-                <!-- Layer 2: Business Logic -->
-                <div class="layer-card p-6 flex items-center border-l-8 border-teal-500 mb-8 delay-400">
-                    <div class="layer-icon bg-teal-100 text-teal-600">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-xl font-bold text-gray-800">Layer 2: SafeDeal Backend</h3>
-                            <div class="flex">
-                                <span class="tech-badge">Go</span>
-                                <span class="tech-badge">PostgreSQL</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-600">Handles notifications, chat, and <span
-                                class="font-bold text-teal-600">AI Dispute Resolution</span>.</p>
-                    </div>
-                </div>
-                <!-- Connector 2-3 -->
-                <div class="connector-line" style="top: 245px;"></div>
-                <!-- Layer 3: Blockchain Settlement -->
-                <div class="layer-card p-6 flex items-center border-l-8 border-purple-500 delay-600">
-                    <div class="layer-icon bg-purple-100 text-purple-600">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-xl font-bold text-gray-800">Layer 3: Settlement (Web3)</h3>
-                            <div class="flex">
-                                <span class="tech-badge">Ethereum</span>
-                                <span class="tech-badge">Smart Contracts</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-600">Immutable Escrow Logic. Funds are locked here. <span
-                                class="font-bold text-purple-600">Audit Trail</span>.</p>
-                    </div>
-                </div>
+        <div class="flex items-center justify-between mt-6">
+            <div class="card w-1/5 p-4 text-center animate-fadeInUp">
+                <h3 class="font-bold text-gray-800">1. Order</h3>
+                <p class="text-gray-700 text-sm">Buyer and seller agree terms.</p>
             </div>
-            <!-- Side Note / Benefit -->
-            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/4 pl-8">
-                <div class="bg-white p-4 rounded-xl shadow-lg border-t-4 border-teal-500 animate-fadeInRight delay-800">
-                    <h4 class="font-bold text-gray-800 mb-2">Why Hybrid?</h4>
-                    <p class="text-sm text-gray-600 mb-3">Ethiopians trust banks/cash, not "crypto".</p>
-                    <ul class="text-sm space-y-2">
-                        <li class="flex items-center"><i class="fas fa-check text-teal-500 mr-2"></i> Easy Onboarding
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-teal-500 mr-2"></i> Fiat On/Off Ramps
-                        </li>
-                        <li class="flex items-center"><i class="fas fa-check text-teal-500 mr-2"></i> Blockchain
-                            Security</li>
-                    </ul>
-                </div>
+            <div class="text-teal-500 text-3xl">›</div>
+            <div class="card w-1/5 p-4 text-center animate-fadeInUp delay-200">
+                <h3 class="font-bold text-gray-800">2. Hold</h3>
+                <p class="text-gray-700 text-sm">Buyer pays; funds held in escrow.</p>
+            </div>
+            <div class="text-teal-500 text-3xl">›</div>
+            <div class="card w-1/5 p-4 text-center animate-fadeInUp delay-300">
+                <h3 class="font-bold text-gray-800">3. Deliver</h3>
+                <p class="text-gray-700 text-sm">Seller ships or provides service.</p>
+            </div>
+            <div class="text-teal-500 text-3xl">›</div>
+            <div class="card w-1/5 p-4 text-center animate-fadeInUp delay-400">
+                <h3 class="font-bold text-gray-800">4. Release/Refund</h3>
+                <p class="text-gray-700 text-sm">Release on acceptance or after return window; refund on return.</p>
             </div>
         </div>
+        <div class="mt-6 text-xs text-gray-500">Aligned to Strategy 2026–2030 escrow guidance (Pages 51–52).</div>
     </div>
 </body>
 

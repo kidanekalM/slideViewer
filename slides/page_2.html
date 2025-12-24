@@ -4,173 +4,53 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>The Trust Crisis in Ethiopian Digital Commerce</title>
+    <title>The Trust Gap in Ethiopian E‑commerce</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        /* Page-specific overrides */
-        .gradient-bg {
-            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
-        }
-
-        .stat-card {
-            transition: all 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .quote-box {
-            border-left: 4px solid #00D4AA;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.5s forwards;
-        }
-
-        .story-image {
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.2s forwards;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-        }
-
-        .key-point {
-            opacity: 0;
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
+        .gradient-bg { background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%); }
     </style>
 </head>
 
 <body>
-    <div class="slide gradient-bg flex flex-col">
-        <!-- Header -->
-        <div class="px-16 pt-10 pb-4">
-            <h1 class="text-5xl font-bold text-white mb-3" style="animation: fadeIn 1s ease-out;">The Trust Crisis in
-                Ethiopian Digital Commerce</h1>
-            <div class="w-24 h-1 bg-teal-400" style="animation: slideInRight 1s ease-out;"></div>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="mb-2">
+            <h1 class="text-5xl font-bold text-white mb-2">The Trust Gap in Ethiopian E‑commerce</h1>
+            <p class="text-white opacity-80">All figures from the Ethiopia National Digital Payments Strategy 2026–2030</p>
         </div>
-        <!-- Main Content -->
-        <div class="flex flex-1 px-16">
-            <!-- Left Column - Stats -->
-            <div class="w-1/2 pr-8 flex flex-col justify-center">
-                <div class="flex space-x-6 mb-5">
-                    <!-- Stat Card 1 -->
-                    <div
-                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-200">
-                        <div class="text-5xl font-bold text-teal-400 mb-1">1.3B ETB</div>
-                        <div class="text-white text-lg">lost to digital fraud</div>
-                        <div class="text-white text-sm opacity-75">in Ethiopia (2024)</div>
-                        <div class="mt-2 text-teal-400">
-                            <i class="fas fa-money-bill-wave text-3xl"></i>
-                        </div>
-                        <div class="text-white text-xs opacity-50 mt-2">(Source: National Strategy 2026-2030)</div>
-                    </div>
-                    <!-- Stat Card 2 -->
-                    <div
-                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-400">
-                        <div class="text-6xl font-bold text-teal-400 mb-1">70%</div>
-                        <div class="text-white text-xl">of scams start on</div>
-                        <div class="text-white text-sm opacity-75">Social Media (TikTok/Telegram)</div>
-                        <div class="mt-2 text-teal-400">
-                            <i class="fab fa-tiktok text-3xl"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional Stats -->
-                <div class="flex space-x-6">
-                    <div
-                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-600">
-                        <div class="text-5xl font-bold text-teal-400 mb-1">61%</div>
-                        <div class="text-white text-lg">pay upfront &amp; get nothing</div>
-                        <div class="text-white text-sm opacity-75">undelivered merchandise</div>
-                        <div class="mt-2 text-teal-400">
-                            <i class="fas fa-box-open text-2xl"></i>
-                        </div>
-                    </div>
-                    <div
-                        class="stat-card bg-white bg-opacity-10 rounded-xl p-4 flex-1 flex flex-col items-center text-center delay-800">
-                        <div class="text-4xl font-bold text-teal-400 mb-1">
-                            <i class="fas fa-user-slash mr-2"></i>
-                        </div>
-                        <div class="text-white text-lg">No Recourse</div>
-                        <div class="text-white text-sm opacity-75">Bank transfers are irreversible</div>
-                        <div class="mt-2 text-teal-400">
-                            <i class="fas fa-university text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
+
+        <div class="grid grid-cols-3 gap-6 mt-6">
+            <div class="bg-white bg-opacity-10 rounded-xl p-4 animate-fadeInUp">
+                <div class="text-5xl font-extrabold text-teal-400 mb-1">ETB 1.3B</div>
+                <div class="text-white">fraud losses (2024)</div>
+                <div class="text-white text-xs opacity-60 mt-2">Source: Strategy 2026–2030</div>
             </div>
-            <!-- Right Column - Quote and Key Points -->
-            <div class="w-1/2 pl-8 flex flex-col justify-center">
-                <div class="flex items-center mb-5">
-                    <img src="scammed_shopper.png"
-                        class="story-image w-32 h-32 object-cover mr-4 border-2 border-teal-400" alt="Sad Shopper">
-                    <div class="quote-box bg-white bg-opacity-10 rounded-r-xl p-4 flex-1">
-                        <i class="fas fa-quote-left text-teal-400 text-2xl mb-1"></i>
-                        <p class="text-white text-lg italic">&#34;I saw a boutique on TikTok with 50k followers. I
-                            transferred 3,000 Birr for a dress. They sent me a fake tracking number and blocked me
-                            immediately.&#34;</p>
-                        <p class="text-white text-sm mt-1 opacity-75">— Scammed Shopper, Addis Ababa</p>
-                    </div>
-                </div>
-                <div class="space-y-3">
-                    <div class="flex items-start key-point delay-1000">
-                        <div class="text-teal-400 mr-4 mt-1">
-                            <i class="fas fa-comment-dollar text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-white text-xl font-semibold">The &#34;Pay-First&#34; Trap</h3>
-                            <p class="text-white text-sm opacity-80">Sellers demand upfront payment to &#34;reserve&#34;
-                                items, exploiting FOMO.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start key-point" style="animation-delay: 1.2s;">
-                        <div class="text-teal-400 mr-4 mt-1">
-                            <i class="fas fa-users-slash text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-white text-xl font-semibold">Social Proof is Fake</h3>
-                            <p class="text-white text-sm opacity-80">Scammers buy followers and reviews to look
-                                legitimate.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start key-point" style="animation-delay: 1.4s;">
-                        <div class="text-teal-400 mr-4 mt-1">
-                            <i class="fas fa-chart-line text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-white text-xl font-semibold">Market Impact</h3>
-                            <p class="text-white text-sm opacity-80">Honest sellers lose business because buyers are
-                                afraid to trust anyone.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-white bg-opacity-10 rounded-xl p-4 animate-fadeInUp delay-200">
+                <div class="text-5xl font-extrabold text-teal-400 mb-1">&lt;1%</div>
+                <div class="text-white">e‑commerce share of digital payments (2024)</div>
+                <div class="text-white text-xs opacity-60 mt-2">Source: Strategy 2026–2030</div>
+            </div>
+            <div class="bg-white bg-opacity-10 rounded-xl p-4 animate-fadeInUp delay-300">
+                <div class="text-5xl font-extrabold text-teal-400 mb-1">0.0153%</div>
+                <div class="text-white">fraud as % of transaction value</div>
+                <div class="text-white text-xs opacity-60 mt-2">Target: 0.0008% | Source: Strategy 2026–2030</div>
             </div>
         </div>
-        <!-- Footer -->
-        <div class="px-16 py-6 flex justify-between items-center">
-            <div class="text-white opacity-50 text-sm">
-                SafeDeal | Ethiopia's First Programmable Trust Layer
+
+        <div class="grid grid-cols-2 gap-6 mt-6">
+            <div class="bg-white bg-opacity-10 rounded-xl p-4 animate-fadeInUp">
+                <h3 class="text-white text-xl font-semibold mb-1">Root Cause</h3>
+                <p class="text-white opacity-90">“The growth of Ethiopia’s e‑commerce sector is significantly constrained by a lack of trust in transactions between unfamiliar buyers and sellers.”</p>
+                <div class="text-white text-xs opacity-60 mt-2">Source: Strategy 2026–2030, Page 52</div>
             </div>
-            <div class="text-white opacity-50 text-sm" style="visibility: hidden;">
-                2/15
+            <div class="bg-white bg-opacity-10 rounded-xl p-4 animate-fadeInUp delay-200">
+                <h3 class="text-white text-xl font-semibold mb-1">Regulatory Mismatch</h3>
+                <p class="text-white opacity-90">Settlement timelines (T+2) vs 7‑day return windows risk releasing funds before buyer protection ends.</p>
+                <div class="text-white text-xs opacity-60 mt-2">Source: Strategy 2026–2030, Pages 51–52</div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+

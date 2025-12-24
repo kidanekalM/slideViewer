@@ -4,347 +4,45 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Go-to-Market Strategy</title>
+    <title>How It Works</title>
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
-        /* Page-specific overrides */
-        .phase-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-            opacity: 0;
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-
-        .phase-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .phase-header {
-            border-radius: 16px 16px 0 0;
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .phase-1-header {
-            background: #00D4AA;
-        }
-
-        .phase-2-header {
-            background: #10B981;
-        }
-
-        .phase-3-header {
-            background: #0A2540;
-        }
-
-        .timeline-connector {
-            height: 4px;
-            background: linear-gradient(90deg, #00D4AA, #10B981, #0A2540);
-            position: relative;
-            margin: 0 20px;
-            width: 0;
-            animation: expandWidth 1.5s ease-out forwards;
-        }
-
-        .timeline-dot {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            position: absolute;
-            top: -6px;
-            opacity: 0;
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-
-        .dot-1 {
-            background: #00D4AA;
-            left: 0%;
-            animation-delay: 0.5s;
-        }
-
-        .dot-2 {
-            background: #10B981;
-            left: 50%;
-            animation-delay: 1s;
-        }
-
-        .dot-3 {
-            background: #0A2540;
-            left: 100%;
-            animation-delay: 1.5s;
-        }
-
-        .economics-card {
-            background: rgba(10, 37, 64, 0.03);
-            border-radius: 12px;
-            padding: 16px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out 1.5s forwards;
-        }
-
-        .metric-value {
-            font-size: 24px;
-            font-weight: 800;
-            color: #0A2540;
-        }
-
-        .metric-label {
-            font-size: 14px;
-            color: #64748B;
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes expandWidth {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 100%;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .step { background: white; border-radius: 12px; padding: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+        .arrow { font-size: 24px; color: #00D4AA; }
     </style>
 </head>
 
 <body>
     <div class="slide flex flex-col p-12">
-        <!-- Header -->
-        <div class="mb-6">
-            <h1 class="title mb-2">Go-to-Market Strategy</h1>
-            <p class="subtitle">Three-phase launch to build trust and scale</p>
+        <div class="mb-2">
+            <h1 class="title mb-2">How It Works</h1>
+            <p class="subtitle">Simple flow aligned to e‑commerce realities</p>
         </div>
-        <!-- Timeline -->
-        <div class="relative h-16 mb-6">
-            <div class="timeline-connector absolute top-1/2 transform -translate-y-1/2"></div>
-            <div class="timeline-dot dot-1"></div>
-            <div class="timeline-dot dot-2"></div>
-            <div class="timeline-dot dot-3"></div>
-            <div class="absolute" style="top: -20px; left: 0%;">
-                <div class="text-center">
-                    <span class="text-teal-500 font-bold">Months 1-6</span>
-                </div>
+        <div class="flex items-center justify-between mt-6">
+            <div class="step w-1/5 text-center animate-fadeInUp">
+                <h3 class="font-bold text-gray-800">1. Initiate</h3>
+                <p class="text-gray-700 text-sm">Order created with terms (price, return window).</p>
             </div>
-            <div class="absolute" style="top: -20px; left: 50%; transform: translateX(-50%);">
-                <div class="text-center">
-                    <span class="text-green-600 font-bold">Months 7-12</span>
-                </div>
+            <div class="arrow">›</div>
+            <div class="step w-1/5 text-center animate-fadeInUp delay-200">
+                <h3 class="font-bold text-gray-800">2. Hold</h3>
+                <p class="text-gray-700 text-sm">Buyer pays; funds held in escrow at bank.</p>
             </div>
-            <div class="absolute" style="top: -20px; left: 100%; transform: translateX(-100%);">
-                <div class="text-center">
-                    <span class="text-blue-900 font-bold">Year 2</span>
-                </div>
+            <div class="arrow">›</div>
+            <div class="step w-1/5 text-center animate-fadeInUp delay-300">
+                <h3 class="font-bold text-gray-800">3. Deliver</h3>
+                <p class="text-gray-700 text-sm">Seller ships or provides service.</p>
+            </div>
+            <div class="arrow">›</div>
+            <div class="step w-1/5 text-center animate-fadeInUp delay-400">
+                <h3 class="font-bold text-gray-800">4. Accept/Return</h3>
+                <p class="text-gray-700 text-sm">Release on acceptance or after 7 days; refund on valid return.</p>
             </div>
         </div>
-        <!-- Phases -->
-        <div class="flex space-x-6 flex-1">
-            <!-- Phase 1 -->
-            <div class="flex-1">
-                <div class="phase-card flex flex-col h-full" style="animation-delay: 0.2s;">
-                    <div class="phase-1-header flex items-center">
-                        <i class="fas fa-rocket mr-2"></i>
-                        Phase 1: Social & Freelance MVP
-                    </div>
-                    <div class="p-4 flex-1 flex flex-col">
-                        <div class="flex items-start mb-3">
-                            <div class="bg-teal-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-users text-teal-500"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">Target</p>
-                                <p class="text-gray-600">Telegram/Instagram Sellers & Gebeya Freelancers</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-3">
-                            <div class="bg-teal-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-handshake text-teal-500"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">Partnership</p>
-                                <p class="text-gray-600">Influencer marketing + Gebeya integration</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-teal-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-chart-line text-teal-500"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">KPI</p>
-                                <p class="text-gray-600">500 escrows, ETB 5M transacted</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Phase 2 -->
-            <div class="flex-1">
-                <div class="phase-card flex flex-col h-full" style="animation-delay: 0.4s;">
-                    <div class="phase-2-header flex items-center">
-                        <i class="fas fa-hard-hat mr-2"></i>
-                        Phase 2: Construction Pilot
-                    </div>
-                    <div class="p-4 flex-1 flex flex-col">
-                        <div class="flex items-start mb-3">
-                            <div class="bg-green-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-users text-green-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">Target</p>
-                                <p class="text-gray-600">Addis Ababa contractors (IFL Sandbox)</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-3">
-                            <div class="bg-green-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-handshake text-green-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">Partnership</p>
-                                <p class="text-gray-600">Ethiopian Contractors Association</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-green-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-chart-line text-green-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">KPI</p>
-                                <p class="text-gray-600">1,000 users, ETB 50M, NBE compliance</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Phase 3 -->
-            <div class="flex-1">
-                <div class="phase-card flex flex-col h-full" style="animation-delay: 0.6s;">
-                    <div class="phase-3-header flex items-center">
-                        <i class="fas fa-store mr-2"></i>
-                        Phase 3: Marketplace Expansion
-                    </div>
-                    <div class="p-4 flex-1 flex flex-col">
-                        <div class="flex items-start mb-3">
-                            <div class="bg-blue-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-users text-blue-900"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">Target</p>
-                                <p class="text-gray-600">E-commerce platforms (Enkopa, Qefira)</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-3">
-                            <div class="bg-blue-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-code text-blue-900"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">Product</p>
-                                <p class="text-gray-600">Enterprise API for embedded escrow</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-2 rounded-full mr-3">
-                                <i class="fas fa-chart-line text-blue-900"></i>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">KPI</p>
-                                <p class="text-gray-600">10,000 MAU, ETB 200M annually</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Unit Economics -->
-        <div class="mt-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Unit Economics</h3>
-            <div class="flex space-x-6">
-                <div class="economics-card flex-1 flex items-center">
-                    <div class="mr-4">
-                        <div class="text-teal-500 text-3xl">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="metric-value">ETB 50</p>
-                        <p class="metric-label">Freelancer Acquisition Cost</p>
-                    </div>
-                </div>
-                <div class="economics-card flex-1 flex items-center">
-                    <div class="mr-4">
-                        <div class="text-green-600 text-3xl">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="metric-value">ETB 200</p>
-                        <p class="metric-label">Contractor Acquisition Cost</p>
-                    </div>
-                </div>
-                <div class="economics-card flex-1 flex items-center">
-                    <div class="mr-4">
-                        <div class="text-blue-900 text-3xl">
-                            <i class="fas fa-coins"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="metric-value">ETB 2,400</p>
-                        <p class="metric-label">Customer Lifetime Value</p>
-                    </div>
-                </div>
-                <div class="economics-card flex-1 flex items-center">
-                    <div class="mr-4">
-                        <div class="text-amber-500 text-3xl">
-                            <i class="fas fa-balance-scale"></i>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="metric-value">12:1 - 48:1</p>
-                        <p class="metric-label">LTV:CAC Ratio (Healthy: &gt;3:1)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="mt-6 text-xs text-gray-500">Aligned to Strategy 2026–2030 guidance on escrow and settlement (Pages 51–52).</div>
     </div>
 </body>
 
 </html>
+
