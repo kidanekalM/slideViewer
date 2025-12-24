@@ -4,54 +4,72 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Enter SafeDeal</title>
+    <title>The Solution Today</title>
     <link href="style.css" rel="stylesheet" />
     <script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script>
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
         }
+
+        .phone-mockup {
+            border: 8px solid #1f2937;
+            border-radius: 2rem;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 
 <body>
-    <div class="slide gradient-bg flex flex-col items-center justify-center p-12 text-center">
-        <div class="animate-fadeInUp">
-            <h1 class="text-7xl font-bold text-white mb-6">SafeDeal</h1>
-            <p class="text-3xl text-teal-400 font-light tracking-wide mb-12">
-                Ethiopia's First Programmable Trust Layer
-            </p>
+    <div class="slide gradient-bg flex flex-col p-12">
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-5xl font-bold text-white mb-2">The Solution Today</h1>
+                <p class="text-xl text-teal-400">SafeDeal Mobile App (Peer-to-Peer)</p>
+            </div>
+            <div class="bg-teal-500/20 px-4 py-2 rounded-lg border border-teal-500/50">
+                <span class="text-teal-300 font-bold">Live Now</span>
+            </div>
         </div>
 
-        <div class="flex items-center gap-12 w-full max-w-5xl animate-fadeInUp delay-200">
-            <!-- Left Connector -->
-            <div class="flex-1 text-right">
-                <div class="text-white text-xl font-bold">Financial Institutions</div>
-                <div class="text-gray-400 text-sm">Custody & Settlement</div>
-            </div>
-
-            <!-- Central Icon -->
-            <div class="relative">
-                <div
-                    class="w-32 h-32 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(0,212,170,0.3)]">
-                    <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
-                        </path>
-                    </svg>
+        <div class="flex gap-12 items-center justify-center h-full">
+            <!-- Left: Description -->
+            <div class="w-1/2 space-y-6 animate-fadeInUp">
+                <h3 class="text-3xl font-bold text-white">Trust in Your Pocket</h3>
+                <p class="text-gray-300 text-lg">
+                    A standalone mobile app where buyers and sellers create escrow agreements instantly.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center bg-white bg-opacity-5 p-4 rounded-lg">
+                        <span class="text-2xl mr-4">🤝</span>
+                        <div class="text-gray-200">
+                            <strong>Anywhere, Anyone:</strong><br />
+                            Works for Instagram, Telegram, or Marketplace deals.
+                        </div>
+                    </div>
+                    <div class="flex items-center bg-white bg-opacity-5 p-4 rounded-lg">
+                        <span class="text-2xl mr-4">🔒</span>
+                        <div class="text-gray-200">
+                            <strong>Secure Vault:</strong><br />
+                            Funds locked until you say "Released".
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Connector -->
-            <div class="flex-1 text-left">
-                <div class="text-white text-xl font-bold">Digital Platforms</div>
-                <div class="text-gray-400 text-sm">User Experience & Reach</div>
+            <!-- Right: Visual -->
+            <div class="w-1/3 flex justify-center animate-fadeInUp delay-200">
+                <div class="phone-mockup h-80 w-40 flex items-center justify-center bg-gray-800">
+                    <div class="text-center p-4">
+                        <div class="text-teal-400 text-3xl font-bold mb-2">SafeDeal</div>
+                        <div class="text-white text-xs">Escrow #2938</div>
+                        <div class="my-4 bg-green-500/20 text-green-400 py-1 rounded text-xs">Funds Locked</div>
+                        <div class="bg-teal-500 text-white py-1 rounded text-xs">Release Funds</div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="mt-16 animate-fadeInUp delay-400 max-w-2xl text-gray-300 text-lg">
-            We provide the API infrastructure that allows <strong>Social Apps</strong> to offer <strong>Bank-Grade
-                Escrow</strong> without needing their own license.
         </div>
     </div>
 </body>
