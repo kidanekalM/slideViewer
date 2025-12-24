@@ -13,50 +13,84 @@
         }
 
         .avatar-placeholder {
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1rem;
-            border: 2px solid #00D4AA;
+            font-size: 1.5rem;
+            margin: 0 auto 0.5rem;
+            border: 2px solid;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
         }
     </style>
 </head>
 
 <body>
-    <div class="slide gradient-bg flex flex-col p-12">
-        <div class="mb-10 text-center">
-            <h1 class="text-5xl font-bold text-white mb-2">Builders of Trust</h1>
-            <p class="text-xl text-gray-300">Combined experience in Finance, Regulation & Tech</p>
+    <div class="slide gradient-bg flex flex-col p-8 justify-center">
+        <div class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-white mb-2">Built by Developers</h1>
+            <p class="text-lg text-teal-400">Engineering Trust from the Ground Up</p>
         </div>
 
-        <div class="flex gap-8 justify-center h-full">
-            <div class="w-1/4 text-center animate-fadeInUp">
-                <div class="avatar-placeholder text-teal-400">CEO</div>
-                <h3 class="text-white text-xl font-bold">Nahom T.</h3>
-                <p class="text-teal-400 text-sm mb-2">Strategy Lead</p>
-                <p class="text-gray-400 text-xs text-left px-4">Ex-Fintech Consultant. Led digital transformation
-                    projects for 2 banks.</p>
+        <div class="grid grid-cols-5 gap-4">
+            <!-- 1. Kidanekal Melkam -->
+            <div class="team-card text-center animate-fadeInUp">
+                <div class="avatar-placeholder border-teal-400 text-teal-400">KM</div>
+                <h3 class="text-white font-bold text-sm mb-1">Kidanekal M.</h3>
+                <div class="text-[10px] uppercase font-bold text-teal-400 mb-2">Lead Full Stack</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Architected the core escrow engine and banking
+                    integrations.</p>
             </div>
 
-            <div class="w-1/4 text-center animate-fadeInUp delay-100">
-                <div class="avatar-placeholder text-blue-400">CTO</div>
-                <h3 class="text-white text-xl font-bold">Dawit A.</h3>
-                <p class="text-blue-400 text-sm mb-2">Tech Lead</p>
-                <p class="text-gray-400 text-xs text-left px-4">Full Stack Engineer. Built 3 payment gateways.
-                    Blockchain Researcher.</p>
+            <!-- 2. Eyakem Haddish -->
+            <div class="team-card text-center animate-fadeInUp delay-100">
+                <div class="avatar-placeholder border-blue-400 text-blue-400">EH</div>
+                <h3 class="text-white font-bold text-sm mb-1">Eyakem H.</h3>
+                <div class="text-[10px] uppercase font-bold text-blue-400 mb-2">Backend Lead</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Specialist in scalable microservices and payment
+                    security.</p>
             </div>
 
-            <div class="w-1/4 text-center animate-fadeInUp delay-200">
-                <div class="avatar-placeholder text-purple-400">COO</div>
-                <h3 class="text-white text-xl font-bold">Sara M.</h3>
-                <p class="text-purple-400 text-sm mb-2">Operations</p>
-                <p class="text-gray-400 text-xs text-left px-4">Supply Chain Expert. Managed logistics for major
-                    e-commerce import/export.</p>
+            <!-- 3. Kidus -->
+            <div class="team-card text-center animate-fadeInUp delay-150">
+                <div class="avatar-placeholder border-purple-400 text-purple-400">K</div>
+                <h3 class="text-white font-bold text-sm mb-1">Kidus</h3>
+                <div class="text-[10px] uppercase font-bold text-purple-400 mb-2">Product/UI</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Crafting the seamless mobile experience for buyers.
+                </p>
+            </div>
+
+            <!-- 4. Kidus Yohannes -->
+            <div class="team-card text-center animate-fadeInUp delay-200">
+                <div class="avatar-placeholder border-yellow-400 text-yellow-400">KY</div>
+                <h3 class="text-white font-bold text-sm mb-1">Kidus Y.</h3>
+                <div class="text-[10px] uppercase font-bold text-yellow-400 mb-2">Mobile Eng</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Flutter expert building our cross-platform seller
+                    tools.</p>
+            </div>
+
+            <!-- 5. Hamzah Abdo -->
+            <div class="team-card text-center animate-fadeInUp delay-300">
+                <div class="avatar-placeholder border-pink-400 text-pink-400">HA</div>
+                <h3 class="text-white font-bold text-sm mb-1">Hamzah A.</h3>
+                <div class="text-[10px] uppercase font-bold text-pink-400 mb-2">Blockchain</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Smart contract auditor ensuring immutable transaction
+                    logic.</p>
             </div>
         </div>
     </div>
