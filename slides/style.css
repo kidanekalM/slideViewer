@@ -224,3 +224,72 @@ body {
     z-index: 1;
     pointer-events: none;
 }
+
+/* Mobile Responsive Styles for Slide Content */
+@media (max-width: 768px) {
+    body {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    .slide {
+        width: 100vw !important;
+        height: 100vh !important;
+        padding: 1rem !important;
+    }
+
+    .title {
+        font-size: 28px !important;
+    }
+
+    .subtitle {
+        font-size: 16px !important;
+    }
+
+    /* Make text smaller on mobile */
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    h3 {
+        font-size: 1.25rem !important;
+    }
+
+    p {
+        font-size: 0.875rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        padding: 0.75rem !important;
+    }
+
+    .title {
+        font-size: 24px !important;
+    }
+
+    .subtitle {
+        font-size: 14px !important;
+    }
+
+    h1 {
+        font-size: 1.75rem !important;
+    }
+
+    h2 {
+        font-size: 1.25rem !important;
+    }
+
+    h3 {
+        font-size: 1.1rem !important;
+    }
+
+    p {
+        font-size: 0.75rem !important;
+    }
+}

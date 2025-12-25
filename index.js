@@ -25,9 +25,17 @@ class SimpleSlideViewer {
         const baseWidth = 1280;
         const baseHeight = 720;
 
+        // Add padding for mobile devices
+        const isMobile = window.innerWidth <= 768;
+        const padding = isMobile ? 20 : 0;
+
+        const availableWidth = window.innerWidth - (padding * 2);
+        const availableHeight = window.innerHeight - (padding * 2);
+
         const scale = Math.min(
-            window.innerWidth / baseWidth,
-            window.innerHeight / baseHeight
+            availableWidth / baseWidth,
+            availableHeight / baseHeight,
+            1 // Never scale up beyond 100%
         );
 
         this.frame.style.width = `${baseWidth * scale}px`;

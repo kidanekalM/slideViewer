@@ -9,6 +9,8 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: fixed;
+    -webkit-overflow-scrolling: touch;
 }
 
 #slide-viewer {
@@ -19,11 +21,14 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 #slide-frame {
     transform-origin: center;
     border: none;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .nav-btn {
