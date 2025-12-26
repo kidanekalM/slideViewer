@@ -4,12 +4,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-right: env(safe-area-inset-right);
+    --safe-bottom: env(safe-area-inset-bottom);
+    --safe-left: env(safe-area-inset-left);
+}
+
 html,
 body {
     width: 100%;
-    height: 100%;
+    /* Use dynamic viewport height for mobile UI chrome */
+    height: 100dvh;
+    height: 100vh; /* fallback */
     overflow: hidden;
-    position: fixed;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -22,6 +30,11 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    /* Respect safe areas (notches) and add small breathing room */
+    padding-top: max(8px, var(--safe-top));
+    padding-right: max(12px, var(--safe-right));
+    padding-bottom: max(12px, var(--safe-bottom));
+    padding-left: max(12px, var(--safe-left));
 }
 
 #slide-frame {
@@ -29,6 +42,7 @@ body {
     border: none;
     max-width: 100%;
     max-height: 100%;
+    display: block;
 }
 
 .nav-btn {
@@ -66,16 +80,16 @@ body {
 }
 
 #prev-btn {
-    left: 30px;
+    left: max(12px, var(--safe-left));
 }
 
 #next-btn {
-    right: 30px;
+    right: max(12px, var(--safe-right));
 }
 
 #slide-indicator {
     position: absolute;
-    bottom: 24px;
+    bottom: max(12px, var(--safe-bottom));
     left: 50%;
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.08);
@@ -95,19 +109,19 @@ body {
         width: 45px;
         height: 45px;
         font-size: 22px;
-        opacity: 0.3;
+        opacity: 0.35;
     }
 
     #prev-btn {
-        left: 10px;
+        left: max(8px, var(--safe-left));
     }
 
     #next-btn {
-        right: 10px;
+        right: max(8px, var(--safe-right));
     }
 
     #slide-indicator {
-        bottom: 12px;
+        bottom: max(8px, var(--safe-bottom));
         font-size: 11px;
         padding: 6px 10px;
     }
@@ -121,15 +135,15 @@ body {
     }
 
     #prev-btn {
-        left: 5px;
+        left: max(6px, var(--safe-left));
     }
 
     #next-btn {
-        right: 5px;
+        right: max(6px, var(--safe-right));
     }
 
     #slide-indicator {
-        bottom: 8px;
+        bottom: max(6px, var(--safe-bottom));
         font-size: 10px;
         padding: 5px 8px;
     }

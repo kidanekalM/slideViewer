@@ -25,21 +25,25 @@ class SimpleSlideViewer {
         const baseWidth = 1280;
         const baseHeight = 720;
 
-        // Add padding for mobile devices
-        const isMobile = window.innerWidth <= 768;
-        const padding = isMobile ? 20 : 0;
+        // Measure available space inside the viewer, excluding padding/safe areas
+        const styles = getComputedStyle(this.viewer);
+        const padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
+        const padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
 
-        const availableWidth = window.innerWidth - (padding * 2);
-        const availableHeight = window.innerHeight - (padding * 2);
+        const viewportWidth = this.viewer.clientWidth - padX;
+        const viewportHeight = this.viewer.clientHeight - padY;
 
         const scale = Math.min(
-            availableWidth / baseWidth,
-            availableHeight / baseHeight,
+            viewportWidth / baseWidth,
+            viewportHeight / baseHeight,
             1 // Never scale up beyond 100%
         );
 
-        this.frame.style.width = `${baseWidth * scale}px`;
-        this.frame.style.height = `${baseHeight * scale}px`;
+        const width = Math.floor(baseWidth * scale);
+        const height = Math.floor(baseHeight * scale);
+
+        this.frame.style.width = `${width}px`;
+        this.frame.style.height = `${height}px`;
     }
 
     bindEvents() {
