@@ -4,6 +4,8 @@ class SimpleSlideViewer {
         this.totalSlides = 16;
         this.slidesPath = 'slides/page_';
         this.isFullscreen = false;
+        this.baseWidth = 1280;
+        this.baseHeight = 720;
 
         this.viewer = document.getElementById("slide-viewer");
         this.frame = document.getElementById("slide-frame");
@@ -17,33 +19,76 @@ class SimpleSlideViewer {
     loadSlide() {
         const url = `${this.slidesPath}${this.currentSlide}.html`;
         this.frame.src = url;
-        this.scaleSlide();
         this.updateIndicator();
     }
 
     scaleSlide() {
-        const baseWidth = 1280;
-        const baseHeight = 720;
+        const { width: viewportWidth, height: viewportHeight } = this.getAvailableSize();
+        const scale = Math.min(
+            viewportWidth / this.baseWidth,
+            viewportHeight / this.baseHeight,
+            1
+        );
 
-        // Measure available space inside the viewer, excluding padding/safe areas
+        // Make iframe fill the viewer; we scale inner content instead
+        this.frame.style.width = `${Math.floor(viewportWidth)}px`;
+        this.frame.style.height = `${Math.floor(viewportHeight)}px`;
+
+        this.applyInnerScale(scale);
+    }
+
+    getAvailableSize() {
         const styles = getComputedStyle(this.viewer);
         const padX = parseFloat(styles.paddingLeft) + parseFloat(styles.paddingRight);
         const padY = parseFloat(styles.paddingTop) + parseFloat(styles.paddingBottom);
+        const width = this.viewer.clientWidth - padX;
+        const height = this.viewer.clientHeight - padY;
+        return { width, height };
+    }
 
-        const viewportWidth = this.viewer.clientWidth - padX;
-        const viewportHeight = this.viewer.clientHeight - padY;
+    ensureInnerStyles(iframeDoc) {
+        if (!iframeDoc || !iframeDoc.documentElement) return;
+        if (iframeDoc.getElementById('sv-inner-style')) return;
 
-        const scale = Math.min(
-            viewportWidth / baseWidth,
-            viewportHeight / baseHeight,
-            1 // Never scale up beyond 100%
-        );
+        const style = iframeDoc.createElement('style');
+        style.id = 'sv-inner-style';
+        style.textContent = `
+            html, body { width:100% !important; height:100% !important; margin:0 !important; padding:0 !important; overflow:hidden !important; background: transparent !important; overscroll-behavior: none; }
+            body { display:flex !important; align-items:center !important; justify-content:center !important; }
+            .sv-scale-viewport { width:100% !important; height:100% !important; display:flex !important; align-items:center !important; justify-content:center !important; overflow:hidden !important; }
+            .sv-scale-wrap { width:${this.baseWidth}px !important; height:${this.baseHeight}px !important; transform-origin:center center; transform: scale(var(--sv-scale, 1)); display:block; }
+            .sv-scale-wrap > .slide { width:${this.baseWidth}px !important; height:${this.baseHeight}px !important; }
+            @media (max-width: 768px) {
+              /* Prefer scaling to avoid overflow/cutoff on small screens */
+              html, body { overflow:hidden !important; }
+            }
+        `;
+        iframeDoc.head ? iframeDoc.head.appendChild(style) : iframeDoc.documentElement.appendChild(style);
+    }
 
-        const width = Math.floor(baseWidth * scale);
-        const height = Math.floor(baseHeight * scale);
-
-        this.frame.style.width = `${width}px`;
-        this.frame.style.height = `${height}px`;
+    applyInnerScale(scale) {
+        try {
+            const iframeDoc = this.frame.contentDocument || this.frame.contentWindow.document;
+            if (!iframeDoc) return;
+            this.ensureInnerStyles(iframeDoc);
+            // Ensure a consistent wrapper exists
+            let slideEl = iframeDoc.querySelector('.slide');
+            if (!slideEl) return;
+            let viewport = iframeDoc.querySelector('.sv-scale-viewport');
+            let wrap = iframeDoc.querySelector('.sv-scale-wrap');
+            if (!wrap) {
+                viewport = iframeDoc.createElement('div');
+                viewport.className = 'sv-scale-viewport';
+                wrap = iframeDoc.createElement('div');
+                wrap.className = 'sv-scale-wrap';
+                slideEl.parentNode.insertBefore(viewport, slideEl);
+                viewport.appendChild(wrap);
+                wrap.appendChild(slideEl);
+            }
+            iframeDoc.documentElement.style.setProperty('--sv-scale', String(scale));
+        } catch (e) {
+            // Cross-origin iframes would block this, but our slides are same-origin
+        }
     }
 
     bindEvents() {
@@ -58,17 +103,13 @@ class SimpleSlideViewer {
             try {
                 const iframeDoc = this.frame.contentDocument || this.frame.contentWindow.document;
                 if (iframeDoc) {
+                    // Inject scaling styles and bind events inside the slide
+                    this.ensureInnerStyles(iframeDoc);
+                    this.scaleSlide();
                     iframeDoc.addEventListener("keydown", (e) => this.handleKeyboard(e), true);
-                    // Optional: clicking slide returns focus to main window if desired, 
-                    // but handling keydown inside iframe is more robust.
-                    iframeDoc.addEventListener("click", () => {
-                        // Ensure the iframe keeps focus or pass focus to parent? 
-                        // Actually, if we handle keys in iframe, we don't need to force focus away.
-                        // But let's trigger a focus event on the viewer just in case.
-                    });
                 }
             } catch (error) {
-                console.warn("Could not bind keyboard events to slide iframe (likely CORS/origin restriction):", error);
+                console.warn("Could not bind/inject into slide iframe:", error);
             }
         });
 
