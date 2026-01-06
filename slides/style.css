@@ -378,3 +378,27 @@ body {
   .grid-cols-3 { grid-template-columns: 1fr !important; }
   .grid-cols-4 { grid-template-columns: 1fr 1fr !important; }
 }
+
+/* Print: force true A4 landscape with zero margins and exact colors */
+@page {
+  size: A4 landscape;
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    width: 297mm;
+    height: 210mm;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    overflow: hidden !important;
+  }
+  .slide {
+    width: 297mm !important;
+    height: 210mm !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

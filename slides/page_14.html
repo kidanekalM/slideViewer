@@ -17,9 +17,8 @@
             height: 70px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
+            object-fit: cover;
             font-size: 1.5rem;
             margin: 0 auto 0.5rem;
             border: 2px solid;
@@ -50,7 +49,7 @@
         <div class="grid grid-cols-5 gap-4">
             <!-- 1. Kidanekal Melkam -->
             <div class="team-card text-center animate-fadeInUp">
-                <div class="avatar-placeholder border-teal-400 text-teal-400">KM</div>
+                <img class="avatar-placeholder border-teal-400" src="../pics/kidanekal.png" alt="Kidanekal M." />
                 <h3 class="text-white font-bold text-sm mb-1">Kidanekal M.</h3>
                 <div class="text-[10px] uppercase font-bold text-teal-400 mb-2">Lead Full Stack</div>
                 <p class="text-gray-400 text-[10px] leading-tight">Architected the core escrow engine and banking
@@ -59,38 +58,40 @@
 
             <!-- 2. Eyakem Haddish -->
             <div class="team-card text-center animate-fadeInUp delay-100">
-                <div class="avatar-placeholder border-blue-400 text-blue-400">EH</div>
+                <img class="avatar-placeholder border-blue-400" src="../pics/eyakem had.jpg" alt="Eyakem H." />
                 <h3 class="text-white font-bold text-sm mb-1">Eyakem H.</h3>
+                 <div class="text-[10px] uppercase font-bold text-blue-400 mb-2">DevOps Engineer</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Ensuring smooth deployments, CI/CD, and infrastructure reliability.</p>
+
+            </div>
+
+            <!-- 3. Kidus Yohannes -->
+            <div class="team-card text-center animate-fadeInUp delay-150">
+                <img class="avatar-placeholder border-purple-400" src="../pics/kidus.png" alt="Kidus Y." />
+                <h3 class="text-white font-bold text-sm mb-1">Kidus Y.</h3>
+                                <div class="text-[10px] uppercase font-bold text-yellow-400 mb-2">Mobile Eng</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Flutter expert building our cross-platform seller
+                    tools.</p>
+
+            </div>
+
+            <!-- 4. Kidus Paulos -->
+            <div class="team-card text-center animate-fadeInUp delay-200">
+                <img class="avatar-placeholder border-yellow-400" src="../pics/kidus paulos.png" alt="Kidus P." />
+                <h3 class="text-white font-bold text-sm mb-1">Kidus P.</h3>
                 <div class="text-[10px] uppercase font-bold text-blue-400 mb-2">Backend Lead</div>
                 <p class="text-gray-400 text-[10px] leading-tight">Specialist in scalable microservices and payment
                     security.</p>
             </div>
 
-            <!-- 3. Kidus -->
-            <div class="team-card text-center animate-fadeInUp delay-150">
-                <div class="avatar-placeholder border-purple-400 text-purple-400">K</div>
-                <h3 class="text-white font-bold text-sm mb-1">Kidus</h3>
-                <div class="text-[10px] uppercase font-bold text-purple-400 mb-2">Product/UI</div>
-                <p class="text-gray-400 text-[10px] leading-tight">Crafting the seamless mobile experience for buyers.
-                </p>
-            </div>
-
-            <!-- 4. Kidus Yohannes -->
-            <div class="team-card text-center animate-fadeInUp delay-200">
-                <div class="avatar-placeholder border-yellow-400 text-yellow-400">KY</div>
-                <h3 class="text-white font-bold text-sm mb-1">Kidus Y.</h3>
-                <div class="text-[10px] uppercase font-bold text-yellow-400 mb-2">Mobile Eng</div>
-                <p class="text-gray-400 text-[10px] leading-tight">Flutter expert building our cross-platform seller
-                    tools.</p>
-            </div>
-
             <!-- 5. Hamzah Abdo -->
             <div class="team-card text-center animate-fadeInUp delay-300">
-                <div class="avatar-placeholder border-pink-400 text-pink-400">HA</div>
+                <img class="avatar-placeholder border-pink-400" src="../pics/hamzah.jpg" alt="Hamzah A." />
                 <h3 class="text-white font-bold text-sm mb-1">Hamzah A.</h3>
-                <div class="text-[10px] uppercase font-bold text-pink-400 mb-2">Blockchain</div>
-                <p class="text-gray-400 text-[10px] leading-tight">Smart contract auditor ensuring immutable transaction
-                    logic.</p>
+                 <div class="text-[10px] uppercase font-bold text-purple-400 mb-2">Product/UI</div>
+                <p class="text-gray-400 text-[10px] leading-tight">Crafting the seamless mobile experience for buyers.
+                </p>
+               
             </div>
         </div>
     </div>
